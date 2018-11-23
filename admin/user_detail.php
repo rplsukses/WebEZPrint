@@ -1,7 +1,10 @@
 <?php
+	include_once 'api/config/database.php';
     include 'include/header.php';
     include 'include/footer.php';
-	  include 'include/sidebar.php';
+	include 'include/sidebar.php';
+    $database = new Database();
+    $db = $database->getConnection();
 ?>
 
 
