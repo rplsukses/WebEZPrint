@@ -1,7 +1,7 @@
 <?php $thisPage = "index";
-    include 'header.php';
-    include 'footer.php';
-		include 'sidebar.php';
+    include 'include/header.php';
+    include 'include/footer.php';
+	include 'include/sidebar.php';
 ?>
 
 			<!-- Content -->

@@ -1,9 +1,9 @@
-<?php
-		$thisPage = "user";
-    include 'header.php';
-    include 'footer.php';
-		include 'sidebar.php';
+<?php $thisPage = "index";
+    include 'include/header.php';
+    include 'include/footer.php';
+	include 'include/sidebar.php';
 ?>
+
 
     <!-- Navbar -->
 		<div class="main-panel">
