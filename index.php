@@ -1,3 +1,9 @@
+<?php
+    include_once 'admin/api/config/database.php';
+
+    $database = new Database();
+    $db = $database->getConnection();
+?>
 <!DOCTYPE html>
 <!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
