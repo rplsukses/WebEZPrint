@@ -21,7 +21,7 @@
         //read mitra
         function read(){
             //select all query
-            $query = "SELECT * FROM `mitra`";
+            $query = "SELECT * FROM mitra";
 
             //prepare query 
             $stmt = $this->conn->prepare($query);
