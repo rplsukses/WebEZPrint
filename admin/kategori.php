@@ -1,4 +1,4 @@
-<?php $thisPage = "index";
+<?php
     include 'include/header.php';
     include 'include/footer.php';
 	  include 'include/sidebar.php';
