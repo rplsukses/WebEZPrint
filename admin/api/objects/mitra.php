@@ -21,11 +21,10 @@
         //read mitra
         function read(){
             //select all query
-            $query = "SELECT * FROM mitra";
+            $query = "SELECT id_mitra, nama, alamat, email, telepon, foto, jam_buka, jam_tutup FROM " . $this->table_name;
 
             //prepare query 
             $stmt = $this->conn->prepare($query);
-
             $stmt->execute();
 
             return $stmt;

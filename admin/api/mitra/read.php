@@ -35,7 +35,7 @@
     
             $mitra_item=array(
                 "id_mitra" => $id_mitra,
-                "name" => $nama,
+                "nama" => $nama,
                 "email" => $email,
                 "telepon" => $telepon,
                 "foto" => $foto,
