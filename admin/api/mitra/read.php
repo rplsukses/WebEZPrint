@@ -22,7 +22,7 @@
     if($num > 0){
         //mitra array
         $mitra_arr = array();
-        $mitra_arr["records"] = array();
+        $mitra_arr["mitra"] = array();
 
         // retrieve our table contents
         // fetch() is faster than fetchAll()
@@ -43,14 +43,14 @@
                 "jam_tutup" => $jam_tutup
             );
     
-            array_push($mitra_arr["records"], $mitra_item);
+            array_push($mitra_arr["mitra"], $mitra_item);
         }
     
         // set response code - 200 OK
         http_response_code(200);
     
         // show products data in json format
-        echo json_encode($products_arr);
+        echo json_encode($mitra_arr);
     }else{
  
         // set response code - 404 Not found
@@ -58,7 +58,7 @@
      
         // tell the user no products found
         echo json_encode(
-            array("message" => "No products found.")
+            array("message" => "No mitra found.")
         );
     }
 ?>
