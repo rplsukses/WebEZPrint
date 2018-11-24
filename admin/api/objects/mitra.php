@@ -4,7 +4,7 @@
         private $table_name = "mitra";
 
         //object properties
-        public $id;
+        public $id_mitra;
         public $nama;
         public $alamat;
         public $email;

@@ -34,7 +34,7 @@
             extract($row);
     
             $mitra_item=array(
-                "id" => $id,
+                "id_mitra" => $id_mitra,
                 "name" => $nama,
                 "email" => $email,
                 "telepon" => $telepon,
