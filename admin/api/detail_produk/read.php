@@ -5,25 +5,25 @@
 
     // include database and object files
     include_once '../config/database.php';
-    include_once '../objects/transaksi.php';
+    include_once '../objects/detail.php';
     
     // instantiate database and product object
     $database = new Database();
     $db = $database->getConnection();
     
     // initialize object
-    $transaksi = new transaksi($db);
-    $transaksi->id_user = 2;
+    $detail = new DetailProduk($db);
+    $detail->id_detail = 4;
 
-    //query transaksi
-    $stmt = $transaksi->readByUser();
+    //query detail
+    $stmt = $detail->readByID();
     $num = $stmt->rowCount();
 
     //check if more than 0 record found
     if($num > 0){
-        //transaksi array
-        $transaksi_arr = array();
-        $transaksi_arr["transaksi"] = array();
+        //detail array
+        $detail_arr = array();
+        $detail_arr["detail"] = array();
 
         // retrieve our table contents
         // fetch() is faster than fetchAll()
@@ -34,26 +34,22 @@
             // just $name only
             extract($row);
     
-            $transaksi_item=array(
-                "id_transaksi" => $id_transaksi,
-                "status" => $status,
-                "tgl_pesan" => $tgl_pesan,
-                "tgl_selesai" => $tgl_selesai,
-                "jumlah" => $jumlah,
-                "harga_total" => $harga_total,
-                "keterangan" => $keterangan,
-                "id_mitra" => $id_mitra,
-                "id_produk" => $id_produk
+            $detail_item=array(
+                "id_detail" => $id_detail,
+                "ukuran" => $ukuran,
+                "warna" => $warna,
+                "bahan" => $bahan,
+                "harga" => $harga
             );
     
-            array_push($transaksi_arr["transaksi"], $transaksi_item);
+            array_push($detail_arr["detail"], $detail_item);
         }
     
         // set response code - 200 OK
         http_response_code(200);
     
         // show products data in json format
-        echo json_encode($transaksi_arr);
+        echo json_encode($detail_arr);
     }else{
  
         // set response code - 404 Not found
@@ -61,7 +57,7 @@
      
         // tell the user no products found
         echo json_encode(
-            array("message" => "No transaksi found.")
+            array("message" => "No detail found.")
         );
     }
 ?>
