@@ -29,7 +29,7 @@
         
         public function readByID(){
             //select all query
-            $query = "SELECT * FROM " . $this->table_name . " WHERE id_detail = :id_detail";
+            $query = "SELECT * FROM " . $this->table_name . " WHERE id_detail = " . $this->id_detail;
 
             //perpare query
             $stmt = $this->conn->prepare($query);
