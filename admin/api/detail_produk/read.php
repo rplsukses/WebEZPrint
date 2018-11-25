@@ -5,7 +5,7 @@
 
     // include database and object files
     include_once '../config/database.php';
-    include_once '../objects/detail.php';
+    include_once '../objects/detail_produk.php';
     
     // instantiate database and product object
     $database = new Database();
@@ -13,7 +13,7 @@
     
     // initialize object
     $detail = new DetailProduk($db);
-    $detail->id_detail = 4;
+    $detail->id_detail = '5';
 
     //query detail
     $stmt = $detail->readByID();

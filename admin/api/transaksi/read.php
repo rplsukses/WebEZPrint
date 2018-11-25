@@ -12,8 +12,8 @@
     $db = $database->getConnection();
     
     // initialize object
-    $transaksi = new transaksi($db);
-    $transaksi->id_user = 2;
+    $transaksi = new Transaksi($db);
+    $transaksi->id_user = '3';
 
     //query transaksi
     $stmt = $transaksi->readByUser();
