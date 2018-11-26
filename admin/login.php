@@ -1,3 +1,9 @@
+<?php
+	include_once 'api/config/database.php';
+    $database = new Database();
+    $db = $database->getConnection();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +34,7 @@
 				<div class="login200-pic js-tilt">
 					<img src="assets/login/images/logo_3.png" alt="IMG">
 				</div>
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="" method="POST">
 					<span class="login100-form-title">
 						Admin Login
 					</span>
