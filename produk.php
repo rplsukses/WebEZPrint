@@ -68,6 +68,7 @@
                     <tr>
                          <th>ID Produk</th>
                          <th>Kategori</th>
+                         <th>Jenis</th>
                          <th>Ukuran</th>
                          <th>Warna</th>
                          <th>Bahan</th>
@@ -80,6 +81,7 @@
                         <tr >
                             <td>001</td>
                             <td>Document</td>
+                            <td>....</td>
                             <td>A4</td>
                             <td>Hitam Putih</td>
                             <td>Hvs 70 gr</td>
@@ -89,6 +91,7 @@
                         <tr>
                             <td>002</td>
                             <td>Document</td>
+                            <td>Kategori</td>
                             <td>F4</td>
                             <td>Hitam Putih</td>
                             <td>Hvs 80 gr</td>
@@ -98,6 +101,7 @@
                         <tr>
                             <td>003</td>
                             <td>Document</td>
+                            <td>....</td>
                             <td>A3</td>
                             <td>Berwarna</td>
                             <td>Art paper 150gr</td>
@@ -106,6 +110,7 @@
                         </tr>
                         <tr >
                             <td>001</td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -120,14 +125,6 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                             <td></td>
                             <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
                         </tr>
@@ -138,10 +135,22 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td></td>
                             <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
                         </tr>
                         <tr >
                             <td>001</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
+                        </tr>
+                        <tr >
+                            <td>001</td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -161,8 +170,6 @@
     </div> <!-- /.row -->
         </div> <!-- /.container -->
             </div> <!-- /#services -->
-
-
 
      <div class="site-footer">
         <div class="container">
