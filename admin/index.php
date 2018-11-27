@@ -1,12 +1,16 @@
 <?php
-	include_once 'api/config/database.php';
-    include 'include/header.php';
-    include 'include/footer.php';
+	require_once 'core/init.php';
+	include 'include/header.php';
+	include 'include/footer.php';
 	include 'include/sidebar.php';
-    $database = new Database();
-    $db = $database->getConnection();
+	
+	session_start();
+	if(!isset($_SESSION['admin'])) {
+	  header('location:login.php');
+	}else {
+	  $loginadmin = $_SESSION['loginadmin'];
+	}
 ?>
-
 
 		<!-- Navbar -->
 		<div class="main-panel">
