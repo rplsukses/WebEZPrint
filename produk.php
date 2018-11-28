@@ -1,8 +1,5 @@
 <?php
-    include_once 'admin/api/config/database.php';
-    $database = new Database();
-    $db = $database->getConnection();
-
+    include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 ?>
@@ -68,7 +65,6 @@
                     <tr>
                          <th>ID Produk</th>
                          <th>Kategori</th>
-                         <th>Jenis</th>
                          <th>Ukuran</th>
                          <th>Warna</th>
                          <th>Bahan</th>
@@ -78,86 +74,20 @@
                 </h1>
                   </thead>
                      <tbody class="h4">
+                     <?php $ambil=$conn->query("SELECT * FROM 
+                     produk, kategori, detail_produk where
+                     produk.id_mitra=4 and produk.id_detail=detail_produk.id_detail and produk.id_kategori=kategori.id_kategori ");?>
+                     <?php while($pecah = $ambil-> fetch_assoc()) { ?>
                         <tr >
-                            <td>001</td>
-                            <td>Document</td>
-                            <td>....</td>
-                            <td>A4</td>
-                            <td>Hitam Putih</td>
-                            <td>Hvs 70 gr</td>
-                            <td>Rp 200,-</td>
+                            <td><?php echo $pecah['id_produk']; ?></td>
+                            <td><?php echo $pecah['nama']; ?></td>
+                            <td><?php echo $pecah['ukuran']; ?></td>
+                            <td><?php echo $pecah['warna']; ?></td>
+                            <td><?php echo $pecah['bahan']; ?></td>
+                            <td><?php echo $pecah['harga']; ?></td>
                             <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
                         </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Document</td>
-                            <td>Kategori</td>
-                            <td>F4</td>
-                            <td>Hitam Putih</td>
-                            <td>Hvs 80 gr</td>
-                            <td>Rp 700,-</td>
-                             <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>Document</td>
-                            <td>....</td>
-                            <td>A3</td>
-                            <td>Berwarna</td>
-                            <td>Art paper 150gr</td>
-                            <td>Rp 3500,-</td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
+                     <?php } ?>
                     </tbody>
                 </table>
               </div>
