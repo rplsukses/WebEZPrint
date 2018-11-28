@@ -1,15 +1,11 @@
 <?php
-    include_once 'admin/api/config/database.php';
-    $database = new Database();
-    $db = $database->getConnection();
-    
+    include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 ?>
 
 
 <body>
-    
     <div id="home">
         <div class="site-header">
             <div class="top-header">
@@ -17,10 +13,8 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
-                              
                                <a href="index.html"><img src="images/logo.png" width="30px" height="30px"></a>
                                 <span>EZPrint Mitra Center</span>
-                                
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
@@ -54,56 +48,46 @@
     <div id="services"> 
         <div>
             <div class="title-section text-center">
-               
             </div> <!-- /.title-section -->
           <div class="container lead">
-         
-            <div class="row">
-              
-                        
+            <div class="row"
               <!-- Content -->
                    <div class="col-md-12">
                         <form>
                           <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">ID Produk</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="ID Produk">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="ID Produk">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Kategori</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Kategori">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="colFormLabel" class="col-sm-2 col-form-label">Jenis</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Jenis">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="Kategori">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Ukuran</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Ukuran">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="Ukuran">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Warna</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Warna">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="Warna">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Bahan</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Bahan">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="Bahan">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Harga</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Harga">
+                                <input type="number" class="form-control" id="colFormLabel" placeholder="Harga">
                             </div>
                         </div>
                         </form><a class="btn btn-warning pull-right" href="admin.php">SAVE</a>

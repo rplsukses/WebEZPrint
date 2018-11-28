@@ -1,8 +1,5 @@
 <?php
-    include_once 'admin/api/config/database.php';
-    $database = new Database();
-    $db = $database->getConnection();
-
+    include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 ?>
