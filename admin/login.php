@@ -51,7 +51,6 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-
 					<div class="container-login100-form-btn">
 						<input class="login100-form-btn" type="submit" name="loginadmin" value="Log In">
 					</div>
@@ -65,8 +64,8 @@
 					$row = mysqli_fetch_array($result);
 					if (mysqli_num_rows($result) == 1) {
 						session_start();
-						$_SESSION["loginadmin"] = $row["email"];
-						echo "<p>Selamat datang ". $row["email"] ."</p>";
+						$_SESSION["loginadmin"] = $row["nama"];
+						echo "<p>Selamat datang ". $row["nama"] ."</p>";
 						header('location:index.php');
 					}else{
 						echo "<p>Error: " . $query . "<br>" . mysqli_error($conn). "</p>";

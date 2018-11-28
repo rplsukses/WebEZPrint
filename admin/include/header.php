@@ -5,7 +5,7 @@
 	<link href="assets/img/logo_3.png" rel="print-icon" sizes="100x100">
 	<link href="assets/img/logo_3.png" rel="icon" type="image/png">
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-	<title>EZPrint</title>
+	<title>EZPrint Admin Panel</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'><!--     Fonts and icons     -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" rel="stylesheet" type="text/css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"><!-- CSS Files -->

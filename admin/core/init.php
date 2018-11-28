@@ -1,12 +1,4 @@
 <?php 
-	/* Setting for online
-	$servername = "localhost";
-	$username = "id5573945_imaisnaini";
-	$password = "123456";
-	$dbname = "id5573945_db_rumah_mukenah";
-	*/
-
-	// Setting for local
 	$servername = "localhost";
 	$username = "u623212174_root";
 	$password = "rplsukses";
