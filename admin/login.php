@@ -1,7 +1,5 @@
 <?php
-	include_once 'api/config/database.php';
-    $database = new Database();
-    $db = $database->getConnection();
+	require_once 'core/init.php';
 ?>
 
 <!DOCTYPE html>
@@ -40,14 +38,14 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required:ex@abc.xyz">
-						<input class="input100" type="text" name="username" placeholder="Email">
+						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -55,11 +53,26 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
+						<input class="login100-form-btn" type="submit" name="loginadmin" value="Log In">
 					</div>
 				</form>
+				<?php 
+				if (isset($_POST["loginadmin"])) {
+					$email = $_POST["email"];
+					$password = $_POST["password"];
+					$query = "SELECT * FROM admin WHERE email='$email' AND password='".md5($password)."' LIMIT 0,1";
+					$result = mysqli_query($conn, $query);
+					$row = mysqli_fetch_array($result);
+					if (mysqli_num_rows($result) == 1) {
+						session_start();
+						$_SESSION["loginadmin"] = $row["email"];
+						echo "<p>Selamat datang ". $row["email"] ."</p>";
+						header('location:index.php');
+					}else{
+						echo "<p>Error: " . $query . "<br>" . mysqli_error($conn). "</p>";
+					}
+				}
+				?>
 			</div>
 		</div>
 	</div>
