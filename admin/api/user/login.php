@@ -17,6 +17,7 @@
 
     //initialize object
     $user = new User($db);
+    $user_arr = array();
 
     if (isset($_POST['email']) && isset($_POST['password'])) {    
         $user->email = htmlspecialchars($_POST['email']);
@@ -29,14 +30,14 @@
 
             //Check jika email dan password cocok
             if($num > 0){
-                $user_arr = array();
-
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
-
+                    
                     $user_arr["nama"] = $nama;
                     $user_arr["email"] = $email;
                     $user_arr["foto"] = $foto;
+                    $user_arr["error"] = false;
+                    $user_arr["message"] = "Login sukse!";
                 }
         
                 // set response code - 200 OK
@@ -47,16 +48,22 @@
             }else{
                 // set response code - 404 Not found
                 http_response_code(404);
+
+                $user_arr["error"] = true;
+                $user_arr["message"] = "Password salah!";
         
                 // tell the user no products found
-                echo json_encode(array("message" => "Password salah!"));    
+                echo json_encode($user_arr);    
             }
         }else{            
             // set response code - 404 Not found
             http_response_code(404);
-        
+            
+            $user_arr["error"] = true;
+            $user_arr["message"] = "Email belum terdaftar!";
+
             // tell the user no products found
-            echo json_encode(array("message" => "Email belum terdaftar!"));
+            echo json_encode($user_arr);
         }
     }  
 ?>
