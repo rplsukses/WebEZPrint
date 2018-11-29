@@ -5,11 +5,12 @@
 	include 'include/sidebar.php';
 	
 	session_start();
-	if(!isset($_SESSION['admin'])) {
+	if(!isset($_SESSION['loginadmin'])) {
 	  header('location:login.php');
 	}else {
 	  $loginadmin = $_SESSION['loginadmin'];
 	}
+
 ?>
 
 		<!-- Navbar -->
