@@ -35,7 +35,7 @@
             $kategori_item=array(
                 "id_kategori" => $id_kategori,
                 "nama" => $nama,
-                "icon" => $icon,
+                "icon" => $icon
             );
     
             array_push($kategori_arr["kategori"], $kategori_item);
@@ -46,8 +46,7 @@
     
         // show products data in json format
         echo json_encode($kategori_arr);
-    }else{
- 
+    }else{ 
         // set response code - 404 Not found
         http_response_code(404);
      

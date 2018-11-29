@@ -1,46 +1,8 @@
 <?php
-    include_once 'admin/api/config/database.php';
-
-    $database = new Database();
-    $db = $database->getConnection();
+    include 'admin/core/init.php';
+    include 'include/header.php';
+    include 'include/footer.php';
 ?>
-<!DOCTYPE html>
-<!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <link href="images/logo.png" rel="print-icon" sizes="100x100">
-    <link href="images/logo.png" rel="icon" type="image/png">
-    <title>EZPrint Mitra Center</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="templatemo">
-    <!-- 
-    Compass Template
-    http://www.templatemo.com/tm-454-compass
-    -->
-    <meta charset="UTF-8">
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
-    <!-- CSS Bootstrap & Custom -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/templatemo-misc.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/templatemo-main.css">
-        
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    
-    <!-- JavaScripts -->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-            <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" alt="" /></a>
-        </div>
-    <![endif]-->
-</head>
 <body>
     <div id="home">
         <div class="site-header">
@@ -112,78 +74,20 @@
                 </h1>
                   </thead>
                      <tbody class="h4">
+                     <?php $ambil=$conn->query("SELECT * FROM 
+                     produk, kategori, detail_produk where
+                     produk.id_mitra=4 and produk.id_detail=detail_produk.id_detail and produk.id_kategori=kategori.id_kategori ");?>
+                     <?php while($pecah = $ambil-> fetch_assoc()) { ?>
                         <tr >
-                            <td>001</td>
-                            <td>Document</td>
-                            <td>A4</td>
-                            <td>Hitam Putih</td>
-                            <td>Hvs 70 gr</td>
-                            <td>Rp 200,-</td>
+                            <td><?php echo $pecah['id_produk']; ?></td>
+                            <td><?php echo $pecah['nama']; ?></td>
+                            <td><?php echo $pecah['ukuran']; ?></td>
+                            <td><?php echo $pecah['warna']; ?></td>
+                            <td><?php echo $pecah['bahan']; ?></td>
+                            <td><?php echo $pecah['harga']; ?></td>
                             <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
                         </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Document</td>
-                            <td>F4</td>
-                            <td>Hitam Putih</td>
-                            <td>Hvs 80 gr</td>
-                            <td>Rp 700,-</td>
-                             <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>Document</td>
-                            <td>A3</td>
-                            <td>Berwarna</td>
-                            <td>Art paper 150gr</td>
-                            <td>Rp 3500,-</td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                           <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
-                        <tr >
-                            <td>001</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
-                        </tr>
+                     <?php } ?>
                     </tbody>
                 </table>
               </div>
@@ -197,8 +101,6 @@
         </div> <!-- /.container -->
             </div> <!-- /#services -->
 
-
-
      <div class="site-footer">
         <div class="container">
             <div class="row">
@@ -209,34 +111,6 @@
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /.site-footer -->
-
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/jquery.lightbox.js"></script>
-    <script src="js/custom.js"></script>
-    <script type="text/javascript">
-
-        function initialize() {
-          var mapOptions = {
-              scrollwheel: false,
-            zoom: 15,
-            center: new google.maps.LatLng(13.758468,100.567481)
-          };
-
-          var map = new google.maps.Map(document.getElementById('map-canvas'),
-              mapOptions);
-        }
-
-        function loadScript() {
-          var script = document.createElement('script');
-          script.type = 'text/javascript';
-          script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-              'callback=initialize';
-          document.body.appendChild(script);
-        }
-
-        window.onload = loadScript;
-    </script>
 
 </body>
 </html>
