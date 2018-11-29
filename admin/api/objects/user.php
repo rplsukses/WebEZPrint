@@ -20,7 +20,8 @@
         // check if given email exist in the database
         function emailExists(){        
             // query to check if email exists
-            $query = "SELECT * FROM " . $this->table_name . "
+            $query = "SELECT id_user, nama, password
+                    FROM " . $this->table_name . "
                     WHERE email = ?
                     LIMIT 0,1";
         
@@ -35,16 +36,36 @@
         
             // execute the query
             $stmt->execute();
-            return $stmt;
+        
+            // get number of rows
+            $num = $stmt->rowCount();
+        
+            // if email exists, assign values to object properties for easy access and use for php sessions
+            if($num>0){
+                // return true because email exists in the database
+                return true;
+            }        
+            // return false if email does not exist in the database
+            return false;
         }
 
         //login user
         public function login()
         {
-            $query = "SELECT * FROM ". $this->table_name ." WHERE email=".$email." AND password=".$password;
+            $query = "SELECT * FROM ". $this->table_name ." 
+                    WHERE email=:email AND password=:password";
             
             //prepare query 
             $stmt = $this->conn->prepare($query);
+
+            // sanitize
+            $this->email=htmlspecialchars(strip_tags($this->email));
+            $this->password=htmlspecialchars(strip_tags($this->password));
+        
+            // bind given email value
+            $stmt->bindParam(":email", $this->email);
+            $stmt->bindParam(":password", $this->password);
+
             $stmt->execute();
 
             return $stmt;
@@ -73,6 +94,18 @@
             }
         
             return false;
+        }
+
+        //get all user
+        public function read()
+        {
+            $query = "SELECT * FROM ". $this->table_name;
+            
+            //prepare query 
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+
+            return $stmt;
         }
     }
 ?>

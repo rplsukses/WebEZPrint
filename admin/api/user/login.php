@@ -20,35 +20,43 @@
 
     if (isset($_POST['email']) && isset($_POST['password'])) {    
         $user->email = htmlspecialchars($_POST['email']);
-        $user->password = md5(htmlspecialchars($_POST['password']));
-        $stmt = $user->emailExists();
-        $num = $stmt->rowCount();
-                
-        //$sql = $MySQLiconn->query("SELECT * FROM users WHERE email='$email' AND password='$password'");
+        $user->password = md5(htmlspecialchars($_POST['password']));                
 
-        if($num > 0){
-            $user_arr = array();
+        // Check jika email sudah terdaftar
+        if($user->emailExists()){
+            $stmt = $user->login();
+            $num = $stmt->rowCount();
 
-            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                extract($row);
+            //Check jika email dan password cocok
+            if($num > 0){
+                $user_arr = array();
 
-                $user_arr["nama"] = $nama;
-                $user_arr["email"] = $email;
-            }
-    
-            // set response code - 200 OK
-            http_response_code(200);
+                while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    extract($row);
+
+                    $user_arr["nama"] = $nama;
+                    $user_arr["email"] = $email;
+                    $user_arr["foto"] = $foto;
+                }
         
-            // show products data in json format
-            echo json_encode($user_arr);
+                // set response code - 200 OK
+                http_response_code(200);
+            
+                // show products data in json format
+                echo json_encode($user_arr);
+            }else{
+                // set response code - 404 Not found
+                http_response_code(404);
+        
+                // tell the user no products found
+                echo json_encode(array("message" => "Password salah!"));    
+            }
         }else{            
             // set response code - 404 Not found
             http_response_code(404);
         
             // tell the user no products found
-            echo json_encode(
-                array("message" => "Email or Password Incorrect!")
-            );
+            echo json_encode(array("message" => "Email belum terdaftar!"));
         }
     }  
 ?>
