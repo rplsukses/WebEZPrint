@@ -5,9 +5,16 @@
 
 	//include connect to database
 	require_once 'core/init.php'; 
-    include_once 'api/config/database.php'; 
+	include_once 'api/config/database.php'; 
+	
+	//include tabel database
     include_once 'api/objects/mitra.php';
-    include_once 'api/objects/produk.php';
+	include_once 'api/objects/produk.php';
+	include_once 'api/objects/user.php';
+	include_once 'api/objects/transaksi.php';
+	include_once 'api/objects/kategori.php';
+	include_once 'api/objects/admin.php';
+	include_once 'api/objects/inbox.php';
 	
 	// session for login
     session_start();
@@ -22,25 +29,14 @@
     $database = new Database();
     $db = $database->getConnection();
     
-    //dashboard count admin
-    $query = "SELECT * FROM admin";
-    $result = mysqli_query($conn, $query);
-    $numadmin = mysqli_num_rows($result);
-    if($numadmin == null){
-        $numadmin = 0;
-    }
-
-	//dashboard count user
-    $query = "SELECT * FROM user";
-    $result = mysqli_query($conn, $query);
-    $numuser = mysqli_num_rows($result);
-    if($numuser == null){
-        $numuser = 0;
-    }
-    
     // initialize object for count dashboard
     $mitra = new Mitra($db);
-    $produk = new Produk($db);
+	$produk = new Produk($db);
+	$user = new User($db);
+	$transaksi = new Transaksi($db);
+	$kategori = new Kategori($db);
+	$admin = new Admin($db);
+	$inbox = new Inbox($db);
 ?>
 
 <!-- Navbar -->
@@ -84,7 +80,7 @@
 									<i class="material-icons">email</i>
 								</div>
 								<p class="card-category">Inbox</p>
-								<h3 class="card-title">75 <small>Inbox</small></h3>
+								<h3 class="card-title"><?php echo $inbox->read()->rowCount();?> <small>Inbox</small></h3>
 							</div>
 							<div class="card-footer">
 								<div class="stats">
@@ -101,7 +97,7 @@
 									<i class="material-icons">assignment</i>
 								</div>
 								<p class="card-category">Transaksi</p>
-								<h3 class="card-title">100</h3>
+								<h3 class="card-title"><?php echo $transaksi->read()->rowCount();?> <small>Trans</small></h3>
 							</div>
 							<div class="card-footer">
 								<div class="stats">
@@ -118,7 +114,7 @@
 									<i class="material-icons">supervisor_account</i>
 								</div>
 								<p class="card-category">User</p>
-								<h3 class="card-title"><?php echo $numuser;?> <small>User</small></h3>
+								<h3 class="card-title"><?php echo $user->read()->rowCount();?> <small>User</small></h3>
 							</div>
 							<div class="card-footer">
 								<div class="stats">
@@ -152,7 +148,7 @@
 									<i class="material-icons">chrome_reader_mode</i>
 								</div>
 								<p class="card-category">Kategori</p>
-								<h3 class="card-title">100</h3>
+								<h3 class="card-title"><?php echo $kategori->read()->rowCount();?> <small>Kategori</small></h3>
 							</div>
 							<div class="card-footer">
 								<div class="stats">
@@ -169,7 +165,7 @@
 									<i class="material-icons">person</i>
 								</div>
 								<p class="card-category">Admin</p>
-								<h3 class="card-title"><?php echo $numadmin;?> <small>Orang</small></h3>
+								<h3 class="card-title"><?php echo $admin->read()->rowCount();?> <small>Admin</small></h3>
 							</div>
 							<div class="card-footer">
 								<div class="stats">

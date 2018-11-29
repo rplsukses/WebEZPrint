@@ -37,7 +37,7 @@
 						<p>Admin</p></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="material-icons">arrow_back_ios</i>
+						<a class="nav-link" href="logout.php"><i class="material-icons">arrow_back_ios</i>
 						<p>Logout</p></a>
 					</li>
 				</ul>
