@@ -20,8 +20,7 @@
         // check if given email exist in the database
         function emailExists(){        
             // query to check if email exists
-            $query = "SELECT id_user, nama, password
-                    FROM " . $this->table_name . "
+            $query = "SELECT * FROM " . $this->table_name . "
                     WHERE email = ?
                     LIMIT 0,1";
         
@@ -36,23 +35,13 @@
         
             // execute the query
             $stmt->execute();
-        
-            // get number of rows
-            $num = $stmt->rowCount();
-        
-            // if email exists, assign values to object properties for easy access and use for php sessions
-            if($num>0){
-                // return true because email exists in the database
-                return true;
-            }        
-            // return false if email does not exist in the database
-            return false;
+            return $stmt;
         }
 
         //login user
         public function login()
         {
-            $query = "SELECT * FROM ". $this->table_name ." WHERE email=".$this->email." AND password=".$this->password;
+            $query = "SELECT * FROM ". $this->table_name ." WHERE email=".$email." AND password=".$password;
             
             //prepare query 
             $stmt = $this->conn->prepare($query);

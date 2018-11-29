@@ -18,31 +18,37 @@
     //initialize object
     $user = new User($db);
 
-    $response = array("error" => FALSE);
-
     if (isset($_POST['email']) && isset($_POST['password'])) {    
         $user->email = htmlspecialchars($_POST['email']);
-        $user->password = htmlspecialchars($_POST['password']);
-        $stmt = $user->login();
+        $user->password = md5(htmlspecialchars($_POST['password']));
+        $stmt = $user->emailExists();
         $num = $stmt->rowCount();
-        //$encrypted_password = hash("sha256", $password);// encrypted password
                 
         //$sql = $MySQLiconn->query("SELECT * FROM users WHERE email='$email' AND password='$password'");
 
         if($num > 0){
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $response["error"] = FALSE;
-            $response["message"] = "Login Successfull";
-            $response["data"]["nama"] = $nama;
-            $response["data"]["email"] = $email;
+            $user_arr = array();
+
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                extract($row);
+
+                $user_arr["nama"] = $nama;
+                $user_arr["email"] = $email;
             }
-
-        echo json_encode($response);
-        }else{
-            $response["error"] = TRUE;
-            $response["message"] = "Incorrect Email or Password!";
-
-        echo json_encode($response);
+    
+            // set response code - 200 OK
+            http_response_code(200);
+        
+            // show products data in json format
+            echo json_encode($user_arr);
+        }else{            
+            // set response code - 404 Not found
+            http_response_code(404);
+        
+            // tell the user no products found
+            echo json_encode(
+                array("message" => "Email or Password Incorrect!")
+            );
         }
     }  
 ?>
