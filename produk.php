@@ -2,6 +2,24 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+
+    //Query select produk by mitra
+    $ambil=$conn->query("SELECT * FROM 
+                     produk, kategori, detail_produk 
+                     WHERE produk.id_mitra=4 
+                     AND produk.id_detail=detail_produk.id_detail 
+                     AND produk.id_kategori=kategori.id_kategori
+                     AND produk.archieve=0 ");
+
+    // Query archieve produk
+    if(isset($_GET['archived']) && !empty($_GET['archived'])){
+        $id_produk = $_GET['archived'];
+        $query = "UPDATE produk SET archieve=1 WHERE id_produk=".$id_produk;
+        $result = mysqli_query($conn, $query);
+        // tambah notif atau apa
+        header('location:produk.php');
+        echo "<script>alert('produk diarchievkan');</script>";
+    }
 ?>
 <body>
     <div id="home">
@@ -74,9 +92,6 @@
                 </h1>
                   </thead>
                      <tbody class="h4">
-                     <?php $ambil=$conn->query("SELECT * FROM 
-                     produk, kategori, detail_produk where
-                     produk.id_mitra=4 and produk.id_detail=detail_produk.id_detail and produk.id_kategori=kategori.id_kategori ");?>
                      <?php while($pecah = $ambil-> fetch_assoc()) { ?>
                         <tr >
                             <td><?php echo $pecah['id_produk']; ?></td>
@@ -85,7 +100,10 @@
                             <td><?php echo $pecah['warna']; ?></td>
                             <td><?php echo $pecah['bahan']; ?></td>
                             <td><?php echo $pecah['harga']; ?></td>
-                            <td><a class="btn-warning btn-sm" href="edit_produk.php">Edit</a> <a class="btn-danger btn-sm" href="#">Delete</a></td>
+                            <td>
+                                <a class="btn-warning btn-sm" href="edit_produk.php?id=<?php echo $pecah['id_produk'];?>">Edit</a> 
+                                <a class="btn-danger btn-sm" href="?archived=<?php echo $pecah['id_produk'];?>">Archieve</a>
+                            </td>
                         </tr>
                      <?php } ?>
                     </tbody>

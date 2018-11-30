@@ -2,6 +2,18 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+
+    if(isset($_GET['id']) && !empty($_GET['id'])){
+        $id_produk=$_GET['id'];
+    $query = ("SELECT * FROM
+              produk, ketegori, detail_produk
+              WHERE produk.id_produk=".$id_produk."
+              AND detail_produk.id_detail=produk.id_detail
+              AND kategori.id_kategori=produk.id_kategori
+              LIMIT 0,1 ");
+    $result = mysqli_query($conn, $query);
+    
+    }
 ?>
 
 
@@ -50,14 +62,15 @@
             <div class="title-section text-center">
             </div> <!-- /.title-section -->
           <div class="container lead">
-            <div class="row"
+            <div class="row">
               <!-- Content -->
                    <div class="col-md-12">
                         <form>
+                        <?php while($row = $result->fetch_assoc()){ ?>
                           <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">ID Produk</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="colFormLabel" placeholder="ID Produk">
+                                <input type="text" class="form-control" id="colFormLabel" value="<?=$row['id_produk'];?>">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -90,6 +103,7 @@
                                 <input type="number" class="form-control" id="colFormLabel" placeholder="Harga">
                             </div>
                         </div>
+                        <?php } ?>
                         </form><a class="btn btn-warning pull-right" href="admin.php">SAVE</a>
 
                                
