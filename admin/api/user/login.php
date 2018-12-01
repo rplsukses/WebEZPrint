@@ -36,7 +36,7 @@
                     $user_arr["nama"] = $nama;
                     $user_arr["email"] = $email;
                     $user_arr["foto"] = $foto;
-                    $user_arr["error"] = false;
+                    $user_arr["error"] = FALSE;
                     $user_arr["message"] = "Login sukse!";
                 }
         
@@ -49,7 +49,7 @@
                 // set response code - 404 Not found
                 http_response_code(404);
 
-                $user_arr["error"] = true;
+                $user_arr["error"] = TRUE;
                 $user_arr["message"] = "Password salah!";
         
                 // tell the user no products found
@@ -59,7 +59,7 @@
             // set response code - 404 Not found
             http_response_code(404);
             
-            $user_arr["error"] = true;
+            $user_arr["error"] = TRUE;
             $user_arr["message"] = "Email belum terdaftar!";
 
             // tell the user no products found
