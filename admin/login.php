@@ -5,11 +5,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>EZPrint</title>
+	<title>EZPrint Admin Center</title>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<!--=====================INCLUDE STYLE CSS, FONTS, IMAGE==========================================-->
-	<link href="assets/login/images/logo_3.png" rel="icon" type="image/png">
+	<link href="assets/img/logo4.png" rel="icon" type="image/png">
 	<link href="assets/login/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/login/vendor/animate/animate.css" rel="stylesheet" type="text/css">
@@ -24,11 +24,11 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login200-pic js-tilt"><img alt="IMG" src="assets/login/images/logo_3.png"></div>
+				<div class="login200-pic js-tilt"><img alt="IMG" src="assets/img/logo_3.png"></div>
 				<form action="" class="login100-form validate-form" method="post">
 					<span class="login100-form-title">Admin Login</span>
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required:ex@abc.xyz">
-						<input class="input100" name="email" placeholder="Email" type="text"> <span class="focus-input100"></span> <span class="symbol-input100"><i aria-hidden="true" class="fa fa-envelope"></i></span>
+						<input class="input100" name="email" placeholder="Email" type="text"><span class="focus-input100"></span> <span class="symbol-input100"><i aria-hidden="true" class="fa fa-envelope"></i></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" name="password" placeholder="Password" type="password"> <span class="focus-input100"></span> <span class="symbol-input100"><i aria-hidden="true" class="fa fa-lock"></i></span>

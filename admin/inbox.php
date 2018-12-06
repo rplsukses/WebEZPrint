@@ -1,4 +1,5 @@
 <?php
+	$page = 'Inbox';
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';

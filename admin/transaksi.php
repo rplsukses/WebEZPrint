@@ -1,4 +1,5 @@
 <?php
+	$page = 'Transaksi';
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';

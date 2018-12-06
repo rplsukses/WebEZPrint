@@ -1,4 +1,5 @@
 <?php
+	$page = 'Mitra';
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';

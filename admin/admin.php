@@ -1,4 +1,5 @@
 <?php
+	$page = 'Admin';
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
