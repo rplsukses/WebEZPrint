@@ -40,9 +40,13 @@
             $produk_item=array(
                 "id_produk" => $id_produk,
                 "id_mitra" => $id_mitra,
-                "id_detail" => $id_detail,
                 "id_kategori" => $id_kategori,
-                "keterangan" => $keterangan
+                "ukuran" => $ukuran,
+                "bahan" => $bahan,
+                "warna" => $warna,
+                "harga" => $harga,
+                "kategori" => $nama,
+                "icon" => $icon
             );
     
             array_push($produk_arr["produk"], $produk_item);

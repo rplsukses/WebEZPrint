@@ -14,8 +14,12 @@
     // initialize object
     $produk = new produk($db);
 
+    if (isset($_POST['id_kategori'])) {
+        $produk->id_kategori = htmlspecialchars($_POST['id_kategori']);
+    }
+
     //query produk
-    $stmt = $produk->read();
+    $stmt = $produk->readUkuran();
     $num = $stmt->rowCount();
 
     //check if more than 0 record found
@@ -34,15 +38,7 @@
             extract($row);
     
             $produk_item=array(
-                "id_produk" => $id_produk,
-                "id_mitra" => $id_mitra,
-                "id_kategori" => $id_kategori,
-                "ukuran" => $ukuran,
-                "bahan" => $bahan,
-                "warna" => $warna,
-                "harga" => $harga,
-                "kategori" => $nama,
-                "icon" => $icon
+                "ukuran" => $ukuran
             );
     
             array_push($produk_arr["produk"], $produk_item);

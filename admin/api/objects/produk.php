@@ -6,9 +6,7 @@
         //object properties
         public $id_produk;
         public $id_mitra;
-        public $id_detail;
         public $id_kategori;
-        public $keterangan;
         public $warna;
         public $ukuran;
         public $bahan;
@@ -37,10 +35,9 @@
         public function readByMitra()
         {
             $query = "SELECT * FROM 
-                    produk, kategori, detail_produk 
+                    produk, kategori
                     WHERE produk.id_mitra=:id_mitra
-                     AND kategori.id_kategori=produk.id_kategori
-                     AND detail_produk.id_detail=produk.id_detail";
+                     AND kategori.id_kategori=produk.id_kategori";
 
             //prepare query
             $stmt = $this->conn->prepare($query);
@@ -60,11 +57,10 @@
         public function readByKategori()
         {
             $query = "SELECT * FROM 
-                    produk, kategori, detail_produk 
+                    produk, kategori
                     WHERE produk.id_kategori=:id_kategori
                      AND kategori.id_kategori=produk.id_kategori
-                     AND detail_produk.id_detail=produk.id_detail
-                     AND detail_produk.ukuran=:ukuran";
+                     AND produk.ukuran=:ukuran";
 
             //prepare query
             $stmt = $this->conn->prepare($query);
@@ -82,17 +78,35 @@
             return $stmt;
         }
 
+        //get ukuran by kategori
+        public function readUkuran()
+        {
+            $query = "SELECT DISTINCT ukuran FROM produk WHERE id_kategori=:id_kategori";
+
+            //prepare query
+            $stmt = $this->conn->prepare($query);
+            
+            //sanitize
+            $this->id_kategori=htmlspecialchars(strip_tags($this->id_kategori));
+
+            //bind given value
+            $stmt->bindparam(":id_kategori", $this->id_kategori);
+
+            $stmt->execute();
+
+            return $stmt;
+        }
+
         // search
         public function search(String $cari)
         {
             $query = "SELECT * FROM 
-                    produk, kategori, detail_produk, mitra 
-                    WHERE detail_produk.id_detail=produk.id_detail
-                     AND kategori.id_kategori=produk.id_kategori
+                    produk, kategori, mitra 
+                    WHERE kategori.id_kategori=produk.id_kategori
                      AND mitra.id_mitra=produk.id_mitra
                      AND kategori.nama LIKE %$cari%
-                     OR detail_produk.ukuran LIKE %$cari%
-                     OR detail_produk.bahan LIKE %$cari%
+                     OR produk.ukuran LIKE %$cari%
+                     OR produk.bahan LIKE %$cari%
                      OR mitra.nama LIKE %$cari%";
 
             //prepare query
