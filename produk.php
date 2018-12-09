@@ -5,16 +5,15 @@
 
     //Query select produk by mitra
     $ambil=$conn->query("SELECT * FROM 
-                     produk, kategori, detail_produk 
-                     WHERE produk.id_mitra=4 
-                     AND produk.id_detail=detail_produk.id_detail 
+                     produk, kategori 
+                     WHERE produk.id_mitra=1
                      AND produk.id_kategori=kategori.id_kategori
-                     AND produk.archieve=0 ");
+                     AND produk.arsip=0 ");
 
     // Query archieve produk
-    if(isset($_GET['archived']) && !empty($_GET['archived'])){
-        $id_produk = $_GET['archived'];
-        $query = "UPDATE produk SET archieve=1 WHERE id_produk=".$id_produk;
+    if(isset($_GET['arsip']) && !empty($_GET['arsip'])){
+        $id_produk = $_GET['arsip'];
+        $query = "UPDATE produk SET arsip=1 WHERE id_produk=".$id_produk;
         $result = mysqli_query($conn, $query);
         // tambah notif atau apa
         header('location:produk.php');
@@ -101,8 +100,8 @@
                             <td><?php echo $pecah['bahan']; ?></td>
                             <td><?php echo $pecah['harga']; ?></td>
                             <td>
-                                <a class="btn-warning btn-sm" href="edit_produk.php?id=<?php echo $pecah['id_produk'];?>&&detail=<?= $pecah['id_detail'];?>">Edit</a> 
-                                <a class="btn-danger btn-sm" href="?archived=<?php echo $pecah['id_produk'];?>">Archieve</a>
+                                <a class="btn-warning btn-sm" href="edit_produk.php?id=<?php echo $pecah['id_produk'];?>">Edit</a> 
+                                <a class="btn-danger btn-sm" href="?arsip=<?php echo $pecah['id_produk'];?>">Archieve</a>
                             </td>
                         </tr>
                      <?php } ?>

@@ -5,10 +5,8 @@ include 'include/footer.php';
 
 if(isset($_GET['id']) && !empty($_GET['id'])){
     $id_produk=$_GET['id'];
-    $id_detail=$_GET['detail'];
-    $query = ("SELECT * FROM produk, kategori, detail_produk
+    $query = ("SELECT * FROM produk, kategori
               WHERE produk.id_produk=".$id_produk."
-              AND detail_produk.id_detail=produk.id_detail
               AND kategori.id_kategori=produk.id_kategori
               LIMIT 0,1 ");
     $result = mysqli_query($conn, $query);
@@ -21,22 +19,18 @@ if(isset($_POST['save'])){
     $warna = $_POST['warna'];
     $bahan = $_POST['bahan'];
     $harga = $_POST['harga'];
-    $query = "UPDATE detail_produk, produk
-          SET produk.id_kategori=".$id_kategori.
-          ", detail_produk.ukuran='".$ukuran.
-          "', detail_produk.warna='".$warna.
-          "', detail_produk.bahan='".$bahan.
-          "', detail_produk.harga=".$harga." 
-          WHERE produk.id_produk=".$id_produk." 
-          AND detail_produk.id_detail=".$id_detail;
-    //BERMASALAH!!!!        
+    $query = "UPDATE produk
+          SET produk.id_kategori=".$id_kategori.", ukuran='".$ukuran."', warna='".$warna."', bahan='".$bahan."', harga=".$harga." 
+          WHERE produk.id_produk=".$id_produk;
+          
+           
     $update = mysqli_query($conn, $query);
     if($update){
             header('Location: produk.php');
     }else{
         echo "<p>Error: " . $query . "<br>" . mysqli_error($conn). "</p>";
     }
-    //END!!!
+    
 }
 ?>
 <body>
