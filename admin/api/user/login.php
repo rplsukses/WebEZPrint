@@ -33,9 +33,9 @@
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
                     
-                    $user_arr["nama"] = $nama;
-                    $user_arr["email"] = $email;
-                    $user_arr["foto"] = $foto;
+                    $user_arr["data"]["nama"] = $nama;
+                    $user_arr["data"]["email"] = $email;
+                    $user_arr["data"]["foto"] = $foto;
                     $user_arr["error"] = FALSE;
                     $user_arr["message"] = "Login sukse!";
                 }

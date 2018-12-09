@@ -29,5 +29,22 @@
 
             return $stmt;
         }
+
+        //search mitra
+        public function search(String $cari)
+        {
+            //select query
+            $query = "SELECT id_mitra, nama, alamat, email, telepon, foto, jam_buka, jam_tutup 
+                    FROM $this->table_name
+                     WHERE nama LIKE %$cari%
+                     OR alamat LIKE %$cari%";
+
+            //prepare query 
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt;
+        }
     }
 ?>
