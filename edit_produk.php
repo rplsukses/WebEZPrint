@@ -28,7 +28,7 @@
 
     
     $update = mysqli_query($conn, $query);
-    if(update){
+    if($update){
         header('Location: produk.php');
     }else{
         echo "<p>Error: " . $query . "<br" . mysqli_error($conn). "</p>";
@@ -94,7 +94,8 @@
                    <div class="col-md-12">
                         <form>
                         <?php
-                            while($row = $result->fetch_assoc()){
+                            $update = mysqli_query($conn, $query);
+                            while($row=$update->fetch_assoc()){
                         ?>
                           <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">ID Produk</label>
@@ -143,10 +144,10 @@
                                 <input type="number" name="harga" class="form-control" id="colFormLabel" value="<?=$row['harga'];?>" >
                             </div>
                         </div>
-                        <input class="btn btn-warning pull-right" type="submit" value="SAVE" name="save"/>
                         <?php
                             }
                         ?>
+                        <input class="btn btn-warning pull-right" type="submit" value="SAVE" name="save"/>
                         </form> 
 
                                
