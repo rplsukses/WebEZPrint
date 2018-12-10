@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 	Header Styles 
 --------------------------------------------------------*/
 .top-header {
-  background: #e3722e;
+  background: #194a8e;
   color: white;
   padding: 10px 0;
 }
@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .top-header .right-header ul.social-icons li a:hover {
   background-color: white;
-  color: #e3722e;
+  color: #194a8e;
 }
 
 .main-header {
@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
 }
 .main-header .menu ul li a.current {
-  background: #e3722e;
+  background: #194a8e;
   color: white;
 }
 
@@ -194,19 +194,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 .responsive-menu .toggle-menu {
   font-size: 24px;
-  color: #e3722e;
+  color: #194a8e;
 }
 .responsive-menu .menu {
   display: none;
   position: absolute;
   top: 52px;
   width: 100%;
-  background-color: #e3722e;
+  background-color: #194a8e;
 }
 .responsive-menu .menu ul li {
   display: block;
   text-align: left;
-  border-bottom: 1px solid #d1601c;
+  border-bottom: 1px solid #194a8e;
   margin: 0;
 }
 .responsive-menu .menu ul li:last-child {
@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 70px;
   height: 4px;
-  background: #e3722e;
+  background: #194a8e;
   margin: 0 auto;
 }
 
@@ -251,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mainBtn {
-  background-color: #e3722e;
+  background-color: #194a8e;
   color: white;
   display: inline-block;
   text-transform: uppercase;
@@ -276,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 #services .service-item .service-header i {
-  color: #e3722e;
+  color: #194a8e;
   font-size: 24px;
   float: left;
   margin-right: 25px;
@@ -310,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
 #portfolio .portfolio-thumb .overlay {
   opacity: 0;
   visibility: visible;
-  background: rgba(227, 114, 46, 0.9);
+  background: rgba(25, 74, 142, 0);
   position: absolute;
   top: 0;
   left: 0;
@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
   -moz-box-shadow: none;
   box-shadow: none;
   line-height: 30px;
-  background: #e3722e;
+  background: #194a8e;
   text-transform: uppercase;
 }
 #about .our-team {
@@ -431,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
 #about .our-team .team-member .inner-content h5 {
   font-size: 18px;
   font-weight: 600;
-  color: #e3722e;
+  color: #194a8e;
   margin-bottom: 10px;
 }
 #about .our-team .team-member .inner-content span {
@@ -481,7 +481,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
 }
 #contact .contact-info span i {
-  color: #e3722e;
+  color: #194a8e;
   font-size: 16px;
   margin-right: 12px;
 }
@@ -539,7 +539,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------*/
 .site-footer {
   margin-top: 100px;
-  background-color: #e3722e;
+  background-color: #194a8e;
   color: white;
   padding: 25px 0;
 }

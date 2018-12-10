@@ -23,6 +23,7 @@
         $kategori_arr = array();
         $kategori_arr["kategori"] = array();
 
+<<<<<<< HEAD
         // retrieve our table contents
         // fetch() is faster than fetchAll()
         // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -30,12 +31,20 @@
             // extract row
             // this will make $row['name'] to
             // just $name only
+=======
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            
+>>>>>>> mitra-new
             extract($row);
     
             $kategori_item=array(
                 "id_kategori" => $id_kategori,
                 "nama" => $nama,
+<<<<<<< HEAD
                 "icon" => $icon
+=======
+                "icon" => $icon,
+>>>>>>> mitra-new
             );
     
             array_push($kategori_arr["kategori"], $kategori_item);
@@ -46,7 +55,12 @@
     
         // show products data in json format
         echo json_encode($kategori_arr);
+<<<<<<< HEAD
     }else{ 
+=======
+    }else{
+ 
+>>>>>>> mitra-new
         // set response code - 404 Not found
         http_response_code(404);
      

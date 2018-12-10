@@ -1,7 +1,30 @@
 <?php
+<<<<<<< HEAD
 include 'admin/core/init.php';
 include 'include/header.php';
 include 'include/footer.php';
+=======
+    include_once 'admin/api/config/database.php';
+
+    $database = new Database();
+    $db = $database->getConnection();
+?>
+
+<!DOCTYPE html>
+<!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <link href="images/logo.png" rel="print-icon" sizes="100x100">
+    <link href="images/logo.png" rel="icon" type="image/png">
+    <title>EZPrint Mitra Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+    <!-- 
+    Compass Template
+    http://www.templatemo.com/tm-454-compass
+    -->
+    <meta charset="UTF-8">
+>>>>>>> mitra-new
 
 if(isset($_GET['id']) && !empty($_GET['id'])){
     $id_produk=$_GET['id'];
@@ -23,6 +46,7 @@ if(isset($_POST['save'])){
           SET produk.id_kategori=".$id_kategori.", ukuran='".$ukuran."', warna='".$warna."', bahan='".$bahan."', harga=".$harga." 
           WHERE produk.id_produk=".$id_produk;
           
+<<<<<<< HEAD
            
     $update = mysqli_query($conn, $query);
     if($update){
@@ -37,6 +61,15 @@ if(isset($_POST['save'])){
   <div id="home">
     <div class="site-header">
       <div class="top-header">
+=======
+    </div> <!-- /.row -->
+        </div> <!-- /.container -->
+            </div> <!-- /#services -->
+
+<!-- coba -->
+
+     <div class="site-footer">
+>>>>>>> mitra-new
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">

@@ -6,6 +6,7 @@
         //object properties
         public $id_produk;
         public $id_mitra;
+<<<<<<< HEAD
         public $id_kategori;
         public $warna;
         public $ukuran;
@@ -14,6 +15,12 @@
         public $kategori;
         public $icon;
         
+=======
+        public $id_detail;
+        public $id_kategori;
+        public $keterangan;
+
+>>>>>>> mitra-new
         // constructor with $db as database connection
         public function __construct($db){
             $this->conn = $db;
@@ -30,6 +37,7 @@
 
             return $stmt;
         }
+<<<<<<< HEAD
 
         //read by mitra
         public function readByMitra()
@@ -116,5 +124,7 @@
 
             return $stmt;
         }
+=======
+>>>>>>> mitra-new
     }
 ?>

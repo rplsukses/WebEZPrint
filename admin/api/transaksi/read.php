@@ -25,6 +25,7 @@
         $transaksi_arr = array();
         $transaksi_arr["transaksi"] = array();
 
+<<<<<<< HEAD
         // retrieve our table contents
         // fetch() is faster than fetchAll()
         // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -32,6 +33,10 @@
             // extract row
             // this will make $row['name'] to
             // just $name only
+=======
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    
+>>>>>>> mitra-new
             extract($row);
     
             $transaksi_item=array(

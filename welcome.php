@@ -1,8 +1,33 @@
 <?php
+<<<<<<< HEAD
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 ?>
+=======
+    include_once 'admin/api/config/database.php';
+
+    $database = new Database();
+    $db = $database->getConnection();
+?>
+<!DOCTYPE html>
+<!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <link href="images/logo.png" rel="print-icon" sizes="100x100">
+    <link href="images/logo.png" rel="icon" type="image/png">
+    <title>EZPrint Mitra Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+    <!-- 
+    Compass Template
+    http://www.templatemo.com/tm-454-compass
+    -->
+    <meta charset="UTF-8">
+	
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+>>>>>>> mitra-new
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
@@ -15,8 +40,8 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
-                               <img src="images/logo.png" width="30px" height="30px"><a href="index.html"></a>
-                                <span>EZPrint Mitra Center</span>                              
+                               <img src="images/logoo2.png" width="250px" height="45px"><a href="index.html"></a>
+                                <span></span>                              
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
@@ -66,7 +91,7 @@
                             <h3>Produk</h3>
                         </div>
                         <div class="service-description">
-                            <a href="produk.php"><img src="images/prod.png" style="height: 150px; width: 150px;"></a>
+                            <a href="produk.php"><img src="images/prod7.jpg" style="height: 150px; width: 150px;"></a>
                         </div>
                     </div> <!-- /.service-item --> 
                 </div> <!-- /.col-md-3 -->
@@ -77,7 +102,7 @@
                             <h3>Transaksi</h3>
                         </div>
                         <div class="service-description">
-                            <a href="transaksi.php"><img src="images/tran.png" style="height: 150px; width: 150px;"></a>
+                            <a href="transaksi.php"><img src="images/prod6.jpg" style="height: 150px; width: 150px;"></a>
                         </div>
                         </div> <!-- /.service-item -->
                         </div> <!-- /.col-md-3 -->
@@ -88,7 +113,7 @@
                             <h3>Profile</h3>
                         </div>
                         <div class="service-description">
-                           <a href="profile.php"><img src="images/prof.png" style="height: 150px; width: 150px;"></a>
+                           <a href="profile.php"><img src="images/prod4.jpg" style="height: 150px; width: 150px;"></a>
                         </div>
                     </div> <!-- /.service-item -->
                 </div> <!-- /.col-md-3 -->

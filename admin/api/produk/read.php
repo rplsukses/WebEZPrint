@@ -24,6 +24,7 @@
         $produk_arr = array();
         $produk_arr["produk"] = array();
 
+<<<<<<< HEAD
         // retrieve our table contents
         // fetch() is faster than fetchAll()
         // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -31,11 +32,16 @@
             // extract row
             // this will make $row['name'] to
             // just $name only
+=======
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+           
+>>>>>>> mitra-new
             extract($row);
     
             $produk_item=array(
                 "id_produk" => $id_produk,
                 "id_mitra" => $id_mitra,
+<<<<<<< HEAD
                 "id_kategori" => $id_kategori,
                 "ukuran" => $ukuran,
                 "bahan" => $bahan,
@@ -43,6 +49,11 @@
                 "harga" => $harga,
                 "kategori" => $nama,
                 "icon" => $icon
+=======
+                "id_detail" => $id_detail,
+                "id_kategori" => $id_kategori,
+                "keterangan" => $keterangan
+>>>>>>> mitra-new
             );
     
             array_push($produk_arr["produk"], $produk_item);
