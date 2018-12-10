@@ -1,4 +1,15 @@
 <?php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+	$page = 'Admin';
+=======
+<<<<<<< HEAD
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
+=======
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
+>>>>>>> refs/remotes/origin/master
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';

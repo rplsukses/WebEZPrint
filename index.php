@@ -58,8 +58,8 @@
                 <div class="flex-caption">
                     <h2>HARGA HEMAT</h2>
                     <span></span>
-                    <p>Cetak berkas kamu dimana saja dan kapan saja tanpa harus antri</p>
-                </div>
+                    <p>bandingkan harga dan dapatkan harga terhemat</p>
+                </div>s antri
             </li>
             <li>
                 <img src="images/banner06.jpg" alt="">

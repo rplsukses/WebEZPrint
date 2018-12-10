@@ -1,30 +1,7 @@
 <?php
-<<<<<<< HEAD
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
-=======
-    include_once 'admin/api/config/database.php';
-
-    $database = new Database();
-    $db = $database->getConnection();
-?>
-
-<!DOCTYPE html>
-<!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <link href="images/logo.png" rel="print-icon" sizes="100x100">
-    <link href="images/logo.png" rel="icon" type="image/png">
-    <title>EZPrint Mitra Center</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="templatemo">
-    <!-- 
-    Compass Template
-    http://www.templatemo.com/tm-454-compass
-    -->
-    <meta charset="UTF-8">
->>>>>>> mitra-new
 
     if(isset($_POST['add'])){
         $id_kategori = $_POST['id_kategori'];
@@ -33,8 +10,8 @@
         $bahan = $_POST['bahan'];
         $harga = $_POST['harga'];
         $query = "INSERT INTO produk 
-                (id_kategori, ukuran, warna, bahan, harga)
-                 VALUES ('$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
+                (id_mitra, id_kategori, ukuran, warna, bahan, harga)
+                 VALUES ('1','$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
         $result = mysqli_query($conn, $query);
         if($result){
             header('Location: produk.php');
@@ -98,8 +75,7 @@
                         
               <!-- Content -->
                    <div class="col-md-12">
-                        <form method="POST" action="">
-                                               
+                        <form method="POST" action="">                  
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Kategori</label>
                             <div class="col-sm-10">

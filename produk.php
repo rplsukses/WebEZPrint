@@ -1,29 +1,7 @@
 <?php
-<<<<<<< HEAD
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
-=======
-    include_once 'admin/api/config/database.php';
-
-    $database = new Database();
-    $db = $database->getConnection();
-?>
-<!DOCTYPE html>
-<!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <link href="images/logo.png" rel="print-icon" sizes="100x100">
-    <link href="images/logo.png" rel="icon" type="image/png">
-    <title>EZPrint Mitra Center</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="templatemo">
-    <!-- 
-    Compass Template
-    http://www.templatemo.com/tm-454-compass
-    -->
-    <meta charset="UTF-8">
->>>>>>> mitra-new
 
     //Query select produk by mitra
     $ambil=$conn->query("SELECT * FROM 
@@ -93,9 +71,9 @@
             </div> <!-- /.title-section -->
             <div class="row">
               <div class="card-body">
-                <div class="row">
-                        <div class="col-md-12 ">
+                       <div class="">
                         <a href="add_produk.php"><button type="submit" class="btn btn-warning btn-sm pull-right">Add</button></a>
+                        <a class="btn-danger btn-sm" href="?arsip=<?php echo $pecah['id_produk'];?>">Unarchieve</a>
                     </div>
               <div class="table">
                 <table class="table table-striped table-hover">

@@ -1,5 +1,12 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
+	$page = 'Kategori';
+=======
+<<<<<<< HEAD
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
+=======
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
