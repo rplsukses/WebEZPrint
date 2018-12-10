@@ -26,7 +26,7 @@
     if($num > 0){
         //produk array
         $produk_arr = array();
-        $produk_arr["produk"] = array();
+        $produk_arr["ukuran"] = array();
 
         // retrieve our table contents
         // fetch() is faster than fetchAll()
@@ -41,7 +41,7 @@
                 "ukuran" => $ukuran
             );
     
-            array_push($produk_arr["produk"], $produk_item);
+            array_push($produk_arr["ukuran"], $produk_item);
         }
     
         // set response code - 200 OK
