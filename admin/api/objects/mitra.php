@@ -21,11 +21,7 @@
         //read mitra
         public function read(){
             //select all query
-<<<<<<< HEAD
             $query = "SELECT * FROM " . $this->table_name;
-=======
-            $query = "SELECT id_mitra, nama, alamat, email, telepon, foto, jam_buka, jam_tutup FROM " . $this->table_name;
->>>>>>> mitra-new
 
             //prepare query 
             $stmt = $this->conn->prepare($query);
@@ -33,7 +29,6 @@
 
             return $stmt;
         }
-<<<<<<< HEAD
 
         //search mitra
         public function search(String $cari)
@@ -51,7 +46,5 @@
 
             return $stmt;
         }
-=======
->>>>>>> mitra-new
     }
 ?>

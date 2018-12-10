@@ -10,11 +10,7 @@ class Database{
  
     // get the database connection
     public function getConnection(){
-<<<<<<< HEAD
  
-=======
-
->>>>>>> mitra-new
         $this->conn = null;
  
         try{
