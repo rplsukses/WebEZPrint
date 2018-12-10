@@ -2,11 +2,11 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
-
+    session_start();
     //Query select produk by mitra
     $ambil=$conn->query("SELECT * FROM 
                      produk, kategori 
-                     WHERE produk.id_mitra=1
+                     WHERE produk.id_mitra=".$_SESSION['user_id']."
                      AND produk.id_kategori=kategori.id_kategori
                      AND produk.arsip=0 ");
 
@@ -73,7 +73,6 @@
               <div class="card-body">
                        <div class="">
                         <a href="add_produk.php"><button type="submit" class="btn btn-warning btn-sm pull-right">Add</button></a>
-                        <a class="btn-danger btn-sm" href="?arsip=<?php echo $pecah['id_produk'];?>">Unarchieve</a>
                     </div>
               <div class="table">
                 <table class="table table-striped table-hover">
@@ -91,7 +90,7 @@
                 </h1>
                   </thead>
                      <tbody class="h4">
-                     <?php while($pecah = $ambil-> fetch_assoc()) { ?>
+                     <?php while($pecah = $ambil->fetch_assoc()) { ?>
                         <tr >
                             <td><?php echo $pecah['id_produk']; ?></td>
                             <td><?php echo $pecah['nama']; ?></td>

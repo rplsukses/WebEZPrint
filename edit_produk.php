@@ -1,10 +1,40 @@
-P<?php
+<?php
     include 'admin/api/config/database.php';
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
     $database = new Database();
     $db = $database->getConnection();
+
+    //QUERY SELECT
+    if(isset($_GET['id']) && !empty($_GET['id'])){
+        $id_produk=$_GET['id'];
+        $query = ("SELECT * FROM produk, kategori
+                 WHERE produk.id_produk=".$id_produk."
+                 AND kategori.id_kategori=produk.id_kategori
+                 LIMIT 0,1");
+        $result = mysqli_query($conn, $query);
+    }
+
+    if(isset($_POST['save'])){
+        $id_kategori = $_POST['id_kategori'];
+        $ukuran = $_POST['ukuran'];
+        $warna = $_POST['warna'];
+        $bahan = $_POST['bahan'];
+        $harga = $_POST['harga'];
+        $query = "UPDATE produk
+                SET produk.id_kategori=".$id_kategori.", ukuran='".$ukuran."', warna='".$warna."', bahan='".$bahan."', harga='".$harga."' 
+                WHERE produk.id_produk=".$id_produk.
+
+    
+    $update = mysqli_query($conn, $query);
+    if($update){
+        header('Location: produk.php');
+    }else{
+        echo "<p>Error: " . $query . "<br" . mysqli_error($conn). "</p>";
+    }
+}
+
 ?>
 
 <body>
@@ -63,49 +93,62 @@ P<?php
               <!-- Content -->
                    <div class="col-md-12">
                         <form>
+                        <?php
+                            $update = mysqli_query($conn, $query);
+                            while($row=$update->fetch_assoc()){
+                        ?>
                           <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">ID Produk</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="ID Produk">
+                                <input type="text" name="id_produk" class="form-control" id="colFormLabel" value="<?=$row['id_produk'];?>"  disabled>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Kategori</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Kategori">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="colFormLabel" class="col-sm-2 col-form-label">Jenis</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Jenis">
+                                <select class="col-sm-12" name="id_kategori">
+                                <?php 
+                                // QUERY KATEGORY
+                                $query_kat = "SELECT * FROM kategori";
+                                $kategori = mysqli_query($conn, $query_kat);
+                                while($row_kat = $kategori->fetch_assoc()){
+                                ?>
+                                <option name="id_kategori" value="<?=$row_kat['id_kategori']?>"><?=$row_kat['nama'];?></option>
+                                <?php
+                                }
+                                ?>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Ukuran</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Ukuran">
+                                <input type="text" name="ukuran" class="form-control" id="colFormLabel" value="<?=$row['ukuran'];?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Warna</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Warna">
+                                <input type="text" name="warna" class="form-control" id="colFormLabel" value="<?=$row['warna'];?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Bahan</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Bahan">
+                                <input type="text" name="bahan" class="form-control" id="colFormLabel" value="<?=$row['bahan'];?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Harga</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Harga">
+                                <input type="number" name="harga" class="form-control" id="colFormLabel" value="<?=$row['harga'];?>" >
                             </div>
                         </div>
-                        </form><a class="btn btn-warning pull-right" href="admin.php">SAVE</a>
+                        <?php
+                            }
+                        ?>
+                        <input class="btn btn-warning pull-right" type="submit" value="SAVE" name="save"/>
+                        </form> 
 
                                
                     </div>
