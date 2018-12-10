@@ -37,7 +37,8 @@
                 "id_mitra" => $id_mitra,
                 "nama" => $nama,
                 "email" => $email,
-                "telepon" => $telepon,
+                "alamat" => $alamat,
+                "telepon" => $no_telepon,
                 "foto" => $foto,
                 "jam_buka" => $jam_buka,
                 "jam_tutup" => $jam_tutup
