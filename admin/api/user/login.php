@@ -33,12 +33,12 @@
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
                     
-                    $user_arr["data"]["nama"] = $nama;
-                    $user_arr["data"]["email"] = $email;
-                    $user_arr["data"]["foto"] = $foto;
-                    $user_arr["data"]["telepon"] = $telepon;
+                    $user_arr["nama"] = $nama;
+                    $user_arr["email"] = $email;
+                    $user_arr["foto"] = $foto;
+                    $user_arr["telepon"] = $telepon;
                     $user_arr["error"] = FALSE;
-                    $user_arr["message"] = "Login sukse!";
+                    $user_arr["message"] = "Login sukses!";
                 }
         
                 // set response code - 200 OK
