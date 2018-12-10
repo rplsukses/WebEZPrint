@@ -7,19 +7,7 @@
     
     <div id="home">
         <div class="site-header">
-            <div class="top-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                             <div class="left-header lead">
-                               <img src="images/logoo2.png" width="250px" height="45px"><a href="index.html"></a>
-                                <span> </span>                              
-                            </div> <!-- /.left-header -->
-                        </div> <!-- /.col-md-6 -->
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.top-header -->
-            <div class="main-header">
+        <div class="main-header">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-sm-8 col-xs-6">
@@ -34,20 +22,20 @@
                             </div> <!-- /.menu -->
                         </div> <!-- /.col-md-8 -->
                     </div> <!-- /.row -->
-                    <div class="responsive-menu text-right visible-xs visible-sm">
-                        <a href="#" class="toggle-menu fa fa-bars"></a>
-                        <div class="menu">
-                            <ul>
-                               <li><a href="#home">Home</a></li>
-                                    <li><a href="#services">About Us</a></li>
-                                    <li><a href="#portfolio">How To Use</a></li>
-                                <li><a href="#contact">Login</a></li>
-                                
-                            </ul>
-                        </div> <!-- /.menu -->
-                    </div> <!-- /.responsive-menu -->
                 </div> <!-- /.container -->
             </div> <!-- /.header -->
+            <div class="top-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                             <div class="left-header lead">
+                               <img src="images/logoo2.png" width="250px" height="45px"><a href="index.html"></a>
+                                <span> </span>                              
+                            </div> <!-- /.left-header -->
+                        </div> <!-- /.col-md-6 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.container -->
+            </div> <!-- /.top-header -->
         </div> <!-- /.site-header -->
     </div> <!-- /#home -->
 
