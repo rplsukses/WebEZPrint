@@ -2,6 +2,23 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+
+    if(isset($_POST['add'])){
+        $id_kategori = $_POST['id_kategori'];
+        $ukuran = $_POST['ukuran'];
+        $warna = $_POST['warna'];
+        $bahan = $_POST['bahan'];
+        $harga = $_POST['harga'];
+        $query = "INSERT INTO produk 
+                (id_kategori, ukuran, warna, bahan, harga)
+                 VALUES ('$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
+        $result = mysqli_query($conn, $query);
+        if($result){
+            header('Location: produk.php');
+        } else {
+            echo "<p>Error: " . $query . "<br>" . mysqli_error($conn). "</p>";
+        }
+    }
 ?>
 
 <body> 
@@ -27,7 +44,7 @@
                     <div class="row">
                         <div class="text-center">
                             <div class="logo">
-                                <h1><a href="#" title="Dreri"> EDIT PRODUK</a></h1>
+                                <h1><a href="#" title="Dreri"> ADD PRODUK</a></h1>
                             </div> <!-- /.logo -->
                         </div> <!-- /.col-md-4 -->
                         <div class="col-md-8 col-sm-8 col-xs-6">
@@ -58,50 +75,53 @@
                         
               <!-- Content -->
                    <div class="col-md-12">
-                        <form>
-                          <div class="form-group row">
-                            <label for="colFormLabel" class="col-sm-2 col-form-label">ID Produk</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="ID Produk">
-                            </div>
-                        </div>
+                        <form method="POST" action="">
+                                               
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Kategori</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Kategori">
+                                <select class="col-sm-12" name="id_kategori">
+                                <?php 
+                                // QUERY KATEGORY
+                                $query_kat = "SELECT * FROM kategori";
+                                $kategori = mysqli_query($conn, $query_kat);
+                                while($row_kat = $kategori->fetch_assoc()){
+                                ?>
+                                <option name="id_kategori" value="<?=$row_kat['id_kategori']?>"><?=$row_kat['nama'];?></option>
+                                <?php
+                                }
+                                ?>
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="colFormLabel" class="col-sm-2 col-form-label">Jenis</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Jenis">
-                            </div>
-                        </div>
+     
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Ukuran</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Ukuran">
+                                <input type="text" name="ukuran" class="form-control" id="colFormLabel" value="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Warna</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Warna">
+                                <input type="text" name="warna" class="form-control" id="colFormLabel" value="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Bahan</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Bahan">
+                                <input type="text" name="bahan" class="form-control" id="colFormLabel" value="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Harga</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="colFormLabel" placeholder="Harga">
+                                <input type="number" name="harga" class="form-control" id="colFormLabel" value="">
                             </div>
                         </div>
-                        </form><a class="btn btn-warning pull-right" href="admin.php">ADD</a>
+                        <input class="btn btn-warning pull-right" type="submit" value="ADD" name="add"/>
+                        </form>
+                        
 
                                
                     </div>
