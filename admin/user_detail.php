@@ -1,8 +1,11 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
   $page = 'User';
 =======
 <<<<<<< HEAD
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
+=======
 >>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
 	include 'core/init.php';
   include 'include/header.php';
@@ -13,6 +16,14 @@
     include 'include/header.php';
     include 'include/footer.php';
 	include 'include/sidebar.php';
+<<<<<<< HEAD
+=======
+=======
+	include_once 'api/config/database.php';
+    include 'include/header.php';
+    include 'include/footer.php';
+	include 'include/sidebar.php';
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
     $database = new Database();
     $db = $database->getConnection();
 >>>>>>> mitra-new
