@@ -1,39 +1,8 @@
-<<<<<<< HEAD
 <?php
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 ?>
-=======
-<!DOCTYPE html>
-<html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <link href="images/logoo2.png" rel="print-icon" sizes="100x100">
-    <link href="images/logoo2.png" rel="icon" type="image/png">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="templatemo">
-    <meta charset="UTF-8">
-
-    <!-- CSS Bootstrap & Custom -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/templatemo-misc.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/templatemo-main.css">
-        
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    
-    <!-- JavaScripts -->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <!--[if lt IE 8]>
-	<div style=' clear: both; text-align:center; position: relative;'> </div>
-    <![endif]-->
-</head>
->>>>>>> mitra-new
 <body>
     
     <div id="home">
