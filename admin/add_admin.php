@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -10,6 +11,10 @@
 =======
 >>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
 >>>>>>> refs/remotes/origin/master
+=======
+
+	$page = 'Admin';
+>>>>>>> 47cf0dc7c868d7ff14c0867b4424ce5c8773612b
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';

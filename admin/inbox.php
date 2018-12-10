@@ -1,13 +1,10 @@
 <?php
-<<<<<<< HEAD
 	$page = 'Inbox';
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 	include 'include/sidebar.php';
-<<<<<<< HEAD
-<<<<<<< HEAD
-
+	
 	// include tabel database
 	include_once 'api/objects/inbox.php';
 
@@ -18,21 +15,7 @@
 	// instantiate database and product object
     $database = new Database();
     $db = $database->getConnection();
-=======
-=======
->>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
-=======
-	include_once 'api/config/database.php';
-    include 'include/header.php';
-    include 'include/footer.php';
-	include 'include/sidebar.php';
-    $database = new Database();
-    $db = $database->getConnection();
->>>>>>> mitra-new
-<<<<<<< HEAD
->>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
-=======
->>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
+
 ?>
 
     <!-- Navbar -->
