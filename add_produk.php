@@ -10,8 +10,8 @@
         $bahan = $_POST['bahan'];
         $harga = $_POST['harga'];
         $query = "INSERT INTO produk 
-                (id_kategori, ukuran, warna, bahan, harga)
-                 VALUES ('$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
+                (id_mitra, id_kategori, ukuran, warna, bahan, harga)
+                 VALUES ('1','$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
         $result = mysqli_query($conn, $query);
         if($result){
             header('Location: produk.php');
@@ -75,8 +75,7 @@
                         
               <!-- Content -->
                    <div class="col-md-12">
-                        <form method="POST" action="">
-                                               
+                        <form method="POST" action="">                  
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Kategori</label>
                             <div class="col-sm-10">

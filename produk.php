@@ -71,9 +71,9 @@
             </div> <!-- /.title-section -->
             <div class="row">
               <div class="card-body">
-                <div class="row">
-                        <div class="col-md-12 ">
+                       <div class="">
                         <a href="add_produk.php"><button type="submit" class="btn btn-warning btn-sm pull-right">Add</button></a>
+                        <a class="btn-danger btn-sm" href="?arsip=<?php echo $pecah['id_produk'];?>">Unarchieve</a>
                     </div>
               <div class="table">
                 <table class="table table-striped table-hover">
