@@ -14,8 +14,13 @@
     // initialize object
     $produk = new produk($db);
 
+    if (isset($_POST['id_kategori']) && isset($_POST['ukuran'])) {
+        $produk->id_kategori = htmlspecialchars($_POST['id_kategori']);
+        $produk->ukuran = htmlspecialchars($_POST['ukuran']);
+    }
+
     //query produk
-    $stmt = $produk->read();
+    $stmt = $produk->readByKategori();
     $num = $stmt->rowCount();
 
     //check if more than 0 record found

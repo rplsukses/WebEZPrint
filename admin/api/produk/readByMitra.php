@@ -14,8 +14,12 @@
     // initialize object
     $produk = new produk($db);
 
+    if (isset($_POST['id_mitra'])) {
+        $produk->id_mitra = htmlspecialchars($_POST['id_mitra']);
+    }
+
     //query produk
-    $stmt = $produk->read();
+    $stmt = $produk->readByMitra();
     $num = $stmt->rowCount();
 
     //check if more than 0 record found

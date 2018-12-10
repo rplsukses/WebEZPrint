@@ -1,9 +1,32 @@
 <?php
+<<<<<<< HEAD
 	$page = 'Inbox';
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 	include 'include/sidebar.php';
+<<<<<<< HEAD
+
+	// include tabel database
+	include_once 'api/objects/inbox.php';
+
+	//include connect to database
+	require_once 'core/init.php'; 
+	include_once 'api/config/database.php'; 
+
+	// instantiate database and product object
+    $database = new Database();
+    $db = $database->getConnection();
+=======
+=======
+	include_once 'api/config/database.php';
+    include 'include/header.php';
+    include 'include/footer.php';
+	include 'include/sidebar.php';
+    $database = new Database();
+    $db = $database->getConnection();
+>>>>>>> mitra-new
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
 ?>
 
     <!-- Navbar -->
@@ -59,26 +82,19 @@
 												</tr>
 											</thead>
 											<tbody>
+											<?php $ambil=$conn->query("SELECT * FROM inbox"); ?>
+											<?php while($pecah = $ambil->fetch_assoc()){ ?>
 												<tr>
 													<td>
 														<div class="checkbox">
 															<input type="checkbox">
 														</div>
 													</td>
-													<td><a href="inbox_detail.php">novarita10.nr@gmail.com</a></td>
-													<td>Rahasia</td>
-													<td>10/11/1999</td>
+													<td><a href="inbox_detail.php"><?php echo $pecah['email_pengirim']?></a></td>
+													<td><?php echo $pecah['subjek']?></td>
+													<td><?php echo $pecah['tanggal_kirim']?></td>
 												</tr>
-												<tr>
-													<td>
-														<div class="checkbox">
-															<input type="checkbox">
-														</div>
-													</td>
-													<td></td>
-													<td></td>
-													<td></td>
-												</tr>
+												<?php } ?>
 											</tbody>
 										</table>
 									</div>

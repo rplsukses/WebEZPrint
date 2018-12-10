@@ -1,8 +1,21 @@
 <?php
+<<<<<<< HEAD
+	$page = 'Inbox';
+=======
+<<<<<<< HEAD
+>>>>>>> 282a541a58326c1dc9ba7640c85220f2d82f3271
 	include 'core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
 	include 'include/sidebar.php';
+=======
+	include_once 'api/config/database.php';
+    include 'include/header.php';
+    include 'include/footer.php';
+	include 'include/sidebar.php';
+    $database = new Database();
+    $db = $database->getConnection();
+>>>>>>> mitra-new
 ?>
 
 
@@ -14,7 +27,7 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header card-header-primary">
-									<h4 class="card-title">novarita10.nr@gmail.com</h4>
+									<h4 class="card-title"><?php ?></h4>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">

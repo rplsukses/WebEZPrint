@@ -12,8 +12,8 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                              <div class="left-header lead">
-                               <img src="images/logo.png" width="30px" height="30px"><a href="index.html"></a>
-                                <span>EZPrint Mitra Center</span>                              
+                               <img src="images/logoo2.png" width="250px" height="45px"><a href="index.html"></a>
+                                <span> </span>                              
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
@@ -51,22 +51,30 @@
         </div> <!-- /.site-header -->
     </div> <!-- /#home -->
 
-    <div class="flexslider">
+   <div class="flexslider">
         <ul class="slides">
             <li>
-                <img src="images/banner01.jpg" alt="">
+                <img src="images/banner07.jpg" alt="">
+                <div class="flex-caption">
+                    <h2>HARGA HEMAT</h2>
+                    <span></span>
+                    <p>bandingkan harga dan dapatkan harga terhemat</p>
+                </div>s antri
+            </li>
+            <li>
+                <img src="images/banner06.jpg" alt="">
+                <div class="flex-caption">
+                    <h2>CLOUD BASE</h2>
+                    <span></span>
+                    <p>Upload dan cetak berkas kamu dengan cloud storage tanpa harus repot colok USB</p>
+                </div>
+            </li>
+            <li>
+                <img src="images/banner05.jpg" alt="">
                 <div class="flex-caption">
                     <h2>BEBAS ANTRI</h2>
                     <span></span>
                     <p>Cetak berkas kamu dimana saja dan kapan saja tanpa harus antri</p>
-                </div>
-            </li>
-            <li>
-                <img src="images/banner02.jpg" alt="">
-                <div class="flex-caption">
-                    <h2>Cloud Base</h2>
-                    <span></span>
-                    <p>Upload dan cetak berkas kamu dengan cloud storage tanpa harus repot colok USB</p>
                 </div>
             </li>
         </ul>
@@ -169,8 +177,6 @@
         </div> <!-- /.container -->
     </div> <!-- /#portfolio -->
 
-    
-
     <div id="contact" class="section-cotent">
         <div class="container">
             <div class="title-section text-center">
@@ -180,17 +186,18 @@
             <div class="row-center">
 				<div class="col-md-4"></div>
                 <div class="col-md-4 col-sm-8">
-                    <div align ="center"></div>
                     <div class="contact-form">
+                        <form action="login.php" method="POST">
                         <p class="full-row">
                             <label for="email-id">Email:</label>
-                            <input type="text" id="email-id" name="email-id">
+                            <input type="text" id="email-id" name="email">
                         </p>
                         <p class="full-row">
                             <label for="subject-id">Password:</label>
-                            <input type="password" name="pass" name="subject-id">
+                            <input type="password" name="password" name="password">
                         </p>
-                        <a href = "welcome.php"> <input class="mainBtn" type="submit" name="" value="Log in" > </a>
+                        <input class="mainBtn" type="submit" name="login" value="Log in" >
+                        </form>
                     </div>
 					<p class="full-row">
                             <label for="name-id"> </label>
@@ -200,7 +207,6 @@
                         </p>
                 </div> <!-- /.col-md-4 -->
 				<div class="col-md-4"></div>
-			
                 </div> <!-- /.col-md-3 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->

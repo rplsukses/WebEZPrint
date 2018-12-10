@@ -27,14 +27,24 @@
         // Check jika email sudah terdaftar
         if(!$user->emailExists()){
             if ($user->register()) {
-                // set response code - 404 Not found
+                $stmt = $user->login();
+                
+                while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    extract($row);
+                    
+                    $user_arr["data"]["nama"] = $nama;
+                    $user_arr["data"]["email"] = $email;
+                    $user_arr["data"]["foto"] = $foto;
+                    $user_arr["data"]["telepon"] = $telepon;
+                    $user_arr["error"] = FALSE;
+                    $user_arr["message"] = "Register sukses!";
+                }
+    
+                // set response code - 200 OK
                 http_response_code(200);
-
-                $user_arr["error"] = FALSE;
-                $user_arr["message"] = "Register sukses!";
-        
-                // tell the user no products found
-                echo json_encode($user_arr);    
+            
+                // show products data in json format
+                echo json_encode($user_arr);
             }else{
                 // set response code - 404 Not found
                 http_response_code(404);
