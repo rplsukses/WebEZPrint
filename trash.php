@@ -1,5 +1,5 @@
 <?php
-    include_once 'admin/api/config/database.php';
+    include 'admin/api/config/database.php';
 
     $database = new Database();
     $db = $database->getConnection();
