@@ -36,6 +36,7 @@
                     $user_arr["data"]["nama"] = $nama;
                     $user_arr["data"]["email"] = $email;
                     $user_arr["data"]["foto"] = $foto;
+                    $user_arr["data"]["telepon"] = $telepon;
                     $user_arr["error"] = FALSE;
                     $user_arr["message"] = "Login sukse!";
                 }
