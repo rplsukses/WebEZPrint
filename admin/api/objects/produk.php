@@ -23,7 +23,7 @@
         public function read(){
             //select all query
             $query = "SELECT * FROM " . $this->table_name. 
-                    ", kategori WHERE kategori.id_kategori=produk.id_produk";
+                    ", kategori WHERE kategori.id_kategori=produk.id_kategori";
 
             //perpare query
             $stmt = $this->conn->prepare($query);
