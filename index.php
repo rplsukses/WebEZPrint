@@ -166,7 +166,7 @@
         </div> <!-- /.container -->
     </div> <!-- /#portfolio -->
 
-    <div id="contact" class="section-cotent">
+     <div id="contact" class="section-cotent">
         <div class="container">
             <div class="title-section text-center">
                 <h2>Login Mitra</h2>
