@@ -1,10 +1,4 @@
 <?php
-<<<<<<< HEAD
-    include 'admin/core/init.php';
-    include 'include/header.php';
-    include 'include/footer.php';
-?>
-=======
     include_once 'admin/api/config/database.php';
 
     $database = new Database();
@@ -47,7 +41,6 @@
         </div>
     <![endif]-->
 </head>
->>>>>>> mitra-new
 <body>
     <div id="home">
         <div class="site-header">

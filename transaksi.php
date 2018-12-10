@@ -1,17 +1,11 @@
 <?php
-<<<<<<< HEAD
-    include 'admin/core/init.php';
-    include 'include/header.php';
-    include 'include/footer.php';
-?>
-=======
     include_once 'admin/api/config/database.php';
 
     $database = new Database();
     $db = $database->getConnection();
 ?>
 <!DOCTYPE html>
-<!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!-- <html class="no-js" lang="en"> <![endif]-->
 <head>
     <link href="images/logo.png" rel="print-icon" sizes="100x100">
     <link href="images/logo.png" rel="icon" type="image/png">
@@ -47,7 +41,6 @@
         </div>
     <![endif]-->
 </head>
->>>>>>> mitra-new
 <body>
     
    <div id="home">

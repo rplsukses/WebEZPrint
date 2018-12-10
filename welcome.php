@@ -1,10 +1,4 @@
 <?php
-<<<<<<< HEAD
-    include 'admin/core/init.php';
-    include 'include/header.php';
-    include 'include/footer.php';
-?>
-=======
     include_once 'admin/api/config/database.php';
 
     $database = new Database();
@@ -27,7 +21,6 @@
 	
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
->>>>>>> mitra-new
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
