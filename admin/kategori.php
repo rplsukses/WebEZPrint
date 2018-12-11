@@ -38,143 +38,35 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-       		<a href="add_kategori.php"><button type="submit" class="btn btn-primary pull-right">Add</button></a>
+       		<a href="add_kategori.php" class="btn btn-primary pull-right">Add</a>
       		</div>
     		</div>
   		</div>
         <div class="container-fluid">
           <div class="row">
+          <?php $ambil = $conn->query("SELECT * FROM kategori"); ?>
+          <?php while ($pecah=$ambil->fetch_assoc()){?>
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
+                <div class="card-header card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">panorama</i>
+                    <img src="icon/<?php echo $pecah['icon']; ?>" width="70" height="70">
                   </div>
-                  <h3 class="card-title">Banner</h3>
+                  <h4 class="card-title"><?php echo $pecah['nama'];?></h4>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
+                    <a href="edit_kategori.php?id=<?php echo $pecah['id_kategori']; ?>" class="btn btn-primary bt-sm">Edit</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">file_copy</i>
-                  </div>
-                  <h3 class="card-title">Dokumen</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">insert_photo</i>
-                  </div>
-                  <h3 class="card-title">Foto</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">photo_album</i>
-                  </div>
-                  <h3 class="card-title">Poster</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">insert_emoticon</i>
-                  </div>
-                  <h3 class="card-title">Sticker</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">contact_mail</i>
-                  </div>
-                  <h3 class="card-title">ID Card</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">local_play</i>
-                  </div>
-                  <h3 class="card-title">Apa?</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">layers</i>
-                  </div>
-                  <h3 class="card-title">Brosur</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">create</i>
-                    <a href="edit_kategori.php">Edit</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php } ?>
           </div>
-					<!-- End Content -->
-				</div>
-			</div>
-		</body>
-	</html>
+        </div>
+      </div>
+	  </div>
+	</div>
+  <!-- End Content -->
+	</body>
+</html>

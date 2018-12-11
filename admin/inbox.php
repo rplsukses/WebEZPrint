@@ -4,18 +4,6 @@
     include 'include/header.php';
     include 'include/footer.php';
 	include 'include/sidebar.php';
-	
-	// include tabel database
-	include_once 'api/objects/inbox.php';
-
-	//include connect to database
-	require_once 'core/init.php'; 
-	include_once 'api/config/database.php'; 
-
-	// instantiate database and product object
-    $database = new Database();
-    $db = $database->getConnection();
-
 ?>
 
     <!-- Navbar -->
@@ -65,7 +53,7 @@
 															<label><b><center>All<input type="checkbox" value=""></center></b></label>
 														</div>
 													</th>
-													<th>Email Pengirim</th>
+													<th>Email</th>
 													<th>Subjek</th>
 													<th>Tgl</i></th>
 												</tr>

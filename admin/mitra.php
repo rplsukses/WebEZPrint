@@ -49,31 +49,26 @@
 											<thead class=" text-primary">
 												<tr>
 													<th>No.</th>
-													<th>ID Mitra<i aria-hidden="true" class="fa fa-sort float-right"></i></th>
-													<th class="th-sm">Nama <i aria-hidden="true" class="fa fa-sort float-right"></i></th>
-													<th class="th-sm">Last Seen <i aria-hidden="true" class="fa fa-sort float-right"></i></th>
-													<th>Profil</th>
+													<th>Nama</th>
+													<th>Last Seen</th>
+													<th>Action</th>
 												</tr>
 											</thead>
 											<tbody>
+											<?php $nomor=1; ?>
+												<?php $ambil=$conn->query("SELECT * FROM mitra"); ?>
+												<?php while ($pecah=$ambil->fetch_assoc()){ ?>
 												<tr>
-													<td>1</td>
-													<td>7381261</td>
-													<td>Nova Print</td>
-													<td>12.30</td>
+													<td><?php echo $nomor ?></td>
+													<td><?php echo $pecah['nama']; ?></td>
+													<td><?php echo $pecah['last_seen']; ?></td>
 													<td>
-														<a class="btn btn-success btn-sm" href="mitra_detail.php">Detail</a>
+														<a href="mitra_detail.php?id=<?php echo $pecah['id_mitra']; ?>" class="btn btn-success btn-sm">Detail</a>
 													</td>
 												</tr>
-												<tr>
-													<td>2</td>
-													<td>21848684</td>
-													<td>Print Coy</td>
-													<td>00.30</td>
-													<td>
-														<a class="btn btn-success btn-sm" href="mitra_detail.php">Detail</a>
-													</td>
-												</tr>
+												<?php $nomor++; ?>
+												<?php } ?>
+											
 											</tbody>
 										</table>
 									</div>

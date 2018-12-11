@@ -24,7 +24,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login200-pic js-tilt"><img alt="IMG" src="assets/img/logo_3.png"></div>
+				<div class="login200-pic js-tilt"><img alt="IMG" src="assets/img/logo2.png" width="300" height="200"></div>
 				<form action="" class="login100-form validate-form" method="post">
 					<span class="login100-form-title">Admin Login</span>
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required:ex@abc.xyz">

@@ -47,31 +47,26 @@
 											<thead class="text-primary">
 												<tr>
 													<th>No.</th>
-													<th>ID Admin<i aria-hidden="true" class="fa fa-sort float-right"></i></th>
-													<th>Nama<i aria-hidden="true" class="fa fa-sort float-right"></i></th>
+													<th>Nama</th>
 													<th>Email</th>
 													<th>Action</th>
 												</tr>
 											</thead>
 											<tbody>
+												<?php $nomor=1; ?>
+												<?php $ambil=$conn->query("SELECT * FROM admin"); ?>
+												<?php while ($pecah=$ambil->fetch_assoc()){ ?>
 												<tr>
-													<td>1</td>
-													<td>0012</td>
-													<td>Jauari Ahmad</td>
-													<td>jauari@pens.ac.id</td>
+													<td><?php echo $nomor ?></td>
+													<td><?php echo $pecah['nama']; ?></td>
+													<td><?php echo $pecah['email']; ?></td>
 													<td>
-														<a class="btn btn-warning btn-sm" href="edit_admin.php">Edit</a> <a class="btn btn-danger btn-sm" href="#">Delete</a>
+														<a href="edit_admin.php?id=<?php echo $pecah['id_admin']; ?>" class="btn btn-warning btn-sm">Edit</a>
+														<a href="delete_admin.php?id=<?php echo $pecah['id_admin']; ?>" class="btn btn-danger btn-sm">Delete</a>
 													</td>
 												</tr>
-												<tr>
-													<td>2</td>
-													<td>0051</td>
-													<td>Irma Wulandari</td>
-													<td>irmawulan@gmail.com</td>
-													<td>
-														<a class="btn btn-warning btn-sm" href="edit_admin.php">Edit</a> <a class="btn btn-danger btn-sm" href="#">Delete</a>
-													</td>
-												</tr>
+												<?php $nomor++; ?>
+												<?php } ?>
 											</tbody>
 										</table>
 									</div>
