@@ -78,7 +78,7 @@
     </div> <!-- /#contact -->
 <?php
 
-    $conn = mysqli_connect("localhost","roou623212174_root","rplsukses","u623212174_print");
+    $conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
     if (isset($_POST['signup'])) {
         $nama = $_POST['nama'];
         $alamat = $_POST['alamat'];
