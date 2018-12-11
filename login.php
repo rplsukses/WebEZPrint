@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	$conn = mysqli_connect("localhost","root","","u623212174_print");
+	$conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
 		if (isset($_POST["login"])) {
 			$email = $_POST["email"];
             $password =  md5($_POST["password"]);
