@@ -196,7 +196,7 @@
                         </p>
                         <p class="full-row">
                             <label for="subject-id">Password:</label>
-                            <input type="password" name="password" name="password">
+                            <input type="password" name="password">
                         </p>
                         <input class="mainBtn" type="submit" name="login" value="Log in" >
                         </form>
