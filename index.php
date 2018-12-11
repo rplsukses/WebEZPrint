@@ -1,42 +1,56 @@
 <?php
     include 'admin/core/init.php';
     include 'include/header.php';
-    include 'include/footer.php';
+  
+    include 'admin/api/config/database.php';
+
+	session_start();
+    $database = new Database();
+    $db = $database->getConnection();
 ?>
 <body>
     
-    <div id="home">
+<div id="home">
         <div class="site-header">
-        <div class="main-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-sm-8 col-xs-6">
-                            <div class="menu text-right hidden-sm hidden-xs">
-                                <ul>
-                                
-                                    <li><a href="#home">Home</a></li>
-                                    <li><a href="#services">About Us</a></li>
-                                    <li><a href="#portfolio">How To Use</a></li>
-                                    <li><a href="#contact">Login</a></li>
-                                   
-                                </ul>
-                            </div> <!-- /.menu -->
-                        </div> <!-- /.col-md-8 -->
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.header -->
             <div class="top-header">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                              <div class="left-header lead">
-                               <img src="images/logoo2.png" width="250px" height="45px"><a href="index.html"></a>
-                                <span> </span>                              
+                               <img src="images/logo.png" width="30px" height="30px"><a href="index.html"></a>
+                                <span>EZPrint Mitra Center</span>                              
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
                 </div> <!-- /.container -->
             </div> <!-- /.top-header -->
+            <div class="main-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 col-xs-6">
+                            <div class="menu text-right hidden-sm hidden-xs">
+                                <ul>
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#services">About Us</a></li>
+                                    <li><a href="#portfolio">How To Use</a></li>
+                                    <li><a href="#contact">Login</a></li>
+                                </ul>
+                            </div> <!-- /.menu -->
+                        </div> <!-- /.col-md-8 -->
+                    </div> <!-- /.row -->
+                    <div class="responsive-menu text-right visible-xs visible-sm">
+                        <a href="#" class="toggle-menu fa fa-bars"></a>
+                        <div class="menu">
+                            <ul>
+                               <li><a href="#home">Home</a></li>
+                                    <li><a href="#services">About Us</a></li>
+                                    <li><a href="#portfolio">How To Use</a></li>
+                                <li><a href="#contact">Login</a></li>
+                            </ul>
+                        </div> <!-- /.menu -->
+                    </div> <!-- /.responsive-menu -->
+                </div> <!-- /.container -->
+            </div> <!-- /.header -->
         </div> <!-- /.site-header -->
     </div> <!-- /#home -->
 
@@ -47,8 +61,8 @@
                 <div class="flex-caption">
                     <h2>HARGA HEMAT</h2>
                     <span></span>
-                    <p>bandingkan harga dan dapatkan harga terhemat</p>
-                </div>s antri
+                    <p>Cetak berkas kamu dimana saja dan kapan saja tanpa harus antri</p>
+                </div>
             </li>
             <li>
                 <img src="images/banner06.jpg" alt="">
@@ -161,12 +175,11 @@
                         </div> <!-- /.overlay -->
                     </div> <!-- /.portfolio-thumb -->
                 </div> <!-- /.col-md-3 -->
-
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /#portfolio -->
 
-     <div id="contact" class="section-cotent">
+    <div id="contact" class="section-cotent">
         <div class="container">
             <div class="title-section text-center">
                 <h2>Login Mitra</h2>
@@ -219,7 +232,12 @@
         </div> <!-- /.container -->
     </div> <!-- /.site-footer -->
 
-    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/jquery.lightbox.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript">
+    </script>
     
 
 </body>

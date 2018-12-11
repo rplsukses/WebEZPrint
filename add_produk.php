@@ -2,6 +2,10 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+    include 'admin/api/config/database.php';
+    session_start();
+    $database = new Database();
+    $db = $database->getConnection();
 
     if(isset($_POST['add'])){
         $id_kategori = $_POST['id_kategori'];
@@ -11,7 +15,8 @@
         $harga = $_POST['harga'];
         $query = "INSERT INTO produk 
                 (id_mitra, id_kategori, ukuran, warna, bahan, harga)
-                 VALUES ('1','$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
+                 VALUES (".$_SESSION['user_id'].
+                 ",'$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
         $result = mysqli_query($conn, $query);
         if($result){
             header('Location: produk.php');

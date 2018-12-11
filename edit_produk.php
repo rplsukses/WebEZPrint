@@ -3,6 +3,7 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+    session_start();
     $database = new Database();
     $db = $database->getConnection();
 
@@ -24,16 +25,16 @@
         $harga = $_POST['harga'];
         $query = "UPDATE produk
                 SET produk.id_kategori=".$id_kategori.", ukuran='".$ukuran."', warna='".$warna."', bahan='".$bahan."', harga='".$harga."' 
-                WHERE produk.id_produk=".$id_produk.
+                WHERE produk.id_produk=".$id_produk;
 
     
-    $update = mysqli_query($conn, $query);
-    if($update){
-        header('Location: produk.php');
-    }else{
-        echo "<p>Error: " . $query . "<br" . mysqli_error($conn). "</p>";
+        $update = mysqli_query($conn, $query);
+        if($update){
+            header('Location: produk.php');
+        }else{
+            echo "<p>Error: " . $query . "<br" . mysqli_error($conn). "</p>";
+        }
     }
-}
 
 ?>
 
@@ -92,10 +93,9 @@
                         
               <!-- Content -->
                    <div class="col-md-12">
-                        <form>
+                        <form action="" method="POST">
                         <?php
-                            $update = mysqli_query($conn, $query);
-                            while($row=$update->fetch_assoc()){
+                            while($row=$result->fetch_assoc()){
                         ?>
                           <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">ID Produk</label>

@@ -2,11 +2,15 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+    include 'admin/api/config/database.php';
     session_start();
+    $database = new Database();
+    $db = $database->getConnection();
+
     //Query select produk by mitra
     $ambil=$conn->query("SELECT * FROM 
                      produk, kategori 
-                     WHERE produk.id_mitra=".$_SESSION['user_id']."
+                     WHERE id_mitra=".$_SESSION['user_id']."
                      AND produk.id_kategori=kategori.id_kategori
                      AND produk.arsip=0 ");
 

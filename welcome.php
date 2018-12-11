@@ -3,14 +3,13 @@
     include 'include/header.php';
     include 'include/footer.php';
 
-    include_once 'admin/api/config/database.php';
-
+    include 'admin/api/config/database.php';
     $database = new Database();
     $db = $database->getConnection();
 ?>
 
 <body>
-    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 <div id="home">
         <div class="site-header">
             <div class="top-header">
