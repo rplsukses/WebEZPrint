@@ -78,69 +78,6 @@
                             <td>matematika.docx</td>
                             <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
                         </tr>
-                        <tr>
-                            
-                            <td>2</td>
-                            <td>002</td>
-                            <td>28-10-2018</td>
-                            <td>Isana</td>
-                            <td>LaporanResmi.docx</td>
-                             <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
-                        </tr>
-                        <tr>
-                            
-                            <td>3</td>
-                            <td>003</td>
-                            <td>05-11-2018</td>
-                            <td>Fatma</td>
-                            <td>GDU.xls</td>
-                             <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
-                        </tr>
-                        <tr >
-                            
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
-                        </tr>
-                        <tr >
-                            
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
-                        </tr>
-                        <tr >
-                            
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
-                        </tr>
-                        <tr >
-                            
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
-                        </tr>
-                        <tr >
-                           
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div> <!-- End Col-->
