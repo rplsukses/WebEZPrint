@@ -3,8 +3,11 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+    session_start();
     $database = new Database();
     $db = $database->getConnection();
+
+
 ?>
 
 <body>
@@ -61,7 +64,11 @@
                         <h1>
                             <tr>
                                 <th>No</th>
-                                <th>ID produk</th>
+                                <th>Kategori</th>
+                                <th>Ukuran</th>
+                                <th>Warna</th>
+                                <th>Bahan</th>
+                                <th>Harga</th>
                                 <th>Tanggal</th>
                                 <th>Nama</th>
                                 <th>File</th>
@@ -71,11 +78,15 @@
                     </thead>
                     <tbody class="h5">
                         <tr >
-                            <td>1</td>
-                            <td>001</td>
-                            <td>11-10-2018</td>
-                            <td>Zauza</td>
-                            <td>matematika.docx</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
                         </tr>
                     </tbody>
