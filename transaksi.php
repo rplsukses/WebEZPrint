@@ -9,7 +9,8 @@
 
     //Query select transaksi
     $status=$_GET['status'];
-    $query="SELECT * FROM transaksi, user, produk, kategori
+    $query="SELECT transaksi.tgl_pesan, user.nama AS nama_user, transaksi.file, kategori.nama AS nama_kategori, produk.ukuran, produk.warna, produk.bahan, produk.harga
+            FROM transaksi, user, produk, kategori
             WHERE transaksi.id_mitra=".$_SESSION['user_id']." 
             AND transaksi.status=".$status."
             AND user.id_user=transaksi.id_user 
@@ -88,9 +89,9 @@
                         <?php while($row=$result->fetch_assoc()){ ?>
                         <tr >
                             <td><?php echo $row['tgl_pesan']; ?></td>
-                            <td><?php echo $row['user.nama']; ?></td>
-                            <td><?php echo $row['']; ?></td>
-                            <td><?php echo $row['nama']; ?></td>
+                            <td><?php echo $row['nama_user']; ?></td>
+                            <td><?php echo $row['file']; ?></td>
+                            <td><?php echo $row['nama_kategori']; ?></td>
                             <td><?php echo $row['ukuran']; ?></td>
                             <td><?php echo $row['warna']; ?></td>
                             <td><?php echo $row['bahan']; ?></td>
