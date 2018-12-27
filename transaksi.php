@@ -7,6 +7,15 @@
     $database = new Database();
     $db = $database->getConnection();
 
+    //Query select transaksi
+    $status=$_GET['status'];
+    $query="SELECT * FROM transaksi, user, produk, kategori
+            WHERE transaksi.id_mitra=".$_SESSION['user_id']." 
+            AND transaksi.status=".$status."
+            AND user.id_user=transaksi.id_user 
+            AND produk.id_produk=transaksi.id_produk 
+            AND kategori.id_kategori=produk.id_kategori ";
+    $result = mysqli_query($conn, $query);
 
 ?>
 
@@ -63,32 +72,32 @@
                     <thead class=" text-primary lead">
                         <h1>
                             <tr>
-                                <th>No</th>
+                                <th>Tanggal</th>
+                                <th>User</th>
+                                <th>File</th>
                                 <th>Kategori</th>
                                 <th>Ukuran</th>
                                 <th>Warna</th>
                                 <th>Bahan</th>
                                 <th>Harga</th>
-                                <th>Tanggal</th>
-                                <th>Nama</th>
-                                <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </h1>
                     </thead>
                     <tbody class="h5">
+                        <?php while($row=$result->fetch_assoc()){ ?>
                         <tr >
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?php echo $row['tgl_pesan']; ?></td>
+                            <td><?php echo $row['user.nama']; ?></td>
+                            <td><?php echo $row['']; ?></td>
+                            <td><?php echo $row['nama']; ?></td>
+                            <td><?php echo $row['ukuran']; ?></td>
+                            <td><?php echo $row['warna']; ?></td>
+                            <td><?php echo $row['bahan']; ?></td>
+                            <td><?php echo $row['harga']; ?></td>
                             <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
                         </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div> <!-- End Col-->

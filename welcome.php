@@ -79,7 +79,7 @@
                             <h3>Transaksi</h3>
                         </div>
                         <div class="service-description">
-                            <a href="transaksi.php"><img src="images/tran.png" style="height: 150px; width: 150px;"></a>
+                            <a href="transaksi.php?status=0"><img src="images/tran.png" style="height: 150px; width: 150px;"></a>
                         </div>
                         </div> <!-- /.service-item -->
                         </div> <!-- /.col-md-3 -->
