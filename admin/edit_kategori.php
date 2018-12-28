@@ -7,6 +7,15 @@
     include 'include/footer.php';
 	include 'include/sidebar.php';
 
+	
+	// session
+    session_start();
+    if(!isset($_SESSION['loginadmin'])) {
+      header('location:login.php');
+    }else {
+      $loginadmin = $_SESSION['loginadmin'];
+    }
+
 	//Query to get id kategori
 	$ambil=$conn->query("SELECT * FROM kategori WHERE id_kategori='$_GET[id]'");
 	$pecah=$ambil->fetch_assoc();

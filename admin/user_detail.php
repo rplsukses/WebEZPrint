@@ -5,6 +5,14 @@
   include 'include/footer.php';
   include 'include/sidebar.php';
   
+	// session
+  session_start();
+  if(!isset($_SESSION['loginadmin'])) {
+    header('location:login.php');
+  }else {
+    $loginadmin = $_SESSION['loginadmin'];
+  }
+  
     //Query to get id 
 	$ambil=$conn->query("SELECT * FROM user WHERE id_user='$_GET[id]'");
 	$pecah= $ambil->fetch_assoc();

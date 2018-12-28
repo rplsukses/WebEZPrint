@@ -5,14 +5,14 @@
     include 'include/header.php';
     include 'include/footer.php';
 	include 'include/sidebar.php';
-
-	include_once 'api/config/database.php';
-    include 'include/header.php';
-    include 'include/footer.php';
-	include 'include/sidebar.php';
-    $database = new Database();
-	$db = $database->getConnection();
 	
+	// session
+    session_start();
+    if(!isset($_SESSION['loginadmin'])) {
+      header('location:login.php');
+    }else {
+      $loginadmin = $_SESSION['loginadmin'];
+    }
 ?>
 
 		<!-- Content -->

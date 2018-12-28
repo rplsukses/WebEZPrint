@@ -8,6 +8,15 @@
     include 'include/footer.php';
 	include 'include/sidebar.php';
 
+	
+	// session
+    session_start();
+    if(!isset($_SESSION['loginadmin'])) {
+      header('location:login.php');
+    }else {
+      $loginadmin = $_SESSION['loginadmin'];
+    }
+
 	//Query to get id admin
 	$ambil=$conn->query("SELECT * FROM admin WHERE id_admin='$_GET[id]'");
 	$pecah=$ambil->fetch_assoc();
