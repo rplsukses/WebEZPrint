@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <link href="images/logo.png" rel="print-icon" sizes="100x100">
-    <link href="images/logo.png" rel="icon" type="image/png">
+    <link href="images/logo4.jpeg" rel="icon" type="image/jpeg">
     <title>EZPrint Mitra Center</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">

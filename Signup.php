@@ -1,7 +1,27 @@
 <?php
+    include 'admin/api/config/database.php';
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+
+    $conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
+    if (isset($_POST['signup'])) {
+        $nama = $_POST['nama'];
+        $alamat = $_POST['alamat'];
+        $telp_kantor=$_POST['no_telepon'];
+        $email = $_POST['email'];
+        $nama_pemilik=$_POST['nama_pemilik'];
+        $telp_pemilik=$_POST['telp_pemilik'];
+        $email_pemilik=$_POST['email_pemilik'];
+        $password = $_POST['password'];
+        $password2 = $_POST['password2'];
+        if ($password == $password2) {
+            mysqli_query($conn, "INSERT INTO mitra (nama,alamat,no_telepon,email,nama_pemilik,telp_pemilik,email_pemilik,password) 
+                                 VALUES ('$nama','$alamat','$telp_kantor','$email','$nama_pemilik','$telp_pemilik','$email_pemilik',md5('$password'))");
+					echo "<script>alert('Anda telah terdaftar sebagai mitra , silahkan log in');</script> <meta http-equiv='refresh' content='1;url=index.php'>";
+        }
+    }
+
 ?>
 <body>
     
@@ -13,8 +33,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
-                               <img src="images/logo.png" width="30px" height="30px"><a href="index.html"></a>
-                                <span>EZPrint Mitra Center</span>                              
+                               <img src="images/logoo2.png" width="280px" height="50px"><a href="index.html"></a>                           
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
@@ -57,8 +76,24 @@
                             <input type="text" id="name-id" name="alamat">
                         </p>
                         <p class="full-row">
+                            <label for="name-id">Nomor Telepon Kantor :</label>
+                            <input type="text" id="name-id" name="no_telepon">
+                        </p>
+                        <p class="full-row">
                             <label for="email-id">Email:</label>
                             <input type="text" id="email-id" name="email">
+                        </p>
+                        <p class="full-row">
+                            <label for="name-id">Nama Pemilik :</label>
+                            <input type="text" id="name-id" name="nama_pemilik">
+                        </p>
+                        <p class="full-row">
+                            <label for="name-id">Nomor Telepon Pemilik :</label>
+                            <input type="text" id="name-id" name="telp_pemilik">
+                        </p>
+                        <p class="full-row">
+                            <label for="name-id">Email Pemilik :</label>
+                            <input type="text" id="name-id" name="email_pemilik">
                         </p>
 						 <p class="full-row">
                             <label for="email-id">Password :</label>
@@ -76,21 +111,7 @@
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /#contact -->
-<?php
 
-    $conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
-    if (isset($_POST['signup'])) {
-        $nama = $_POST['nama'];
-        $alamat = $_POST['alamat'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $password2 = $_POST['password2'];
-        if ($password == $password2) {
-            mysqli_query($conn, "INSERT INTO mitra (nama, alamat, email, password) VALUES ('$nama', '$alamat', '$email', md5('$password'))");
-					echo "<script>alert('Anda telah terdaftar sebagai mitra , silahkan log in');</script> <meta http-equiv='refresh' content='1;url=index.php'>";
-        }
-    }
-?>
 
     <div class="site-footer">
         <div class="container">

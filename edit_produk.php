@@ -47,10 +47,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
-                              
-                               <a href="index.html"><img src="images/logo.png" width="30px" height="30px"></a>
-                                <span>EZPrint Mitra Center</span>
-                                
+                               <a href="index.html"><img src="images/logoo2.png" width="280px" height="50px"></a>                                
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
