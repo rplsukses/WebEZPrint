@@ -1,7 +1,27 @@
 <?php
+    include 'admin/api/config/database.php';
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'include/footer.php';
+
+    $conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
+    if (isset($_POST['signup'])) {
+        $nama = $_POST['nama'];
+        $alamat = $_POST['alamat'];
+        $telp_kantor=$_POST['no_telepon'];
+        $email = $_POST['email'];
+        $nama_pemilik=$_POST['nama_pemilik'];
+        $telp_pemilik=$_POST['telp_pemilik'];
+        $email_pemilik=$_POST['email_pemilik'];
+        $password = $_POST['password'];
+        $password2 = $_POST['password2'];
+        if ($password == $password2) {
+            mysqli_query($conn, "INSERT INTO mitra (nama,alamat,no_telepon,email,nama_pemilik,telp_pemilik,email_pemilik,password) 
+                                 VALUES ('$nama','$alamat','$telp_kantor','$email','$nama_pemilik','$telp_pemilik','$email_pemilik',md5('$password'))");
+					echo "<script>alert('Anda telah terdaftar sebagai mitra , silahkan log in');</script> <meta http-equiv='refresh' content='1;url=index.php'>";
+        }
+    }
+
 ?>
 <body>
     
@@ -91,21 +111,7 @@
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /#contact -->
-<?php
 
-    $conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
-    if (isset($_POST['signup'])) {
-        $nama = $_POST['nama'];
-        $alamat = $_POST['alamat'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $password2 = $_POST['password2'];
-        if ($password == $password2) {
-            mysqli_query($conn, "INSERT INTO mitra (nama, alamat, email, password) VALUES ('$nama', '$alamat', '$email', md5('$password'))");
-					echo "<script>alert('Anda telah terdaftar sebagai mitra , silahkan log in');</script> <meta http-equiv='refresh' content='1;url=index.php'>";
-        }
-    }
-?>
 
     <div class="site-footer">
         <div class="container">

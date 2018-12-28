@@ -32,7 +32,7 @@
       </script>";
     }else{
         $query="INSERT into mitra (nama,alamat,no_telepon,email,nama_pemilik,telp_pemilik,email_pemilik,password)
-                VALUES('$nama','$alamat','$telp_kantor','$email','$nama_pemilik','$telp_pemilik','$email_pemilik','$password')";
+                VALUES('$nama','$alamat','$telp_kantor','$email','$nama_pemilik','$telp_pemilik','$email_pemilik',md5('$password'))";
         $result=mysqli_query($conn, $query);
         echo "<script>location='index.php' </script>";
     if($result){
