@@ -72,7 +72,7 @@
 													<td><?php echo $pecah['nama']; ?></td>
 													<td><?php echo $pecah['last_seen']; ?></td>
 													<td>
-														<a href="mitra_detail.php?id=<?php echo $pecah['id_mitra']; ?>" class="btn btn-success btn-sm">Detail</a>
+														<a href="mitra_detail.php?id=<?php echo $pecah['id_mitra'];?>" class="btn btn-success btn-sm">Detail</a>
 													</td>
 												</tr>
 												<?php $nomor++; ?>
