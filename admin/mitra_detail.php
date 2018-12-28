@@ -64,3 +64,45 @@
 					</div>
 				</div>
 			</div>
+			<div class="card">
+				<div class="card-header card-header-primary">
+					<center><h4 class="card-title">Produk</h4></center>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table">
+							<thead class=" text-primary">
+							<?php
+							//Query to get id 
+							$ambil=$conn->query("SELECT * FROM produk, kategori
+							WHERE id_mitra='$_GET[id]' AND produk.id_kategori = kategori.id_kategori");
+							?>
+								<tr>
+									<th>ID Produk</th>
+									<th>Kategori</th>
+									<th>Ukuran</th>
+									<th>Warna</th>
+									<th>Bahan</th>
+									<th>Harga</th>
+								</tr>
+							</thead>
+							<tbody>
+							<?php while ($pecah= $ambil->fetch_assoc()){?>
+								<tr>
+									<td>&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $pecah['id_produk']; ?></td>
+									<td><?php echo $pecah['nama'];?></td>
+									<td><?php echo $pecah['ukuran']; ?></td>
+									<td><?php echo $pecah['warna']; ?></td>
+									<td><?php echo $pecah['bahan']; ?></td>
+									<td><?php echo $pecah['harga']; ?></td>
+								</tr>
+							<?php } ?>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
