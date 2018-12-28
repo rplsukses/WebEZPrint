@@ -9,7 +9,7 @@
 
     //Query select transaksi
     $status=$_GET['status'];
-    $query="SELECT transaksi.tgl_pesan, user.nama AS nama_user, transaksi.file, kategori.nama AS nama_kategori, produk.ukuran, produk.warna, produk.bahan, produk.harga
+    $query="SELECT transaksi.id_transaksi, transaksi.tgl_pesan, user.nama AS nama_user, transaksi.file, kategori.nama AS nama_kategori, produk.ukuran, produk.warna, produk.bahan, produk.harga
             FROM transaksi, user, produk, kategori
             WHERE transaksi.id_mitra=".$_SESSION['user_id']." 
             AND transaksi.status=".$status."
@@ -18,10 +18,35 @@
             AND kategori.id_kategori=produk.id_kategori ";
     $result = mysqli_query($conn, $query);
 
+    //Query Proses transaksi
+    if(isset($_GET['proses']) && !empty($_GET['proses'])){
+        $id_transaksi = $_GET['proses'];
+        $query_proses = "UPDATE transaksi 
+        SET status=1 WHERE id_transaksi=".$id_transaksi;
+        mysqli_query($conn, $query_proses);
+        header('location:transaksi.php?status=1');
+    }
+
+    //Query done transaksi
+    if(isset($_GET['done']) && !empty($_GET['done'])){
+        $id_transaksi = $_GET['done'];
+        $query_done = "UPDATE transaksi 
+        SET status=2 WHERE id_transaksi=".$id_transaksi;
+        mysqli_query($conn, $query_done);
+        header('location:transaksi.php?status=2');
+    }
+
+    //Query Cancel transaksi
+    if(isset($_GET['cancel']) && !empty($_GET['cancel'])){
+        $id_transaksi = $_GET['cancel'];
+        $query_cancel = "UPDATE transaksi 
+        SET status=3 WHERE id_transaksi=".$id_transaksi;
+        mysqli_query($conn, $query_cancel);
+        header('location:transaksi.php?status=3');
+    }
 ?>
 
 <body>
-    
    <div>
         <div class="site-header">
             <div class="top-header">
@@ -91,10 +116,18 @@
                             <td><?php echo $row['warna']; ?></td>
                             <td><?php echo $row['bahan']; ?></td>
                             <td><?php echo $row['harga']; ?></td>
-                            <td>
-                                <a class="btn-primary btn-sm" href="transaksi.php?status=1">Proses</a> 
-                
-                            <a class="btn-primary btn-sm" href="transaksi.php?status=3">Cancel</a>
+                            <td>   
+                            <?php if($status == 0) { ?>
+                                <a href="transaksi.php?status=1&&proses=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Proses</a>
+                                <a href="transaksi.php?status=3&&cancel=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Cancel</a>
+                            <?php }else if($status == 1) { ?>
+                                <a href="transaksi.php?status=2&&done=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Done</a>
+                                <a href="transaksi.php?status=3&&cancel=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Cancel</a>
+                            <?php }else if($status == 2) {?>
+                                selesai
+                            <?php }else{?>
+                                Cancel
+                            <?php }?>
                             </td>
                         </tr>
                         <?php } ?>
