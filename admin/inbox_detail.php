@@ -41,17 +41,19 @@
 								</thead>
 								<thead>
 								<tr>
-									<b><td>Tanggal : <?php echo $pecah['tanggal_kirim']?></td></b>
+									<td>Tanggal : <?php echo $pecah['tanggal_kirim']?></td>
 								</tr>
 								</thead>
-								<thead>
-									<tr>
-										<th>Pesan : </th>
-									</tr>
-									<tr>
-										<td><?php echo $pecah['pesan']?></td>
-									<tr>
+								<thead class="text-primary">
+								<tr>
+									<td>Pesan : </td>
+								</tr>
 								</thead>
+								<tbody>
+								<tr>
+									<td><?php echo $pecah['pesan']?></td>
+								</tr>
+								</tbody>
 								</table>
 							</div>
 						</div>
@@ -69,7 +71,7 @@
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlTextarea1">Message :</label>
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 						</div>
 						<button class="btn btn-primary center-block pull-right" type="button">Send</button>
 					</form>
