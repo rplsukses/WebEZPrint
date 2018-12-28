@@ -22,7 +22,7 @@
 
 <body>
     
-   <div id="home">
+   <div>
         <div class="site-header">
             <div class="top-header">
                 <div class="container">
@@ -39,33 +39,28 @@
             <div class="main-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-sm-8 col-xs-6">
-                            <div class="menu text-left hidden-sm hidden-xs">
-                                <ul>
-                                    <li><a href="#todo" class="current">Belum Diproses</a></li>
-                                    <li><a href="#doing">Sudah Diproses</a></li>
-                                    <li><a href="#done">Selesai</a></li>
-                                    <li><a href="#cancel">Pembatalan</a></li>
-                                   
+                        <div class="col-md-12 col-sm-8">
+                            <div class="responsive text-right hidden-sm hidden-xs">
+                                <ul class="nav nav-pills">
+                                    <li class="<?php if($status == 0) echo 'nav-item active';?>">
+                                         <a class="nav-link" href="transaksi.php?status=0">Belum Diproses</a>
+                                    </li>
+                                    <li class="<?php if($status == 1) echo 'nav-item active';?>">
+                                        <a class="nav-link" href="transaksi.php?status=1">Sedang Diproses</a>
+                                    </li>
+                                    <li class="<?php if($status == 2) echo 'nav-item active';?>">
+                                        <a class="nav-link" href="transaksi.php?status=2">Selesai</a>
+                                    </li>
+                                    <li class="<?php if($status == 3) echo 'nav-item active';?>">
+                                        <a class="nav-link" href="transaksi.php?status=3">Pembatalan</a>
+                                    </li>
                                 </ul>
-                            </div> <!-- /.menu -->
-                        </div> <!-- /.col-md-8 -->
-                    </div> <!-- /.row -->
-                    <div class="responsive-menu text-left visible-xs visible-sm">
-                        <a href="#" class="toggle-menu fa fa-bars"></a>
-                        <div class="menu">
-                            <ul>
-                                <li><a href="" >Belum Diproses</a></li>
-                                <li><a href="">Sudah Diproses</a></li>
-                                <li><a href="">Selesai</a></li>
-                                <li><a href="">Pembatalan</a></li>
-                            </ul>
-                        </div> <!-- /.menu -->
-                    </div> <!-- /.responsive-menu -->
-                </div> <!-- /.container -->
-            </div> <!-- /.header -->
-        </div> <!-- /.site-header -->
-    </div> <!-- /#home -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <br>
     <div id="services"> 
         <div class="container">
             <div class="col-md-12 col-sm-4 col-xs-4">           
@@ -96,7 +91,11 @@
                             <td><?php echo $row['warna']; ?></td>
                             <td><?php echo $row['bahan']; ?></td>
                             <td><?php echo $row['harga']; ?></td>
-                            <td><a class="btn-warning btn-sm" href="proses.php">Proses</a> <a class="btn-danger btn-sm" href="#">Cancel</a></td>
+                            <td>
+                                <a class="btn-primary btn-sm" href="transaksi.php?status=1">Proses</a> 
+                
+                            <a class="btn-primary btn-sm" href="transaksi.php?status=3">Cancel</a>
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>
