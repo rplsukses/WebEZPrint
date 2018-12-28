@@ -13,8 +13,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
-                               <img src="images/logo.png" width="30px" height="30px"><a href="index.html"></a>
-                                <span>EZPrint Mitra Center</span>                              
+                               <img src="images/logoo2.png" width="280px" height="50px"><a href="index.html"></a>                           
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
@@ -57,8 +56,24 @@
                             <input type="text" id="name-id" name="alamat">
                         </p>
                         <p class="full-row">
+                            <label for="name-id">Nomor Telepon Kantor :</label>
+                            <input type="text" id="name-id" name="no_telepon">
+                        </p>
+                        <p class="full-row">
                             <label for="email-id">Email:</label>
                             <input type="text" id="email-id" name="email">
+                        </p>
+                        <p class="full-row">
+                            <label for="name-id">Nama Pemilik :</label>
+                            <input type="text" id="name-id" name="nama_pemilik">
+                        </p>
+                        <p class="full-row">
+                            <label for="name-id">Nomor Telepon Pemilik :</label>
+                            <input type="text" id="name-id" name="telp_pemilik">
+                        </p>
+                        <p class="full-row">
+                            <label for="name-id">Email Pemilik :</label>
+                            <input type="text" id="name-id" name="email_pemilik">
                         </p>
 						 <p class="full-row">
                             <label for="email-id">Password :</label>
