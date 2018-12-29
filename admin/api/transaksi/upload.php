@@ -30,7 +30,7 @@
                         $response['message'] = 'File Uploaded Successfullly';
                     }else{
                         $response['error'] = true;
-                        $response['message'] = 'Required parameters are not available';
+                        $response['message'] = 'Failed to upload file';
                     }
                 }else{
                     $response['error'] = true;
