@@ -15,7 +15,7 @@
     $transaksi = new Transaksi($db);
 
     //query transaksi
-    $stmt = $transaksi->readByUser();
+    $stmt = $transaksi->read();
     $num = $stmt->rowCount();
 
     //check if more than 0 record found

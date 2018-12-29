@@ -3,6 +3,7 @@
         private $conn;
         private $table_name = "transaksi";
         private $path = "/upload/file/";
+        private $url_file = "";
 
         //object properties 
         public $id_transaksi;
@@ -46,16 +47,23 @@
             return $stmt;
         }
 
+        //upload file
+        public function saveFile($file, $extension)
+        {
+            $name = date('Ymdhis') . '_' . rand(10000, 99999) . '.' . $extension;
+            $this->url_file = $_SERVER['SERVER_NAME'] . $this->path . $name;
+            return move_uploaded_file($file, $this->url_file);
+        }
+
         //insert to transaksi
         public function insert(){
-            move_uploaded_file($this->file, $this->path);
             $query = "INSERT INTO ".$this->table_name." SET 
                     id_user=:user, 
                     id_mitra=:mitra, 
                     id_produk=:produk,
                     file=:file,
                     jumlah=1,
-                    harga=0";
+                    harga_total=0";
 
             // prepare query
             $stmt = $this->conn->prepare($query);
@@ -64,13 +72,13 @@
             $this->id_user=htmlspecialchars(strip_tags($this->id_user));
             $this->id_mitra=htmlspecialchars(strip_tags($this->id_mitra));
             $this->id_produk=htmlspecialchars(strip_tags($this->id_produk));
-            $this->file=htmlspecialchars(strip_tags($this->file));
+            //$this->file=htmlspecialchars(strip_tags($this->file));
         
             // bind values
             $stmt->bindParam(":user", $this->id_user);
             $stmt->bindParam(":mitra", $this->id_mitra);
             $stmt->bindParam(":produk", $this->id_produk);
-            $stmt->bindParam(":file", $this->file);
+            $stmt->bindParam(":file", $this->url_file);
         
             // execute query
             if($stmt->execute()){

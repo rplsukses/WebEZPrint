@@ -6,7 +6,6 @@
     // include database and object files
     include_once '../config/database.php';
     include_once '../objects/transaksi.php';
-    include_once 'FileHandler.php';
 
     // instantiate database and product object
     $database = new Database();
@@ -19,15 +18,22 @@
     if (isset($_GET['apicall'])) {
         switch ($_GET['apicall']) {
             case 'upload':
-                if(isset($_POST['user']) && isset($_POST['mitra']) && isset($_POST['produk']) && isset($_POST['file'])){
+                if(isset($_POST['user']) && isset($_POST['mitra']) && isset($_POST['produk']) && $_FILES['file']['error'] === UPLOAD_ERR_OK){
                     $transaksi->id_user=htmlspecialchars($_POST['user']);
                     $transaksi->id_mitra=htmlspecialchars($_POST['mitra']);
                     $transaksi->id_produk=htmlspecialchars($_POST['produk']);
-                    $transaksi->file=htmlspecialchars($_POST['file']);
-
-                    if($transaksi->insert()){
-                        $response['error'] = false;
-                        $response['message'] = 'File Uploaded Successfullly';
+                    $transaksi->file=$_FILES['file']['tmp_name'];
+                    $newFile = $_FILES['file']['tmp_name'];
+                    $extension = getFileExtension($_FILES['file']['name']);
+                    
+                    if($transaksi->saveFile($newFile, $extension)){
+                        if($transaksi->insert()){
+                            $response['error'] = false;
+                            $response['message'] = 'File Uploaded Successfullly';
+                        }else{
+                            $response['error'] = true;
+                            $response['message'] = 'Failed insert to database';                            
+                        }
                     }else{
                         $response['error'] = true;
                         $response['message'] = 'Failed to upload file';
