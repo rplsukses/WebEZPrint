@@ -8,6 +8,10 @@
     include_once '../objects/transaksi.php';
     include_once 'FileHandler.php';
 
+    // instantiate database and product object
+    $database = new Database();
+    $db = $database->getConnection();
+    
     // initialize object
     $transaksi = new Transaksi($db);
     $response = array();
@@ -20,7 +24,7 @@
                     $transaksi->id_mitra=htmlspecialchars($_POST['mitra']);
                     $transaksi->id_produk=htmlspecialchars($_POST['produk']);
                     $transaksi->file=htmlspecialchars($_POST['file']);
-                    
+
                     if($transaksi->insert()){
                         $response['error'] = false;
                         $response['message'] = 'File Uploaded Successfullly';
