@@ -36,7 +36,7 @@
                         }
                     }else{
                         $response['error'] = true;
-                        $response['message'] = 'Failed to upload file';
+                        $response['message'] = 'Failed to upload file to ' . $_SERVER['SERVER_NAME'];
                     }
                 }else{
                     $response['error'] = true;
