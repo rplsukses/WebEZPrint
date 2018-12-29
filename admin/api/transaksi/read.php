@@ -13,7 +13,6 @@
     
     // initialize object
     $transaksi = new Transaksi($db);
-    $transaksi->id_user = '3';
 
     //query transaksi
     $stmt = $transaksi->readByUser();
