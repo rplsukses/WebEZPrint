@@ -2,7 +2,7 @@
     class Transaksi{
         private $conn;
         private $table_name = "transaksi";
-        private $path = "/upload/file/";
+        private $path = "..\..\..\upload/file/";
         private $url_file = "";
 
         //object properties 
@@ -51,7 +51,7 @@
         public function saveFile($file, $extension)
         {
             $name = date('Ymdhis') . '_' . rand(10000, 99999) . '.' . $extension;
-            $this->url_file = $_SERVER['SERVER_NAME'] . $this->path . $name;
+            $this->url_file = $this->path . $name;
             return move_uploaded_file($file, $this->url_file);
         }
 
