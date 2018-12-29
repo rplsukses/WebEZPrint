@@ -2,7 +2,7 @@
     class Transaksi{
         private $conn;
         private $table_name = "transaksi";
-        private $path = "..\..\..\upload/file/";
+        private $path = "../upload/file/";
         private $url_file = "";
 
         //object properties 

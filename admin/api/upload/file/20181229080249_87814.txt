@@ -1,0 +1,101 @@
+CREATE TABLE barang 
+(no_barang NUMBER(4) PRIMARY KEY,
+nama_barang VARCHAR(20),
+satuan VARCHAR(10),
+harga NUMBER(15),
+stok NUMBER(3));
+
+CREATE TABLE pelanggan
+(no_pelanggan NUMBER(4) PRIMARY KEY,
+nama_pelanggan VARCHAR(20),
+alamat VARCHAR(100),
+jenil_kelamin VARCHAR(1),
+kode_pos NUMBER(5));
+
+CREATE TABLE head_jual
+(no_jual NUMBER(4) PRIMARY KEY,
+tgl_jual DATE,
+no_pelanggan NUMBER(4),
+CONSTRAINT fk_no_pelanggan FOREIGN KEY (no_pelanggan) REFERENCES pelanggan(no_pelanggan));
+
+CREATE TABLE detail_jual
+(no_jual NUMBER(4),
+no_barang NUMBER(4),
+jumlah NUMBER(2),
+CONSTRAINT fk_no_jual FOREIGN KEY (no_jual) REFERENCES head_jual(no_jual),
+CONSTRAINT fk_no_barang FOREIGN KEY (no_barang) REFERENCES barang(no_barang));
+
+ALTER TABLE pelanggan
+ADD (no_telp NUMBER(15));
+
+INSERT INTO barang 
+VALUES(1001, 'Aqua 600ml', 'pcs', 3300, 100); 
+INSERT INTO barang 
+VALUES(1002, 'Tissue Paseo', 'pcs', 7500, 10); 
+INSERT INTO barang 
+VALUES(1003, 'Anggur Red 250gr', 'gram', 15000, 12);
+INSERT INTO barang 
+VALUES(1004, 'Telur Ayam', 'butir', 1200, 200); 
+INSERT INTO barang 
+VALUES(1005, 'Apel Fuji', 'buah', 8600, 30); 
+
+INSERT INTO pelanggan
+VALUES (2001, 'Rafika Chandra', 'Blora, Jawa Tengah', 'P', '75128', 089812324664);
+INSERT INTO pelanggan
+VALUES (2002, 'Adeline V', 'Solo, Jawa Tengah', 'P', '70152', 085775002322);
+INSERT INTO pelanggan
+VALUES (2003, 'Randika', 'Bogor, Jawa Barat', 'L', '72451', 081228820012);
+INSERT INTO pelanggan
+VALUES (2004, 'Dewi Lely', 'Sidoarjo, Jawa Timur', 'P', '61258', 089854661233);
+INSERT INTO pelanggan
+VALUES (2005, 'Gege', 'Surabaya, Jawa Timur', 'L', '60252', 082245391123);
+INSERT INTO pelanggan
+VALUES (2006, 'Regy', 'Bogor, Jawa Barat', 'L', '72455', 089877600125);
+
+INSERT INTO head_jual
+VALUES (3001, TO_DATE('01/DECEMBER/2018', 'DD/MON/YYYY'), 2002);
+INSERT INTO head_jual
+VALUES (3002, TO_DATE('01/DECEMBER/2018', 'DD/MON/YYYY'), 2003);
+INSERT INTO head_jual
+VALUES (3003, TO_DATE('01/DECEMBER/2018', 'DD/MON/YYYY'), 2006);
+INSERT INTO head_jual
+VALUES (3004, TO_DATE('02/DECEMBER/2018', 'DD/MON/YYYY'), 2001);
+INSERT INTO head_jual
+VALUES (3005, TO_DATE('02/DECEMBER/2018', 'DD/MON/YYYY'), 2003);
+INSERT INTO head_jual
+VALUES (3006, TO_DATE('03/DECEMBER/2018', 'DD/MON/YYYY'), 2004);
+INSERT INTO head_jual
+VALUES (3007, TO_DATE('04/DECEMBER/2018', 'DD/MON/YYYY'), 2005);
+INSERT INTO head_jual
+VALUES (3008, TO_DATE('04/DECEMBER/2018', 'DD/MON/YYYY'), 2001);
+INSERT INTO head_jual
+VALUES (3010, TO_DATE('04/DECEMBER/2018', 'DD/MON/YYYY'), 2006);
+
+INSERT INTO detail_jual
+VALUES (3001, 1001, 3);
+INSERT INTO detail_jual
+VALUES (3001, 1002, 1);
+INSERT INTO detail_jual
+VALUES (3002, 1002, 5);
+INSERT INTO detail_jual
+VALUES (3003, 1003, 2);
+INSERT INTO detail_jual
+VALUES (3003, 1005, 5);
+INSERT INTO detail_jual
+VALUES (3004, 1004, 12);
+INSERT INTO detail_jual
+VALUES (3005, 1001, 3);
+INSERT INTO detail_jual
+VALUES (3005, 1002, 1);
+INSERT INTO detail_jual
+VALUES (3006, 1003, 1);
+INSERT INTO detail_jual
+VALUES (3006, 1005, 1);
+INSERT INTO detail_jual
+VALUES (3006, 1002, 1);
+INSERT INTO detail_jual
+VALUES (3007, 1001, 2);
+INSERT INTO detail_jual
+VALUES (3008, 1004, 1);
+INSERT INTO detail_jual
+VALUES (3010, 1003, 2);
