@@ -11,7 +11,7 @@
     // instantiate database and product object
     $database = new Database();
     $db = $database->getConnection();
-    
+
     // initialize object
     $transaksi = new Transaksi($db);
     $response = array();
@@ -32,6 +32,9 @@
                         $response['error'] = true;
                         $response['message'] = 'Required parameters are not available';
                     }
+                }else{
+                    $response['error'] = true;
+                    $response['message'] = 'Required parameters are not available';
                 }
                 /*
                 if (isset($_POST['desc']) && strlen($_POST['desc']) > 0 && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
@@ -60,9 +63,9 @@
 
                 break;
         }
+        
+        echo json_encode($response);
     }
-
-    echo json_encode($response);
 
     function getFileExtension($file)
     {
