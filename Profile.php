@@ -3,6 +3,15 @@
     include 'admin/core/init.php';
     $database = new Database();
     $db = $database->getConnection();
+    session_start();
+
+    $conn = mysqli_connect("localhost","root","","u623212174_print");
+    $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra = $_SESSION[user_id]");
+    $row =  mysqli_fetch_assoc($result);
+
+
+
+    
 ?>
 <!DOCTYPE html>
 <!--><html class="no-js" lang="en"> <!--<![endif]-->
@@ -81,21 +90,14 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="team-member">
                             <div class="member-img">
-                                <img src="images/team/Capture.jpg" alt="Mary">
+                                <img src="images/<?php echo $row['foto']; ?>" alt="Mary">
                                 <div class="overlay">   
                                 </div> <!-- /.overlay -->
                             </div>
                             <div class="inner-content">
-                                <?php 
-                                    $conn = mysqli_connect("localhost","root","","u623212174_print");
-                                    $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra = $_SESSION[user_id]");
-                                    $row =  mysqli_fetch_assoc($result);
-                                ?>
-                                <h5 text align="center">Theater Print</h5>
-								   <span><i class="fa fa-home"></i> Alamat   : No Sukolilo, Jl. Gebang Lor No.105, Gebang Putih, Sukolilo</span>
-								   <span><i class="fa fa-home"></i> Jam Buka   : 06.00 Jam Tutup : 22.00 </span>
-									<span><i class="fa fa-phone"></i> Telepon  : 0813-3936-6196</span>
-									<span><i class="fa fa-envelope"></i> Email : theater@cgmail.com</span>
+                               
+                                <h5 text align="center"><?php echo $row['nama'] ?></h5>
+								
                             </div>
                         </div> <!-- /.team-member -->
                     </div>
@@ -116,6 +118,12 @@
 										<td><?php echo $row['alamat'] ?></td>
 										<td> </td>
 									</tr>
+                                    <tr>
+										<td>Telepon Kantor </td>
+										<td>: </td>
+										<td><?php echo $row['no_telepon'] ?></td>
+										<td> </td>
+									</tr>
 									<tr>
 										<td>Email  </td>
 										<td>: </td>
@@ -123,27 +131,27 @@
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Telepon  </td>
+										<td>Nama Pemilik  </td>
+										<td>: </td>
+										<td><?php echo $row['nama_pemilik'] ?></td>
+										<td> </td>
+									</tr>
+                                    <tr>
+										<td>Telepon Pemilik  </td>
 										<td>: </td>
 										<td><?php echo $row['telp_pemilik'] ?></td>
 										<td> </td>
 									</tr>
-									<tr>
-										<td>Nama Pemilik  </td>
+                                    <tr>
+										<td>Email  </td>
 										<td>: </td>
-										<td>Aaaaaa </td>
-										<td> </td>
-									</tr>
-									<tr>
-										<td>Telepon Pemilik  </td>
-										<td>: </td>
-										<td>0814-3142-2442</td>
+										<td><?php echo $row['email_pemilik'] ?></td>
 										<td> </td>
 									</tr>
 									<tr>
 										<td>Last Seen </td>
 										<td>: </td>
-										<td>17.00</td>
+										<td><?php echo $row['last_seen'] ?></td>
 										<td> </td>
 									</tr>
 									<tr>
