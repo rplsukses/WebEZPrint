@@ -17,6 +17,20 @@
             $this->conn = $db;
         }
 
+        public function getUsername($id)
+        {
+            $username = "";
+            $query = "SELECT nama FROM " . $this->table_name ." WHERE id_user=".$id." LIMIT 0,1";
+
+            $stmt = $this->conn->prepare( $query );
+            $stmt->execute();
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                extract($row);
+                $username = $nama;
+            }
+            return $username;
+        }
+
         // check if given email exist in the database
         function emailExists(){        
             // query to check if email exists

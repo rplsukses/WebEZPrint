@@ -1,4 +1,6 @@
 <?php
+    include_once '../config/database.php';
+    include 'user.php';
     class Transaksi{
         private $conn;
         private $table_name = "transaksi";
@@ -48,9 +50,9 @@
         }
 
         //upload file
-        public function saveFile($file, $extension)
+        public function saveFile($username, $file, $extension)
         {
-            $name = date('Ymdhis') . '_' . rand(10000, 99999) . '.' . $extension;
+            $name = $username. '_' .date('Ymdhis'). '.' . $extension;
             $this->url_file = $this->path . $name;
             return move_uploaded_file($file, $this->url_file);
         }

@@ -13,6 +13,7 @@
 
     // initialize object
     $transaksi = new Transaksi($db);
+    $user = new User($db);
     $response = array();
 
     if (isset($_GET['apicall'])) {
@@ -22,11 +23,12 @@
                     $transaksi->id_user=htmlspecialchars($_POST['user']);
                     $transaksi->id_mitra=htmlspecialchars($_POST['mitra']);
                     $transaksi->id_produk=htmlspecialchars($_POST['produk']);
+                    $username = $user->getUsername($transaksi->id_user);
                     $transaksi->file=$_FILES['file']['tmp_name'];
                     $newFile = $_FILES['file']['tmp_name'];
                     $extension = getFileExtension($_FILES['file']['name']);
                     
-                    if($transaksi->saveFile($newFile, $extension)){
+                    if($transaksi->saveFile($username, $newFile, $extension)){
                         if($transaksi->insert()){
                             $response['error'] = false;
                             $response['message'] = 'File Uploaded Successfullly';
