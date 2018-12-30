@@ -42,24 +42,6 @@
                     $response['error'] = true;
                     $response['message'] = 'Required parameters are not available';
                 }
-                /*
-                if (isset($_POST['desc']) && strlen($_POST['desc']) > 0 && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-                    $upload = new FileHandler();
-
-                    $file = $_FILES['file']['tmp_name'];
-
-                    $desc = $_POST['desc'];
-
-                    if ($upload->saveFile($file, getFileExtension($_FILES['file']['name']), $desc)) {
-                        $response['error'] = false;
-                        $response['message'] = 'File Uploaded Successfullly';
-                    }
-
-                } else {
-                    $response['error'] = true;
-                    $response['message'] = 'Required parameters are not available';
-                }
-                */
                 break;
 
             case 'getallimages':

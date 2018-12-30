@@ -32,6 +32,7 @@
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                     extract($row);
                     
+                    $user_arr["data"]["id_user"] = $id_user;
                     $user_arr["data"]["nama"] = $nama;
                     $user_arr["data"]["email"] = $email;
                     $user_arr["data"]["foto"] = $foto;
