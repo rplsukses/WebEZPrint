@@ -24,11 +24,10 @@
                     $transaksi->id_mitra=htmlspecialchars($_POST['mitra']);
                     $transaksi->id_produk=htmlspecialchars($_POST['produk']);
                     $username = $user->getUsername($transaksi->id_user);
-                    $transaksi->file=$_FILES['file']['tmp_name'];
-                    $newFile = $_FILES['file']['tmp_name'];
-                    $extension = getFileExtension($_FILES['file']['name']);
+                    $dir = $_FILES['file']['tmp_name'];
+                    $filename = explode(".", $_FILES['file']['name']);
                     
-                    if($transaksi->saveFile($username, $newFile, $extension)){
+                    if($transaksi->saveFile($username, $dir, $filename)){
                         if($transaksi->insert()){
                             $response['error'] = false;
                             $response['message'] = 'File Uploaded Successfullly';
@@ -55,11 +54,5 @@
         }
         
         echo json_encode($response);
-    }
-
-    function getFileExtension($file)
-    {
-        $path_parts = pathinfo($file);
-        return $path_parts['extension'];
     }
 ?>

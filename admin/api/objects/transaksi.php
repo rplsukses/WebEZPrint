@@ -50,11 +50,11 @@
         }
 
         //upload file
-        public function saveFile($username, $file, $extension)
-        {
-            $name = $username. '_' .date('Ymdhis'). '.' . $extension;
+        public function saveFile($username, $dir, $filename)
+        {   
+            $name = $username. '_' . $filename[0] . "_" .date('Ymd') . '.' . $filename[1];
             $this->url_file = $this->path . $name;
-            return move_uploaded_file($file, $this->url_file);
+            return move_uploaded_file($dir, $this->url_file);
         }
 
         //insert to transaksi
