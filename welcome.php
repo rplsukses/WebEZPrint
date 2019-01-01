@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
-                               <img src="images/logoo2.png" width="280px" height="50px"><a href="index.html"></a>                            
+                            <a href="welcome.php"><img src="images/logoo2.png" width="280px" height="50px"></a>                            
                             </div> <!-- /.left-header -->
                         </div> <!-- /.col-md-6 -->
                     </div> <!-- /.row -->
@@ -31,6 +31,7 @@
                                 <h1 align="center"><a href="#" title="Dreri">Selamat Datang di Fitur EZPrint Mitra Center</a></h1>
                             </div> <!-- /.logo -->
                         </div> <!-- /.col-md-4 -->
+                        
                         <div class="col-md-8 col-sm-8 col-xs-6">
                             <div class="menu text-right hidden-sm hidden-xs">
                                 
@@ -40,7 +41,7 @@
                     <div class="responsive-menu text-right visible-xs visible-sm">
                         <a href="#" class="toggle-menu fa fa-bars"></a>
                         <div class="menu">
-                            
+                        
                         </div> <!-- /.menu -->
                     </div> <!-- /.responsive-menu -->
                 </div> <!-- /.container -->
@@ -59,8 +60,8 @@
 				<p> Di halaman Ini sobat EZPrint dapat mengatur produk , melacak transaksi , melihat profil serta mengedit profile dari akun Sobat EzPrint.</p>
                
             </div> <!-- /.title-section -->
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
+            <div class="row-center">
+                <div class="col-md-3 col-sm-6">
                     <div class="service-item">
                         <div class="service-header">
                             <i class="fas fa-newspaper"></i>
@@ -71,7 +72,7 @@
                         </div>
                     </div> <!-- /.service-item --> 
                 </div> <!-- /.col-md-3 -->
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="service-item">
                         <div class="service-header">
                             <i class="far fa-credit-card"></i>
@@ -82,14 +83,25 @@
                         </div>
                         </div> <!-- /.service-item -->
                         </div> <!-- /.col-md-3 -->
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="service-item">
                         <div class="service-header">
                             <i class="fas fa-user"></i>
                             <h3>Profile</h3>
                         </div>
                         <div class="service-description">
-                           <a href="profile.php"><img src="images/prof.png" style="height: 150px; width: 150px;"></a>
+                           <a href="profile.php"><img src="images/prod4.jpg" style="height: 150px; width: 150px;"></a>
+                        </div>
+                    </div> <!-- /.service-item -->
+                </div> <!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-header">
+                            <i class="fas fa-power-off"></i>
+                            <h3>Logout</h3>
+                        </div>
+                        <div class="service-description">
+                           <a href="logout.php"><img src="images/set1.png" style="height: 150px; width: 150px;"></a>
                         </div>
                     </div> <!-- /.service-item -->
                 </div> <!-- /.col-md-3 -->
