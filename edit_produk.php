@@ -17,6 +17,7 @@
         $result = mysqli_query($conn, $query);
     }
 
+    //QUERY POST
     if(isset($_POST['save'])){
         $id_kategori = $_POST['id_kategori'];
         $ukuran = $_POST['ukuran'];
@@ -24,7 +25,11 @@
         $bahan = $_POST['bahan'];
         $harga = $_POST['harga'];
         $query = "UPDATE produk
-                SET produk.id_kategori=".$id_kategori.", ukuran='".$ukuran."', warna='".$warna."', bahan='".$bahan."', harga='".$harga."' 
+                SET produk.id_kategori=".$id_kategori.", 
+                ukuran='".$ukuran."', 
+                warna='".$warna."', 
+                bahan='".$bahan."', 
+                harga='".$harga."' 
                 WHERE produk.id_produk=".$id_produk;
 
     
@@ -144,7 +149,7 @@
                         <?php
                             }
                         ?>
-                        <input class="btn btn-warning pull-right" type="submit" value="SAVE" name="save"/>
+                        <input class="btn btn-primary pull-right" type="submit" value="SAVE" name="save"/>
                         </form> 
 
                                

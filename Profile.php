@@ -9,9 +9,7 @@
     $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra = $_SESSION[user_id]");
     $row =  mysqli_fetch_assoc($result);
 
-
-
-    
+        
 ?>
 <!DOCTYPE html>
 <!--><html class="no-js" lang="en"> <!--<![endif]-->
@@ -103,8 +101,8 @@
                     </div>
 					<div class="col-md-8">
 						<div class="table">
-							<table class="table table-striped table-hover">
-							 <h3 class="widget-title">Info </h3>
+							<table class="table table-striped table-hover">                            
+                            <a class="btn-primary btn-sm pull-right" href="setting.php?id=<?php echo $row['id_mitra'];?>">Edit Profile</a><br><br>
 								<tbody class="h5">
 									<tr >
 										<td>Nama Mitra  </td>
@@ -125,7 +123,7 @@
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Email  </td>
+										<td>Email Kantor  </td>
 										<td>: </td>
 										<td><?php echo $row['email'] ?></td>
 										<td> </td>
@@ -143,7 +141,7 @@
 										<td> </td>
 									</tr>
                                     <tr>
-										<td>Email  </td>
+										<td>Email Pemilik</td>
 										<td>: </td>
 										<td><?php echo $row['email_pemilik'] ?></td>
 										<td> </td>
@@ -154,20 +152,8 @@
 										<td><?php echo $row['last_seen'] ?></td>
 										<td> </td>
 									</tr>
-									<tr>
-										<td>Upload foto </td>
-										<td> </td>
-										<td><input type="file" name="foto"></td>
-										<td> </td>
-									</tr>
-									<tr>
-										<td> </td>
-										<td> </td>
-										<td><input type="submit" name="submit" value="Upload Foto"></td>
-										<td> </td>
-									</tr>
-								</tbody>
-						</table>
+                                </body>
+					    	</table>
 						</div> <!-- /.col-md-3 -->
 					</div>
                 </div> <!-- /.our-team -->
