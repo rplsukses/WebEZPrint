@@ -38,7 +38,7 @@
         //read transaksi by user
         public function readByUser(){
             //select all query
-            $query = "SELECT * FROM " . $this->table_name . " WHERE id_user =:id_user";
+            $query = "SELECT * FROM " . $this->table_name . " WHERE id_user=:id_user";
 
             //perpare query
             $stmt = $this->conn->prepare($query);
