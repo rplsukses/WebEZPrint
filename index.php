@@ -204,7 +204,7 @@
                             <label for="name-id"> </label>
                         </p>
 						<p class="full-row">
-                            <label for="name-id">Don't have an account ? <a href = "Signup.php"> Sign up </a> </label>
+                            <label for="name-id">Don't have an account ? <a href = "signup.php"> Sign up </a> </label>
                         </p>
                 </div> <!-- /.col-md-4 -->
 				<div class="col-md-4"></div>

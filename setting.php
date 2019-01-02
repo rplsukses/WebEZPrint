@@ -38,7 +38,7 @@
         
         $update = mysqli_query($conn, $query);
         if($update){
-            header('Location: Profile.php');
+            header('Location: profile.php');
         }else{
             echo "<p>Error: " . $query . "<br" . mysqli_error($conn). "</p>";
         }       
