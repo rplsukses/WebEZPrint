@@ -15,7 +15,7 @@
     $transaksi = new Transaksi($db);
 
     if (isset($_POST['id_user'])) {
-        $produk->id_mitra = htmlspecialchars($_POST['id_user']);
+        $produk->id_user = htmlspecialchars($_POST['id_user']);
     }
 
     //query transaksi
