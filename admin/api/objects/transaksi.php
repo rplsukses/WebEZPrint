@@ -1,6 +1,4 @@
 <?php
-    include_once '../config/database.php';
-    include 'user.php';
     class Transaksi{
         private $conn;
         private $table_name = "transaksi";
@@ -65,7 +63,8 @@
                     id_produk=:produk,
                     file=:file,
                     jumlah=1,
-                    harga_total=0";
+                    harga_total=0,
+                    keterangan=:ket";
 
             // prepare query
             $stmt = $this->conn->prepare($query);
@@ -74,13 +73,14 @@
             $this->id_user=htmlspecialchars(strip_tags($this->id_user));
             $this->id_mitra=htmlspecialchars(strip_tags($this->id_mitra));
             $this->id_produk=htmlspecialchars(strip_tags($this->id_produk));
-            //$this->file=htmlspecialchars(strip_tags($this->file));
+            $this->keterangan=htmlspecialchars(strip_tags($this->keterangan));
         
             // bind values
             $stmt->bindParam(":user", $this->id_user);
             $stmt->bindParam(":mitra", $this->id_mitra);
             $stmt->bindParam(":produk", $this->id_produk);
             $stmt->bindParam(":file", $this->url_file);
+            $stmt->bindParam(":ket", $this->keterangan);
         
             // execute query
             if($stmt->execute()){
