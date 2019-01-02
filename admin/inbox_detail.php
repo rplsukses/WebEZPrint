@@ -25,7 +25,8 @@
 					<div class="card">
 					<?php
 						//Query to get id 
-						$ambil=$conn->query("SELECT * FROM inbox, user WHERE id_inbox='$_GET[id]'");
+						$ambil=$conn->query("SELECT * FROM inbox, user 
+						WHERE id_inbox='$_GET[id]' AND inbox.id_user=user.id_user");
 						$pecah= $ambil->fetch_assoc();
 					?>
 					<div class="card-header card-header-primary">
