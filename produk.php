@@ -102,8 +102,8 @@
                             <td><?php echo $pecah['bahan']; ?></td>
                             <td><?php echo $pecah['harga']; ?></td>
                             <td>
-                                <a class="btn-primary btn-sm" href="edit_produk.php?id=<?php echo $pecah['id_produk'];?>">Edit</a> 
-                                <a class="btn-primary btn-sm" href="?arsip=<?php echo $pecah['id_produk'];?>">Archieve</a>
+                                <a class="btn-warning btn-sm" href="edit_produk.php?id=<?php echo $pecah['id_produk'];?>">Edit</a> 
+                                <a class="btn-danger btn-sm" href="?arsip=<?php echo $pecah['id_produk'];?>">Archieve</a>
                             </td>
                         </tr>
                      <?php } ?>

@@ -118,10 +118,10 @@
                             <td>   
                             <?php if($status == 0) { ?>
                                 <a href="transaksi.php?status=1&&proses=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Proses</a>
-                                <a href="transaksi.php?status=3&&cancel=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Cancel</a>
+                                <a href="transaksi.php?status=3&&cancel=<?php echo $row['id_transaksi'];?>" class="btn-danger btn-sm">Cancel</a>
                             <?php }else if($status == 1) { ?>
-                                <a href="transaksi.php?status=2&&done=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Done</a>
-                                <a href="transaksi.php?status=3&&cancel=<?php echo $row['id_transaksi'];?>" class="btn-primary btn-sm">Cancel</a>
+                                <a href="transaksi.php?status=2&&done=<?php echo $row['id_transaksi'];?>" class="btn-success btn-sm">Done</a>
+                                <a href="transaksi.php?status=3&&cancel=<?php echo $row['id_transaksi'];?>" class="btn-danger btn-sm">Cancel</a>
                             <?php }else if($status == 2) {?>
                                 selesai
                             <?php }else{?>
