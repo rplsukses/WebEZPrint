@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link href="assets/img/logo4.jpeg" rel="print-icon" sizes="100x100">
-	<link href="assets/img/logo4.jpeg" rel="icon" type="image/png" width="400" height="200">
+	<link href="assets/img/logo_kotak.png" rel="print-icon" sizes="100x100">
+	<link href="assets/img/logo_kotak.png" rel="icon" type="image/png" width="400" height="200">
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 	<title>EZPrint Admin Center</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'><!--     Fonts and icons     -->

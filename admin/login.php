@@ -9,7 +9,7 @@
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<!--=====================INCLUDE STYLE CSS, FONTS, IMAGE==========================================-->
-	<link href="assets/img/logo4.jpeg" rel="icon" type="image/png">
+	<link href="assets/img/logo_kotak.png" rel="icon" type="image/png">
 	<link href="assets/login/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/login/vendor/animate/animate.css" rel="stylesheet" type="text/css">
