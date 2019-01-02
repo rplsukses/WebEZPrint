@@ -47,8 +47,7 @@
 				        $row = mysqli_fetch_array($result);
 				        if (mysqli_num_rows($result) == 1) {
 				            session_start();
-				            $_SESSION["loginadmin"] = $row["nama"];
-				                echo "<p>Selamat datang ". $row["nama"] ."</p>";
+				            $_SESSION["loginadmin"] = $row["id_admin"];
 				                	header('location:index.php');
 				        }else{
 				                echo "<p>Error: " . $query . "<br>" . mysqli_error($conn). "</p>";

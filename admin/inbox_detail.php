@@ -25,11 +25,12 @@
 					<div class="card">
 					<?php
 						//Query to get id 
-						$ambil=$conn->query("SELECT * FROM inbox WHERE id_inbox='$_GET[id]'");
+						$ambil=$conn->query("SELECT * FROM inbox, user 
+						WHERE id_inbox='$_GET[id]' AND inbox.id_user=user.id_user");
 						$pecah= $ambil->fetch_assoc();
 					?>
 					<div class="card-header card-header-primary">
-						<h4 class="card-title"><?php echo $pecah['email_pengirim'] ?></h4>
+						<h4 class="card-title"><?php echo $pecah['email'] ?></h4>
 					</div>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -67,14 +68,26 @@
 				<div class="card-body">
 					<form>
 						<div class="form-group">
-							<label for="exampleFormControlInput1">To :</label> <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" type="email">
+							<label for="exampleFormControlInput1">To :</label>
+							<input class="form-control" placeholder="your name" type="text" name="email" value="<?php echo $pecah['email']?>">
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlTextarea1">Message :</label>
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="balasan"></textarea>
 						</div>
-						<button class="btn btn-primary center-block pull-right" type="button">Send</button>
+						<input class="btn btn-primary center-block pull-right" type="submit" name="send" value="SEND">
 					</form>
+					<?php
+					if (isset($_POST['send'])){
+						$email_user = $_POST['email'];
+						$balasan = $_POST['balasan'];
+
+						$conn->query("INSERT INTO outbox VALUES ('','$email_user', '$balasan')");
+
+						echo "<script>alert('Data sucessfully saved !');</script>";
+						echo "<script>location='inbox.php';</script>";
+					}
+					?>
 				</div>
 			</div>
 		</div>

@@ -120,7 +120,8 @@
                                 <input type="number" name="harga" class="form-control" id="colFormLabel" value="">
                             </div>
                         </div>
-                        <input class="btn btn-warning pull-right" type="submit" value="ADD" name="add"/>
+                        <input class="btn btn-primary pull-right" type="submit" value="ADD" name="add"/>
+                        <a href="produk.php" class="btn btn-danger pull-right">Cancel</a>
                         </form>
                         
 

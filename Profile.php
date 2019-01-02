@@ -161,18 +161,6 @@
         </div> <!-- /.container -->
     </div> <!-- /#about -->
 
-    <div id="contact" class="section-cotent">
-        <div class="container">
-                    <h4 class="widget-title">Location</h4>
-                    <div class="map-holder">
-                        <div class="google-map-canvas" id="map-canvas" style="height: 250px;">
-                        </div>
-                    </div> <!-- /.map-holder -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /#contact -->
-
-
     <div class="site-footer">
         <div class="container">
             <div class="row">

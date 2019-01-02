@@ -68,7 +68,7 @@
 												</tr>
 											</thead>
 											<tbody>
-											<?php $ambil=$conn->query("SELECT * FROM inbox"); ?>
+											<?php $ambil=$conn->query("SELECT * FROM inbox, user WHERE inbox.id_user=user.id_user"); ?>
 											<?php while($pecah = $ambil->fetch_assoc()){ ?>
 												<tr>
 													<td>
@@ -76,7 +76,7 @@
 															<input type="checkbox">
 														</div>
 													</td>
-													<td><a href="inbox_detail.php?id=<?php echo $pecah['id_inbox'];?>"><?php echo $pecah['email_pengirim'];?></a></td>
+													<td><a href="inbox_detail.php?id=<?php echo $pecah['id_inbox'];?>"><?php echo $pecah['email'];?></a></td>
 													<td><?php echo $pecah['subjek']?></td>
 													<td><?php echo $pecah['tanggal_kirim']?></td>
 												</tr>
