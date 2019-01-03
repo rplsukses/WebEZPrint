@@ -68,7 +68,7 @@
                             <h3>Produk</h3>
                         </div>
                         <div class="service-description">
-                            <a href="produk.php"><img src="images/prod.png" style="height: 150px; width: 150px;"></a>
+                            <a href="produk.php?status=0"><img src="images/prod.png" style="height: 150px; width: 150px;"></a>
                         </div>
                     </div> <!-- /.service-item --> 
                 </div> <!-- /.col-md-3 -->

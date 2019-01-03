@@ -19,7 +19,7 @@
                  ",'$id_kategori','$ukuran', '$warna', '$bahan', '$harga')";
         $result = mysqli_query($conn, $query);
         if($result){
-            header('Location: produk.php');
+            header('Location: produk.php?status=0');
         } else {
             echo "<p>Error: " . $query . "<br>" . mysqli_error($conn). "</p>";
         }
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <input class="btn btn-primary pull-right" type="submit" value="ADD" name="add"/>
-                        <a href="produk.php" class="btn btn-danger pull-right">Cancel</a>
+                        <a href="produk.php?status=0" class="btn btn-danger pull-right">Cancel</a>
                         </form>
                         
 

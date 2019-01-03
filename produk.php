@@ -8,11 +8,13 @@
     $db = $database->getConnection();
 
     //Query select produk by mitra
-    $ambil=$conn->query("SELECT * FROM 
+    $status=$_GET['status'];
+    $query="SELECT * FROM 
                      produk, kategori 
                      WHERE id_mitra=".$_SESSION['user_id']."
                      AND produk.id_kategori=kategori.id_kategori
-                     AND produk.arsip=0 ");
+                     AND produk.arsip=".$status;
+    $result = mysqli_query($conn, $query);
 
     // Query archieve produk
     if(isset($_GET['arsip']) && !empty($_GET['arsip'])){
@@ -20,9 +22,21 @@
         $query = "UPDATE produk SET arsip=1 WHERE id_produk=".$id_produk;
         $result = mysqli_query($conn, $query);
         // tambah notif atau apa
-        header('location:produk.php');
-        echo "<script>alert('produk diarchievkan');</script>";
+        echo "<script>alert('produk diarsipkan');</script>";
+        header('location:produk.php?status=0');
+        
     }
+
+    //Query select archieve
+    if(isset($_GET['unarsip']) && !empty($_GET['unarsip'])){
+        $id_produk = $_GET['unarsip'];
+        $query = "UPDATE produk SET arsip=0 WHERE id_produk=".$id_produk;
+        $result = mysqli_query($conn, $query);
+        // tambah notif atau apa
+        echo "<script>alert('produk unarsip');</script>";
+        header('location:produk.php?status=1');
+    }
+
 ?>
 <body>
     <div id="home">
@@ -42,23 +56,21 @@
             <div class="main-header">
                 <div class="container">
                     <div class="row">
-                        <div class="text-center">
-                            <div class="logo">
-                                <h1><a href="#" title="Dreri">PRODUK</a></h1>
-                            </div> <!-- /.logo -->
-                        </div> <!-- /.col-md-4 -->
-                        <div class="col-md-8 col-sm-8 col-xs-6">
-                            <div class="menu text-right hidden-sm hidden-xs">
-                                
-                            </div> <!-- /.menu -->
-                        </div> <!-- /.col-md-8 -->
+                    <div class="col-md-12 col-sm-8">
+                            <div class="responsive text-right hidden-sm hidden-xs">
+                                <ul class="nav nav-pills">
+                                    <li class="<?php if($status == 0) echo 'nav-item active';?>">
+                                         <a class="nav-link" href="produk.php?status=0">Produk Mitra</a>
+                                    </li>
+                                    <li class="<?php if($status == 1) echo 'nav-item active';?>">
+                                        <a class="nav-link" href="produk.php?status=1">Arsip produk</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>   
+                        
+                    
                     </div> <!-- /.row -->
-                    <div class="responsive-menu text-right visible-xs visible-sm">
-                        <a href="#" class="toggle-menu fa fa-bars"></a>
-                        <div class="menu">
-                            
-                        </div> <!-- /.menu -->
-                    </div> <!-- /.responsive-menu -->
                 </div> <!-- /.container -->
             </div> <!-- /.header -->
         </div> <!-- /.site-header -->
@@ -74,9 +86,7 @@
             </div> <!-- /.title-section -->
             <div class="row">
               <div class="card-body">
-                       <div class="">
-                        <a href="add_produk.php"><button type="submit" class="btn btn-primary btn-sm pull-right">Add</button></a>
-                    </div>
+                      
               <div class="table">
                 <table class="table table-striped table-hover">
                   <thead class=" text-primary lead">
@@ -93,22 +103,29 @@
                 </h1>
                   </thead>
                      <tbody class="h4">
-                     <?php while($pecah = $ambil->fetch_assoc()) { ?>
+                     <?php while($row=$result->fetch_assoc()) { ?>
                         <tr >
-                            <td><?php echo $pecah['id_produk']; ?></td>
-                            <td><?php echo $pecah['nama']; ?></td>
-                            <td><?php echo $pecah['ukuran']; ?></td>
-                            <td><?php echo $pecah['warna']; ?></td>
-                            <td><?php echo $pecah['bahan']; ?></td>
-                            <td><?php echo $pecah['harga']; ?></td>
+                            <td><?php echo $row['id_produk']; ?></td>
+                            <td><?php echo $row['nama']; ?></td>
+                            <td><?php echo $row['ukuran']; ?></td>
+                            <td><?php echo $row['warna']; ?></td>
+                            <td><?php echo $row['bahan']; ?></td>
+                            <td><?php echo $row['harga']; ?></td>
                             <td>
-                                <a class="btn-warning btn-sm" href="edit_produk.php?id=<?php echo $pecah['id_produk'];?>">Edit</a> 
-                                <a class="btn-danger btn-sm" href="?arsip=<?php echo $pecah['id_produk'];?>">Archieve</a>
+                            <?php if($status == 0) { ?>
+                                <a href="edit_produk.php?id=<?php echo $row['id_produk'];?>" class="btn-warning btn-sm" >Edit</a> 
+                                <a class="btn-danger btn-sm" href="produk.php?status=1&&arsip=<?php echo $row['id_produk'];?>">Arsipkan</a>
+                            <?php }else{?>
+                                <a class="btn-danger btn-sm" href="produk.php?status=0&&unarsip=<?php echo $row['id_produk'];?>">Unarsip</a>
+                            <?php } ?>
                             </td>
                         </tr>
-                     <?php } ?>
+                        <?php } ?>
                     </tbody>
                 </table>
+                <?php if($status == 0) { ?>
+                    <a href="add_produk.php"><button type="submit" class="btn btn-primary btn-sm pull-right">Add Produk</button></a>               
+                <?php } ?>
               </div>
             </div>
           </div>

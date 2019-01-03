@@ -35,7 +35,7 @@
     
         $update = mysqli_query($conn, $query);
         if($update){
-            header('Location: produk.php');
+            header('Location: produk.php?status=0');
         }else{
             echo "<p>Error: " . $query . "<br" . mysqli_error($conn). "</p>";
         }

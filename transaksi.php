@@ -123,7 +123,7 @@
                                 <a href="transaksi.php?status=2&&done=<?php echo $row['id_transaksi'];?>" class="btn-success btn-sm">Done</a>
                                 <a href="transaksi.php?status=3&&cancel=<?php echo $row['id_transaksi'];?>" class="btn-danger btn-sm">Cancel</a>
                             <?php }else if($status == 2) {?>
-                                selesai
+                                Selesai
                             <?php }else{?>
                                 Cancel
                             <?php }?>
