@@ -104,31 +104,31 @@
                             <a class="btn-primary btn-sm pull-right" href="setting.php?id=<?php echo $row['id_mitra'];?>">Edit Profile</a><br><br>
 								<tbody class="h5">
 									<tr >
-										<td>Nama Mitra  </td>
+										<td>Nama Mitra</td>
 										<td>: </td>
 										<td><?php echo $row['nama']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Alamat Mitra  </td>
+										<td>Alamat Mitra</td>
 										<td>: </td>
 										<td><?php echo $row['alamat']; ?></td>
 										<td> </td>
 									</tr>
                                     <tr>
-										<td>Telepon Kantor </td>
+										<td>Telepon Kantor</td>
 										<td>: </td>
 										<td><?php echo $row['no_telepon']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Email Kantor  </td>
+										<td>Email Kantor</td>
 										<td>: </td>
 										<td><?php echo $row['email']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Nama Pemilik  </td>
+										<td>Nama Pemilik:<?php echo $row['nama_pemilik']; ?></td>
 										<td>: </td>
 										<td><?php echo $row['nama_pemilik']; ?></td>
 										<td> </td>
