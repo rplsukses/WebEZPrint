@@ -17,7 +17,7 @@
 						<p>Inbox</p></a>
 					</li>
 					<li <?php if($page == "Transaksi") echo "class='nav-item active'";?>>
-						<a class="nav-link" href="transaksi.php"><i class="material-icons">assignment</i>
+						<a class="nav-link" href="transaksi.php?status=0"><i class="material-icons">assignment</i>
 						<p>Transaksi</p></a>
 					</li>
 					<li <?php if($page == "User") echo "class='nav-item active'";?>>
