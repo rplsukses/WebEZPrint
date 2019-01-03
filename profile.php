@@ -12,7 +12,6 @@
         
 ?>
 <!DOCTYPE html>
-<!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <link href="images/logo4.jpeg" rel="icon" type="image/jpeg">
     <title>EZPrint Mitra Center</title>
