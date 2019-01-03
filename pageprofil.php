@@ -106,47 +106,47 @@
 									<tr >
 										<td>Nama Mitra  </td>
 										<td>: </td>
-										<td><?php echo $row['nama'] ?></td>
+										<td><?php echo $row['nama']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
 										<td>Alamat Mitra  </td>
 										<td>: </td>
-										<td><?php echo $row['alamat'] ?></td>
+										<td><?php echo $row['alamat']; ?></td>
 										<td> </td>
 									</tr>
                                     <tr>
 										<td>Telepon Kantor </td>
 										<td>: </td>
-										<td><?php echo $row['no_telepon'] ?></td>
+										<td><?php echo $row['no_telepon']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
 										<td>Email Kantor  </td>
 										<td>: </td>
-										<td><?php echo $row['email'] ?></td>
+										<td><?php echo $row['email']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
 										<td>Nama Pemilik  </td>
 										<td>: </td>
-										<td><?php echo $row['nama_pemilik'] ?></td>
+										<td><?php echo $row['nama_pemilik']; ?></td>
 										<td> </td>
 									</tr>
                                     <tr>
 										<td>Telepon Pemilik  </td>
 										<td>: </td>
-										<td><?php echo $row['telp_pemilik'] ?></td>
+										<td><?php echo $row['telp_pemilik']; ?></td>
 										<td> </td>
 									</tr>
                                     <tr>
 										<td>Email Pemilik : </td>
 										<td>: </td>
-										<td><?php echo $row['email_pemilik'] ?></td>
+										<td><?php echo $row['email_pemilik']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Last Seen : <?php echo $row['last_seen'] ?></td>
+										<td>Last Seen : <?php echo $row['last_seen']; ?></td>
 										<td>: </td>
 										<td></td>
 										<td> </td>
