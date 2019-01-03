@@ -140,15 +140,15 @@
 										<td> </td>
 									</tr>
                                     <tr>
-										<td>Email Pemilik : </td>
+										<td>Email Pemilik </td>
 										<td>: </td>
 										<td><?php echo $row['email_pemilik']; ?></td>
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Last Seen : <?php echo $row['last_seen']; ?></td>
+										<td>Last Seen </td>
 										<td>: </td>
-										<td></td>
+										<td><?php echo $row['last_seen']; ?></td>
 										<td> </td>
 									</tr>
                                 </body>
