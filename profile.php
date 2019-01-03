@@ -146,7 +146,7 @@
 										<td> </td>
 									</tr>
 									<tr>
-										<td>Last Seen </td>
+										<td>Last Seen : </td>
 										<td>: </td>
 										<td><?php echo $row['last_seen'] ?></td>
 										<td> </td>
