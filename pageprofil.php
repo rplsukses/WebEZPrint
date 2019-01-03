@@ -140,7 +140,7 @@
 										<td> </td>
 									</tr>
                                     <tr>
-										<td>Email Pemilik</td>
+										<td>Email Pemilik : </td>
 										<td>: </td>
 										<td><?php echo $row['email_pemilik'] ?></td>
 										<td> </td>
