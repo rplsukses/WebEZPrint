@@ -6,6 +6,7 @@
     // include database and object files
     include_once '../config/database.php';
     include_once '../objects/transaksi.php';
+    include_once '../objects/user.php';
 
     // instantiate database and product object
     $database = new Database();
