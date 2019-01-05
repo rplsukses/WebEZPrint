@@ -4,7 +4,7 @@
 	<div class="wrapper">
 		<div class="sidebar" data-background-color="white" data-color="purple" data-image="">
 			<div class="logo">
-				<a class="simple-text logo-normal" href="dashboard.php">HALAMAN ADMIN</a>
+				<a class="simple-text logo-normal" href="dashboard.php">EZPRINT ADMIN</a>
 			</div>
 			<div class="sidebar-wrapper">
 				<ul class="nav">
