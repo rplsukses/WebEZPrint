@@ -1,12 +1,14 @@
 <?php
-    include 'admin/api/config/database.php';
     include 'admin/core/init.php';
+    include 'include/header.php';
+    include 'include/footer.php';
+    include 'admin/api/config/database.php';
     $database = new Database();
     $db = $database->getConnection();
     session_start();
 
     $conn = mysqli_connect("localhost","root","","u623212174_print");
-    $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra = $_SESSION[user_id]");
+    $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra =".$_SESSION['user_id']);
     $row =  mysqli_fetch_assoc($result);
 
         

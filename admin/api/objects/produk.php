@@ -12,6 +12,7 @@
         public $bahan;
         public $harga;
         public $kategori;
+        public $arsip;
         public $icon;
         
         // constructor with $db as database connection
@@ -23,7 +24,7 @@
         public function read(){
             //select all query
             $query = "SELECT * FROM " . $this->table_name. 
-                    ", kategori WHERE kategori.id_kategori=produk.id_kategori";
+                    ", kategori WHERE kategori.id_kategori=produk.id_kategori AND WHERE produk.arsip=0";
 
             //perpare query
             $stmt = $this->conn->prepare($query);
@@ -38,7 +39,7 @@
             $query = "SELECT * FROM 
                     produk, kategori
                     WHERE produk.id_mitra=:id_mitra
-                     AND kategori.id_kategori=produk.id_kategori";
+                     AND kategori.id_kategori=produk.id_kategori AND produk.arsip=0";
 
             //prepare query
             $stmt = $this->conn->prepare($query);
@@ -61,7 +62,8 @@
                     produk, kategori
                     WHERE produk.id_kategori=:id_kategori
                      AND kategori.id_kategori=produk.id_kategori
-                     AND produk.ukuran=:ukuran";
+                     AND produk.ukuran=:ukuran 
+                     AND produk.arsip=0";
 
             //prepare query
             $stmt = $this->conn->prepare($query);
@@ -105,6 +107,7 @@
                     produk, kategori, mitra 
                     WHERE kategori.id_kategori=produk.id_kategori
                      AND mitra.id_mitra=produk.id_mitra
+                     AND produk.arsip=0
                      AND kategori.nama LIKE %$cari%
                      OR produk.ukuran LIKE %$cari%
                      OR produk.bahan LIKE %$cari%
