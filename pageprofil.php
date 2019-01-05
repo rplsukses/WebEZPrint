@@ -3,13 +3,12 @@
     include 'include/header.php';
     include 'include/footer.php';
     include 'admin/api/config/database.php';
+    session_start();
     $database = new Database();
     $db = $database->getConnection();
-    session_start();
 
-    $conn = mysqli_connect("localhost","root","","u623212174_print");
-    $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra =".$_SESSION['user_id']);
-    $row =  mysqli_fetch_assoc($result);
+    $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra=".$_SESSION['user_id']);
+    //$row =  mysqli_fetch_assoc($result);
 
         
 ?>
@@ -84,8 +83,8 @@
      <div id="about" class="section-cotent">
         <div class="container">
             <div class="row">
+                <?php while($row=$result->fetch_assoc()) {?>
                 <div class="our-team">
-					
                     <div class="col-md-4 col-sm-6">
                         <div class="team-member">
                             <div class="member-img">
@@ -158,6 +157,7 @@
 						</div> <!-- /.col-md-3 -->
 					</div>
                 </div> <!-- /.our-team -->
+                <?php }?>
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /#about -->
