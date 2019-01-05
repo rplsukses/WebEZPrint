@@ -46,10 +46,10 @@
 													<pre><h6>Mitra			: <?php echo $pecah['nama_mitra']?></h6></pre>
 													<?php $kalimat = $pecah['file'];
 														$sub_kalimat = substr($kalimat, 15);?>
-													<pre><h6>File			: <a href="api/upload/file/<?php echo $sub_kalimat;?>"><?php echo $sub_kalimat;?> </a></h6></pre>
+													<pre><h6>File				: <a href="api/upload/file/<?php echo $sub_kalimat;?>"><?php echo $sub_kalimat;?> </a></h6></pre>
 													<pre><h6>Kategori		: <?php echo $pecah['nama_kategori'] ?></h5></pre>
 													<pre><h6>Bahan			: <?php echo $pecah['bahan'] ?></h5></pre>
-													<pre><h6>Ukuran		: <?php echo $pecah['ukuran'] ?></h5></pre>
+													<pre><h6>Ukuran			: <?php echo $pecah['ukuran'] ?></h5></pre>
 													<pre><h6>Warna			: <?php echo $pecah['warna'] ?></h5></pre>
 													<pre><h6>Total Harga	: <?php echo $pecah['harga_total'] ?></h5></pre>
 													<pre><h6>Status			: <?php if ($pecah['status'] == 0){ 
