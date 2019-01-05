@@ -4,7 +4,7 @@
 	<div class="wrapper">
 		<div class="sidebar" data-background-color="white" data-color="purple" data-image="">
 			<div class="logo">
-				<a class="simple-text logo-normal" href="dashboard.php">HALAMAN ADMIN</a>
+				<a class="simple-text logo-normal" href="dashboard.php">EZPRINT ADMIN</a>
 			</div>
 			<div class="sidebar-wrapper">
 				<ul class="nav">
@@ -17,7 +17,7 @@
 						<p>Inbox</p></a>
 					</li>
 					<li <?php if($page == "Transaksi") echo "class='nav-item active'";?>>
-						<a class="nav-link" href="transaksi.php"><i class="material-icons">assignment</i>
+						<a class="nav-link" href="transaksi.php?status=0"><i class="material-icons">assignment</i>
 						<p>Transaksi</p></a>
 					</li>
 					<li <?php if($page == "User") echo "class='nav-item active'";?>>

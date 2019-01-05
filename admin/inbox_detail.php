@@ -35,26 +35,17 @@
 						<div class="card-body">
 							<div class="table-responsive">
 								<table cellspacing="0" class="table" id="dtBasicExample" width="100%">
-								<thead>
-								<tr>
-									<td>Subjek : <?php echo $pecah['subjek']?></td>
-								</tr>
-								</thead>
-								<thead>
-								<tr>
-									<td>Tanggal : <?php echo $pecah['tanggal_kirim']?></td>
-								</tr>
-								</thead>
-								<thead class="text-primary">
-								<tr>
-									<td>Pesan : </td>
-								</tr>
-								</thead>
 								<tbody>
 								<tr>
-									<td><?php echo $pecah['pesan']?></td>
+									<td><pre><h6>Tanggal	: <?php echo $pecah['tanggal_kirim']?></td>
+									
 								</tr>
-								</tbody>
+								<tr>
+									<td><pre><h6>Subjek		: <?php echo $pecah['subjek']?></td>
+								</tr>
+								<tr>
+									<td><pre><h6>Pesan		:</pre><b><?php echo $pecah['pesan']?> </td>
+								</tr>
 								</table>
 							</div>
 						</div>

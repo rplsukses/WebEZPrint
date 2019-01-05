@@ -90,7 +90,7 @@
                             <h3>Profile</h3>
                         </div>
                         <div class="service-description">
-                           <a href="profile.php"><img src="images/prod4.jpg" style="height: 150px; width: 150px;"></a>
+                           <a href="pageprofil.php"><img src="images/prod4.jpg" style="height: 150px; width: 150px;"></a>
                         </div>
                     </div> <!-- /.service-item -->
                 </div> <!-- /.col-md-3 -->

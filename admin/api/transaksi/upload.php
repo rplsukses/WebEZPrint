@@ -6,6 +6,7 @@
     // include database and object files
     include_once '../config/database.php';
     include_once '../objects/transaksi.php';
+    include_once '../objects/user.php';
 
     // instantiate database and product object
     $database = new Database();
@@ -23,7 +24,7 @@
                     $transaksi->id_user=htmlspecialchars($_POST['user']);
                     $transaksi->id_mitra=htmlspecialchars($_POST['mitra']);
                     $transaksi->id_produk=htmlspecialchars($_POST['produk']);
-                    $transaksi->keterrangan=htmlspecialchars($_POST['keterangan']);
+                    $transaksi->keterangan=htmlspecialchars($_POST['keterangan']);
                     $username = $user->getUsername($transaksi->id_user);
                     $dir = $_FILES['file']['tmp_name'];
                     $filename = explode(".", $_FILES['file']['name']);

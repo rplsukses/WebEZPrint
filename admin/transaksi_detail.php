@@ -19,42 +19,48 @@
 		<div class="main-panel">
 			<div class="content">
 				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-12">
+					<div class="row justify-content-md-center">
+						<div class="col-md-8">
 							<div class="card">
 								<div class="card-header card-header-primary">
 									<center><h3 class="card-title">Detail Transaksi</h3></center>
 								</div>
 								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table">
-											<thead class="text-primary">
-												<tr>
-													<th>ID Transaksi :</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>File :</td>
-												</tr>
-												<tr>
-													<td>Jenis Produk :</td>
-												</tr>
-												<tr>
-													<td>Tanggal Order :</td>
-												</tr>
-												<tr>
-													<td>Tanggal Selesai :</td>
-												</tr>
-												<tr>
-													<td>Total Harga :</td>
-												</tr>
-												<tr>
-													<td>Status :</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+									
+										<?php
+											$ambil=$conn->query("SELECT transaksi.id_transaksi, user.nama AS nama_user, mitra.nama AS nama_mitra, transaksi.file,
+											kategori.nama AS nama_kategori, produk.bahan, produk.warna, produk.ukuran, transaksi.tgl_pesan,
+											transaksi.status, transaksi.harga_total
+											FROM transaksi, user, mitra, kategori, produk
+											WHERE id_transaksi='$_GET[id]'
+											AND user.id_user=transaksi.id_user
+											AND mitra.id_mitra=transaksi.id_mitra
+											AND produk.id_produk=transaksi.id_produk
+											AND produk.id_kategori=kategori.id_kategori");
+											$pecah= $ambil->fetch_assoc();
+										?>
+											
+													<pre><h6>ID Transaksi	: <?php echo $pecah['id_transaksi'] ?></h5></pre>
+													<pre><h6>Tgl Pesan		: <?php echo $pecah['tgl_pesan'] ?></h5></pre>
+													<pre><h6>Nama User		: <?php echo $pecah['nama_user'] ?></h5></pre>
+													<pre><h6>Mitra			: <?php echo $pecah['nama_mitra']?></h6></pre>
+													<?php $kalimat = $pecah['file'];
+														$sub_kalimat = substr($kalimat, 15);?>
+													<pre><h6>File				: <a href="api/upload/file/<?php echo $sub_kalimat;?>"><?php echo $sub_kalimat;?> </a></h6></pre>
+													<pre><h6>Kategori		: <?php echo $pecah['nama_kategori'] ?></h5></pre>
+													<pre><h6>Bahan			: <?php echo $pecah['bahan'] ?></h5></pre>
+													<pre><h6>Ukuran			: <?php echo $pecah['ukuran'] ?></h5></pre>
+													<pre><h6>Warna			: <?php echo $pecah['warna'] ?></h5></pre>
+													<pre><h6>Total Harga	: <?php echo $pecah['harga_total'] ?></h5></pre>
+													<pre><h6>Status			: <?php if ($pecah['status'] == 0){ 
+																					echo "belum diproses";
+																			  }else if($pecah['status'] == 1){
+																				  echo "sedang diproses";
+																			  }else if($pecah['status'] == 2){
+																				  echo "selesai";
+																			  }else{
+																				  echo "dibatalkan";
+																			  }?></h5></pre>
 								</div>
 							</div>
 						</div>
