@@ -59,7 +59,7 @@
               <div class="card card-stats">
                 <div class="card-header card-header-icon">
                   <div class="card-icon">
-                    <img src="icon/<?php echo $pecah['icon']; ?>" width="70" height="70">
+                    <img src="api/upload/kategori/<?php echo $pecah['icon']; ?>" width="70" height="70">
                   </div>
                   <h4 class="card-title"><?php echo $pecah['nama'];?></h4>
                 </div>
