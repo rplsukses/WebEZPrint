@@ -128,7 +128,10 @@
 										<td> </td>
 									</tr>
 									<tr>
+										<td>Nama Pemilik</td>
+										<td>: </td>
 										<td><?php echo $row['nama_pemilik']; ?></td>
+										<td> </td>
 									</tr>
                                     <tr>
 										<td>Telepon Pemilik  </td>

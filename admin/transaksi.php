@@ -126,7 +126,7 @@
 											<td><?php echo $row['nama_kategori']; ?></td>
 											<td><?php echo $row['harga_total']; ?></td>
 											<td>
-												<a href="transaksi_detail.php?id=<?php echo $pecah['id_transaksi']; ?>" class="btn btn-success btn-sm">Detail</a>
+												<a href="transaksi_detail.php?id=<?php echo $row['id_transaksi']; ?>" class="btn btn-success btn-sm">Detail</a>
 											</td>
 											</tbody>
 											<?php }?>
