@@ -14,8 +14,8 @@
     // initialize object
     $transaksi = new Transaksi($db);
 
-    if (isset($_GET['id_user'])) {
-        $transaksi->id_user = htmlspecialchars($_GET['id_user']);
+    if (isset($_POST['id_user'])) {
+        $transaksi->id_user = htmlspecialchars($_POST['id_user']);
     }
 
     //query transaksi
