@@ -68,7 +68,7 @@
 						<center><h4 class="card-title">Foto Mitra</h4></center>
 					</div>
 						<div class="card-body">
-						<center><img src="icon/<?php echo $pecah['foto']; ?>" width="370" height="370"></center>
+						<center><img src="api/upload/foto_mitra/<?php echo $pecah['foto']; ?>" width="370" height="370"></center>
 						</div>
 					</div>
 				</div>

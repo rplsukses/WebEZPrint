@@ -45,7 +45,7 @@
 										$lokasi=$_FILES['icon']['tmp_name'];
 										$nama=$_POST['nama'];
 
-										move_uploaded_file($lokasi, "icon/".$namafoto);
+										move_uploaded_file($lokasi, "api/upload/kategori/".$namafoto);
 
 										$conn->query("INSERT INTO kategori (nama, icon) VALUES ('$nama', '$namafoto')");
 

@@ -2,7 +2,6 @@
     include 'admin/api/config/database.php';
     include 'admin/core/init.php';
     include 'include/header.php';
-    include 'include/footer.php';
 
     $conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
     if (isset($_POST['signup'])) {
@@ -112,24 +111,9 @@
         </div> <!-- /.container -->
     </div> <!-- /#contact -->
 
-
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                    <p>Copyright &copy; EZPrint</p>
-                </div> <!-- /.col-md-6 -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="go-top">
-                        <a href="#" id="go-top">
-                            <i class="fa fa-angle-up"></i>
-                            Back to Top
-                        </a>
-                    </div>
-                </div> <!-- /.col-md-6 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
+<?php
+    include 'include/footer.php';
+?>
 
 </body>
 </html>

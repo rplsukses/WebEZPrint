@@ -53,7 +53,7 @@
 											$nama=$_POST['nama'];
 
 											if ($namafoto != ''){
-												move_upload_file($lokasifoto, "icon/$namafoto");
+												move_upload_file($lokasifoto, "api/upload/kategori/$namafoto");
 												
 												$conn->query("UPDATE kategori SET nama='$nama', icon='$namafoto' WHERE id_kategori='$_GET[id]'");
 

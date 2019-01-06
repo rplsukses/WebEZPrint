@@ -213,31 +213,9 @@
         </div> <!-- /.container -->
     </div> <!-- /#contact -->
 
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                    <p>Copyright &copy; 2018 EzPrint</p>
-                </div> <!-- /.col-md-6 -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="go-top">
-                        <a href="#" id="go-top">
-                            <i class="fa fa-angle-up"></i>
-                            Back to Top
-                        </a>
-                    </div>
-                </div> <!-- /.col-md-6 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
-
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/jquery.lightbox.js"></script>
-    <script src="js/custom.js"></script>
-    <script type="text/javascript">
-    </script>
-    
+<?php
+    include 'include/footer.php';
+?>
 
 </body>
 </html>

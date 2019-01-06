@@ -65,8 +65,9 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <a href="edit_kategori.php?id=<?php echo $pecah['id_kategori']; ?>" class="btn btn-primary bt-sm">Edit</a>
-                  </div>
+                    	<a href="edit_kategori.php?id=<?php echo $pecah['id_kategori']; ?>" class="btn btn-primary bt-sm">Edit</a>
+											<a href="delete_kategori.php?id=<?php echo $pecah['id_kategori']; ?>" class="btn btn-danger bt-sm">Delete</a>				
+									</div>
                 </div>
               </div>
             </div>

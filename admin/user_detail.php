@@ -57,7 +57,7 @@
               <center><h3 class="card-title">Foto User</h3></center>
             </div>
             <div class="card-body">
-            <center><img src="icon/<?php echo $pecah['foto']; ?>" width="210" height="210"></center>
+            <center><img src="api/upload/foto_user/<?php echo $pecah['foto']; ?>" width="210" height="210"></center>
               </div>
             </div>
         </div>
