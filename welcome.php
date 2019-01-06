@@ -1,7 +1,6 @@
 <?php
     include 'admin/core/init.php';
     include 'include/header.php';
-    include 'include/footer.php';
 
     include 'admin/api/config/database.php';
     $database = new Database();
@@ -57,7 +56,7 @@
             <div class="title-section text-center">
 				<div class="title-section text-center"> </div>
                 <h2>Halo Sobat EZPrint! </h2>
-				<p> Di halaman Ini sobat EZPrint dapat mengatur produk , melacak transaksi , melihat profil serta mengedit profile dari akun Sobat EzPrint.</p>
+				<p><h5>Di halaman ini sobat EZPrint dapat mengatur produk , melacak transaksi , melihat profile serta mengedit profile dari akun Sobat EZPrint.</h5></p>
                
             </div> <!-- /.title-section -->
             <div class="row-center">
@@ -90,7 +89,7 @@
                             <h3>Profile</h3>
                         </div>
                         <div class="service-description">
-                           <a href="pageprofil.php"><img src="images/prod4.jpg" style="height: 150px; width: 150px;"></a>
+                           <a href="profile.php"><img src="images/prod4.jpg" style="height: 150px; width: 150px;"></a>
                         </div>
                     </div> <!-- /.service-item -->
                 </div> <!-- /.col-md-3 -->
@@ -107,21 +106,9 @@
                 </div> <!-- /.col-md-3 -->
         </div> <!-- /.container -->
     </div> <!-- /#services -->
-
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                    <p>Copyright &copy; 2018 EzPrint</p>
-                </div> <!-- /.col-md-6 -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="go-top">
-                      
-                    </div>
-                </div> <!-- /.col-md-6 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
+<?php
+    include 'include/footer.php';
+?>
 
     </body>
 </html>

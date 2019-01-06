@@ -1,7 +1,6 @@
 <?php
     include 'admin/core/init.php';
     include 'include/header.php';
-    include 'include/footer.php';
     include 'admin/api/config/database.php';
     session_start();
     $database = new Database();
@@ -120,8 +119,10 @@
                                 <input type="number" name="harga" class="form-control" id="colFormLabel" value="">
                             </div>
                         </div>
-                        <input class="btn btn-primary pull-right" type="submit" value="ADD" name="add"/>
-                        <a href="produk.php?status=0" class="btn btn-danger pull-right">Cancel</a>
+                        <p align="right">
+                        <input class="btn btn-primary" type="submit" value="ADD" name="add"/>
+                        <a href="produk.php?status=0" class="btn btn-danger">Cancel</a>
+                        </p>
                         </form>
                         
 
@@ -137,18 +138,8 @@
         </div> <!-- /.container -->
             </div> <!-- /#services -->
 
-
-
-     <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                    <p>Copyright &copy; 2018 EzPrint</p>
-                </div> <!-- /.col-md-6 -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
-
+<?php
+    include 'include/footer.php';
+?>
 </body>
 </html>

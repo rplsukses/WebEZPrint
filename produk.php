@@ -1,7 +1,6 @@
 <?php
     include 'admin/core/init.php';
     include 'include/header.php';
-    include 'include/footer.php';
     include 'admin/api/config/database.php';
     session_start();
     $database = new Database();
@@ -137,16 +136,8 @@
         </div> <!-- /.container -->
             </div> <!-- /#services -->
 
-     <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                    <p>Copyright &copy; 2018 EzPrint</p>
-                </div> <!-- /.col-md-6 -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
-
+<?php
+   include 'include/footer.php';
+?>
 </body>
 </html>

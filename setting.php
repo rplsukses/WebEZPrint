@@ -2,7 +2,6 @@
     include 'admin/api/config/database.php';
     include 'admin/core/init.php';
     include 'include/header.php';
-    include 'include/footer.php';
     $database = new Database();
     $db = $database->getConnection();
     session_start();
@@ -149,25 +148,18 @@
                         <?php
                             }
                         ?>
-                        <input class="btn btn-primary pull-right" type="submit" value="SAVE" name="save"/>
+                        <p align="right">
+                        <input class="btn btn-primary" type="submit" value="SAVE" name="save"/>
+                        <a class="btn btn-danger" href="profile.php">Cancel</a>
+                        </p>
                         </form> 
 
                     </div>     
                     </div>
 
-                        
-    
-                  
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                    <p>Copyright &copy; 2018 EzPrint</p>
-                </div> <!-- /.col-md-6 -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.site-footer -->
+    <?php
+        include 'include/footer.php';
+    ?>
 
 </body>
 </html>
