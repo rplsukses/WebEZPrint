@@ -51,6 +51,8 @@
             );
     
             array_push($transaksi_arr["transaksi"], $transaksi_item);
+            $transaksi_arr["message"] = "Get Data Sukses";
+            $transaksi_arr["error"] = false;
         }
     
         // set response code - 200 OK
