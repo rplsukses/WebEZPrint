@@ -24,7 +24,7 @@
         public function read(){
             //select all query
             $query = "SELECT * FROM " . $this->table_name. 
-                    ", kategori WHERE kategori.id_kategori=produk.id_kategori AND WHERE produk.arsip=0";
+                    ", kategori WHERE kategori.id_kategori=produk.id_kategori AND produk.arsip=0";
 
             //perpare query
             $stmt = $this->conn->prepare($query);
@@ -39,7 +39,8 @@
             $query = "SELECT * FROM 
                     produk, kategori
                     WHERE produk.id_mitra=:id_mitra
-                     AND kategori.id_kategori=produk.id_kategori AND produk.arsip=0";
+                     AND kategori.id_kategori=produk.id_kategori 
+                     AND produk.arsip=0";
 
             //prepare query
             $stmt = $this->conn->prepare($query);
