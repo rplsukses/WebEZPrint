@@ -64,43 +64,22 @@
 												</tr>
 											</thead>
 											<tbody>
-											<?php
-												$halaman = 10;
-												$page = isset($_GET["halaman"])?(int)$_GET["halaman"] : 1;
-												$mulai = ($page>1)?($page * halaman) - $halaman : 0;
-												$ambil = $conn->query("SELECT * FROM mitra");
-												$total = mysqli_num_rows($ambil);
-												$pages = ceil($total/$halaman);
-												$pagination = $conn->query("SELECT * FROM mitra LIMIT $mulai, $halaman")or die(mysql_error);
-												$no = $mulai+1;
-
-												while ($pecah=$ambil->fetch_assoc()){ ?>
+											<?php $nomor=1; ?>
+												<?php $ambil=$conn->query("SELECT * FROM mitra"); ?>
+												<?php while ($pecah=$ambil->fetch_assoc()){ ?>
 												<tr>
-													<td><?php echo $no++ ?></td>
+													<td><?php echo $nomor ?></td>
 													<td><?php echo $pecah['nama']; ?></td>
 													<td><?php echo $pecah['last_seen']; ?></td>
 													<td>
 														<a href="mitra_detail.php?id=<?php echo $pecah['id_mitra'];?>" class="btn btn-success btn-sm">Detail</a>
 													</td>
 												</tr>
-
+												<?php $nomor++; ?>
 												<?php } ?>
 											
 											</tbody>
 										</table>
-										</div>
-										</div>
-										</div>
-										<nav aria-label="pagination">
-										<ul class="pagination justify-content-center">
-										<li class=page-item active><span class="page-link">
-										<?php for ($i=1; $i<=$pages ; $i++){ ?>
-										<a class="page-link" href="?halaman=<?php echo $i; ?>"><?php echo $i; ?></a>
-										<?php } ?>
-										<span class="sr-only">(current)</span></span>
-										</li>
-										</ul>
-										</nav>
 									</div>
 								</div>
 							</div>
