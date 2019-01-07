@@ -2,53 +2,12 @@
     include 'admin/api/config/database.php';
     include 'admin/core/init.php';
     include 'include/header.php';
-    $database = new Database();
-    $db = $database->getConnection();
-    session_start();
 
     //Query Select
     if(isset($_GET['id']) && !empty($_GET['id'])){
         $id_mitra=$_GET['id'];
-        $query = ("SELECT * FROM mitra
-                WHERE id_mitra = $_SESSION[user_id]");
-        $result = mysqli_query($conn, $query);
-    }
-
-    //QUERY POST
-    if(isset($_POST['save'])){
-        $nama_mitra = $_POST['nama'];
-        $alamat_mitra = $_POST['alamat'];
-        $telp_kantor = $_POST['no_telepon'];
-        $email_kantor = $_POST['email'];
-        $nama_pemilik = $_POST['nama_pemilik'];
-        $telp_pemilik = $_POST['telp_pemilik'];
-        $email_pemilik = $_POST['email_pemilik'];
-        $last_seen = $_POST['last_seen'];
-        $namafoto=$_FILES['foto']['name'];
-        $lokasifoto=$_FILES['foto']['tmp_name'];
-
-        if ($namafoto != ''){
-            move_uploaded_file($lokasifoto, "admin/api/upload/foto_mitra/$namafoto");
-
-            $conn->query("UPDATE mitra 
-                SET nama='".$nama_mitra."',
-                alamat='".$alamat_mitra."',
-                no_telepon='".$telp_kantor."',
-                email='".$email_kantor."',
-                nama_pemilik='".$nama_pemilik."',
-                telp_pemilik='".$telp_pemilik."',
-                email_pemilik='".$email_pemilik."',
-                last_seen='".$last_seen."',
-                foto='".$namafoto."'
-                WHERE id_mitra = '$_SESSION[user_id]'");
-            }else {
-                $conn->query("UPDATE mitra SET nama='$' WHERE id_mitra='$_SESSION[user_id]'");
-            }
-
-            echo "<script>alert('Data was updated succesfully !');</script>";
-            echo "<script>location='profile.php';</script>";
-        }else if (isset($_POST['cancel'])){
-            echo "<script>location='profile.php';</script>";
+        $ambil=$conn->query("SELECT * FROM mitra WHERE id_mitra='$_GET[id]'");
+        $pecah=$ambil->fetch_assoc();
     }
 ?>
 
@@ -98,55 +57,52 @@
                 <div class="container lead">
                         <div class="col-md-12">
                         <form action="" method="POST">
-                        <?php
-                            while($row=$result->fetch_assoc()){
-                        ?>
                           <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Nama Mitra</label>
                             <div class="col-sm-10">
-                                <input type="text" name="nama" class="form-control" id="colFormLabel" value="<?=$row['nama'];?>">
+                                <input type="text" name="nama" class="form-control" id="colFormLabel" value="<?php echo $pecah['nama']; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Alamat Mitra</label>
                             <div class="col-sm-10">
-                                <input type="text" name="alamat" class="form-control" id="colFormLabel" value="<?=$row['alamat'];?>" >
+                                <input type="text" name="alamat" class="form-control" id="colFormLabel" value="<?php echo $pecah['alamat']; ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Telepon Kantor</label>
                             <div class="col-sm-10">
-                                <input type="text" name="no_telepon" class="form-control" id="colFormLabel" value="<?=$row['no_telepon'];?>" >
+                                <input type="text" name="no_telepon" class="form-control" id="colFormLabel" value="<?php echo $pecah['no_telepon']; ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Email Kantor</label>
                             <div class="col-sm-10">
-                                <input type="text" name="email" class="form-control" id="colFormLabel" value="<?=$row['email'];?>" >
+                                <input type="text" name="email" class="form-control" id="colFormLabel" value="<?php echo $pecah['email']; ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Nama Pemilik</label>
                             <div class="col-sm-10">
-                                <input type="text" name="nama_pemilik" class="form-control" id="colFormLabel" value="<?=$row['nama_pemilik'];?>" >
+                                <input type="text" name="nama_pemilik" class="form-control" id="colFormLabel" value="<?php echo $pecah['nama_pemilik']; ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Telepon Pemilik</label>
                             <div class="col-sm-10">
-                                <input type="text" name="telp_pemilik" class="form-control" id="colFormLabel" value="<?=$row['telp_pemilik'];?>" >
+                                <input type="text" name="telp_pemilik" class="form-control" id="colFormLabel" value="<?php echo $pecah['telp_pemilik']; ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Email Pemilik</label>
                             <div class="col-sm-10">
-                                <input type="text" name="email_pemilik" class="form-control" id="colFormLabel" value="<?=$row['email_pemilik'];?>" >
+                                <input type="text" name="email_pemilik" class="form-control" id="colFormLabel" value="<?php echo $pecah['email_pemilik']; ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Last Seen</label>
                             <div class="col-sm-10">
-                                <input type="date" name="last_seen" class="form-control" id="colFormLabel" value="<?=$row['last_seen'];?>" >
+                                <input type="date" name="last_seen" class="form-control" id="colFormLabel" value="<?php echo $pecah['last_seen']; ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -155,9 +111,6 @@
                             <input class="form-control" name="foto" type="file">
                             </div>
                         </div>
-                        <?php
-                            }
-                        ?>
                         <p align="right">
                         <input class="btn btn-primary" type="submit" value="SAVE" name="save"/>
                         <a class="btn btn-danger" href="profile.php">Cancel</a>
