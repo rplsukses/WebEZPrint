@@ -43,7 +43,7 @@
 										</div>
 											<input class="form-control" name="icon" type="file">
 											<button class="btn btn-primary pull-right" name="save">Save</button>
-											<button class="btn btn-primary pull-right" name="cancel">Cancel</button>
+											<button class="btn btn-warning pull-right" name="cancel">Cancel</button>
 									</form>
 									<?php
 										if (isset($_POST['save']))
