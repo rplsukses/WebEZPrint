@@ -58,7 +58,7 @@
 												$conn->query("UPDATE kategori SET nama='$nama', icon='$namafoto' WHERE id_kategori='$_GET[id]'");
 
 											} else {
-												$conn->query("UPDATE kategori SET nama='$' WHERE id_kategori='$_GET[id]'");
+												$conn->query("UPDATE kategori SET nama='$nama' WHERE id_kategori='$_GET[id]'");
 											}
 
 											echo "<script>alert('Data was updated succesfully !');</script>";

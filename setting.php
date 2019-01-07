@@ -115,7 +115,30 @@
                         <input class="btn btn-primary" type="submit" value="SAVE" name="save"/>
                         <a class="btn btn-danger" href="profile.php">Cancel</a>
                         </p>
-                        </form> 
+                        </form>
+                        <?php
+										if (isset($_POST['save']))
+										{
+											$namafoto=$_FILES['foto']['name'];
+											$lokasifoto=$_FILES['foto']['tmp_name'];
+                                            $nama=$_POST['nama'];
+
+
+											if ($namafoto != ''){
+												move_uploaded_file($lokasifoto, "admin/api/upload/foto_mitra/$namafoto");
+												
+												$conn->query("UPDATE mitra SET nama='$nama', foto='$namafoto' WHERE id_mitra='$_GET[id]'");
+
+											} else {
+												$conn->query("UPDATE mitra SET nama='$nama' WHERE id_mitra='$_GET[id]'");
+											}
+
+											echo "<script>alert('Data was updated succesfully !');</script>";
+											echo "<script>location='profile.php';</script>";
+										}else if (isset($_POST['cancel'])){
+											echo "<script>location='profile.php';</script>";
+										}
+										?>
 
                     </div>     
                     </div>
