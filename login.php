@@ -19,10 +19,8 @@
 				}else{
 					echo "<script>alert('Password Anda Salah , Silahkan masukkan password yang benar');</script> <meta http-equiv='refresh' content='1;url=index.php'>";
 				}
-
 			}else{
                 echo "<script>alert('Email dan Password anda tidak valid');</script> <meta http-equiv='refresh' content='1;url=index.php'>";
-
 			}
-	}
+		}
 ?>

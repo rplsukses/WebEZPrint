@@ -2,7 +2,16 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'admin/api/config/database.php';
+
+    // Session
     session_start();
+    if(!isset($_SESSION['login_mitra'])) {
+        header('location:index.php');
+    }else {
+        $login_mitra = $_SESSION['login_mitra'];
+    }
+    
+    //Connect To Database
     $database = new Database();
     $db = $database->getConnection();
 
@@ -35,8 +44,9 @@
         echo "<script>alert('produk unarsip');</script>";
         header('location:produk.php?status=1');
     }
-
 ?>
+
+<!-- Content -->
 <body>
     <div id="home">
         <div class="site-header">
@@ -46,12 +56,11 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
                             <a href="welcome.php"><img src="images/logoo2.png" width="280px" height="50px"></a>                          
-                            </div> <!-- /.left-header -->
-                        </div> <!-- /.col-md-6 -->
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.top-header -->
-            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
             <div class="main-header">
                 <div class="container">
                     <div class="row">
@@ -67,42 +76,35 @@
                                 </ul>
                             </div>
                         </div>   
-                        
-                    
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.header -->
-        </div> <!-- /.site-header -->
-    </div> <!-- /#home -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
     <div id="services"> 
         <div>
             <div class="title-section text-center">
-               
-            </div> <!-- /.title-section -->
-    <div >
-        <div class="container">
-         <div > 
-            </div> <!-- /.title-section -->
+        </div>
+        <div class="container"> 
             <div class="row">
               <div class="card-body">
-                      
-              <div class="table">
-                <table class="table table-striped table-hover">
-                  <thead class=" text-primary lead">
-                    <h1>
-                    <tr>
-                         <th>ID Produk</th>
-                         <th>Kategori</th>
-                         <th>Ukuran</th>
-                         <th>Warna</th>
-                         <th>Bahan</th>
-                         <th>Harga</th>
-                         <th>Action</th>
-                    </tr>
-                </h1>
-                  </thead>
-                     <tbody class="h4">
-                     <?php while($row=$result->fetch_assoc()) { ?>
+                <div class="table">
+                    <table class="table table-striped table-hover">
+                        <thead class=" text-primary lead">
+                        <h1>
+                        <tr>
+                            <th>ID Produk</th>
+                            <th>Kategori</th>
+                            <th>Ukuran</th>
+                            <th>Warna</th>
+                            <th>Bahan</th>
+                            <th>Harga</th>
+                            <th>Action</th>
+                        </tr>
+                        </h1>
+                        </thead>
+                        <tbody class="h4">
+                             <?php while($row=$result->fetch_assoc()) { ?>
                         <tr >
                             <td><?php echo $row['id_produk']; ?></td>
                             <td><?php echo $row['nama']; ?></td>
@@ -120,11 +122,11 @@
                             </td>
                         </tr>
                         <?php } ?>
-                    </tbody>
-                </table>
-                <?php if($status == 0) { ?>
-                    <a href="add_produk.php"><button type="submit" class="btn btn-primary btn-sm pull-right">Add Produk</button></a>               
-                <?php } ?>
+                        </tbody>
+                    </table>
+                    <?php if($status == 0) { ?>
+                        <a href="add_produk.php"><button type="submit" class="btn btn-primary btn-sm pull-right">Add Produk</button></a>               
+                    <?php } ?>
               </div>
             </div>
           </div>
@@ -132,9 +134,6 @@
       </div>
     </div>
 </div>          
-    </div> <!-- /.row -->
-        </div> <!-- /.container -->
-            </div> <!-- /#services -->
 
 <?php
    include 'include/footer.php';
