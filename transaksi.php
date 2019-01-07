@@ -2,7 +2,16 @@
     include 'admin/api/config/database.php';
     include 'admin/core/init.php';
     include 'include/header.php';
+    
+    // Session
     session_start();
+    if(!isset($_SESSION['login_mitra'])) {
+        header('location:index.php');
+    }else {
+        $login_mitra = $_SESSION['login_mitra'];
+    }
+
+    //Connect To Database
     $database = new Database();
     $db = $database->getConnection();
 
@@ -45,32 +54,32 @@
     }
 ?>
 
+<!--Content-->
 <body>
-   <div>
-        <div class="site-header">
-            <div class="top-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                           <div class="left-header lead">
-                                <a href="welcome.php"><img src="images/logoo2.png" width="280px" height="50px"></a>                            
-                            </div> <!-- /.left-header -->
-                        </div> <!-- /.col-md-6 -->                        
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.top-header -->
-            <div class="main-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-8">
-                            <div class="responsive text-right hidden-sm hidden-xs">
-                                <ul class="nav nav-pills">
-                                    <li class="<?php if($status == 0) echo 'nav-item active';?>">
-                                         <a class="nav-link" href="transaksi.php?status=0">Belum Diproses</a>
-                                    </li>
-                                    <li class="<?php if($status == 1) echo 'nav-item active';?>">
-                                        <a class="nav-link" href="transaksi.php?status=1">Sedang Diproses</a>
-                                    </li>
+    <div class="site-header">
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="left-header lead">
+                            <a href="welcome.php"><img src="images/logoo2.png" width="280px" height="50px"></a>                            
+                        </div>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-8">
+                        <div class="responsive text-right hidden-sm hidden-xs">
+                            <ul class="nav nav-pills">
+                                <li class="<?php if($status == 0) echo 'nav-item active';?>">
+                                    <a class="nav-link" href="transaksi.php?status=0">Belum Diproses</a>
+                                </li>
+                                <li class="<?php if($status == 1) echo 'nav-item active';?>">
+                                    <a class="nav-link" href="transaksi.php?status=1">Sedang Diproses</a>
+                                </li>
                                     <li class="<?php if($status == 2) echo 'nav-item active';?>">
                                         <a class="nav-link" href="transaksi.php?status=2">Selesai</a>
                                     </li>
@@ -133,9 +142,9 @@
                         <?php } ?>
                     </tbody>
                 </table>
-            </div> <!-- End Col-->
-        </div> <!-- End Container-->
-    </div> <!-- End Servis-->
+            </div>
+        </div>
+    </div>
 
 <?php
     include 'include/footer.php';

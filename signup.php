@@ -3,6 +3,7 @@
     include 'admin/core/init.php';
     include 'include/header.php';
 
+    //Query Sign In
     $conn = mysqli_connect("localhost","u623212174_root","rplsukses","u623212174_print");
     if (isset($_POST['signup'])) {
         $nama = $_POST['nama'];
@@ -22,9 +23,9 @@
     }
 
 ?>
-<body>
-    
 
+<!-- Content -->
+<body>
     <div id="home">
         <div class="site-header">
             <div class="top-header">
@@ -33,30 +34,27 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
                             <a href="index.php"><img src="images/logoo2.png" width="280px" height="50px"></a>                           
-                            </div> <!-- /.left-header -->
-                        </div> <!-- /.col-md-6 -->
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.top-header -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="main-header">
                 <div class="container">
                     <div class="row">
                         <div class="text-center">
                             <div class="logo">
                                 <h1 text align="center"><a href="#" title="Dreri">Sign Up Mitra </a></h1>
-                            </div> <!-- /.logo -->
-                        </div> <!-- /.col-md-4 -->
-                        
-                    </div> <!-- /.row -->
+                            </div>
+                        </div>
+                    </div>
                     <div class="responsive-menu text-right visible-xs visible-sm">
                         <a href="#" class="toggle-menu fa fa-bars"></a>
-                       
-                    </div> <!-- /.responsive-menu -->
-                </div> <!-- /.container -->
-            </div> <!-- /.header -->
-        </div> <!-- /.site-header -->
-    </div> <!-- /#home -->
-    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="contact" class="section-cotent">
         <div class="container">
             <div class="row-center">
@@ -106,10 +104,9 @@
                         </form>
                     </div>
                 </div> 
-				<div class="col-md-3"> </div>
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /#contact -->
+            </div>
+        </div>
+    </div>
 
 <?php
     include 'include/footer.php';

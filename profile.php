@@ -2,18 +2,26 @@
     include 'admin/core/init.php';
     include 'include/header.php';
     include 'admin/api/config/database.php';
+
+    // Session
     session_start();
+    if(!isset($_SESSION['login_mitra'])) {
+        header('location:index.php');
+    }else {
+        $login_mitra = $_SESSION['login_mitra'];
+    }
+    
+    //Connect To Database
     $database = new Database();
     $db = $database->getConnection();
 
+    //Query SELECT
     $result = mysqli_query($conn, "SELECT * FROM mitra WHERE id_mitra=".$_SESSION['user_id']);
     //$row =  mysqli_fetch_assoc($result);
-
-        
 ?>
 
+<!-- CONTENT -->
 <body>
-    
     <div id="home">
         <div class="site-header">
             <div class="top-header">
@@ -22,29 +30,27 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="left-header lead">
                             <a href="welcome.php"><img src="images/logoo2.png" width="280px" height="50px"></a>                           
-                            </div> <!-- /.left-header -->
-                        </div> <!-- /.col-md-6 -->
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.top-header -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="main-header">
                 <div class="container">
                     <div class="row">
                         <div class="text-center">
                             <div class="logo">
                                 <h1 text align="center"><a href="#" title="Dreri">Profile Mitra </a></h1>
-                            </div> <!-- /.logo -->
-                        </div> <!-- /.col-md-4 -->                        
-                    </div> <!-- /.row -->
+                            </div>
+                        </div>                      
+                    </div>
                     <div class="responsive-menu text-right visible-xs visible-sm">
                         <a href="#" class="toggle-menu fa fa-bars"></a>
-                       
-                    </div> <!-- /.responsive-menu -->
-                </div> <!-- /.container -->
-            </div> <!-- /.header -->
-        </div> <!-- /.site-header -->
-    </div> <!-- /#home -->
-    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
      <div id="about" class="section-cotent">
         <div class="container">
             <div class="row">
@@ -55,14 +61,12 @@
                             <div class="member-img">
                                 <img src="admin/api/upload/foto_mitra/<?php echo $row['foto']; ?>" alt="Mary">
                                 <div class="overlay">   
-                                </div> <!-- /.overlay -->
+                                </div>
                             </div>
                             <div class="inner-content">
-                               
                                 <h5 text align="center"><?php echo $row['nama'] ?></h5>
-								
                             </div>
-                        </div> <!-- /.team-member -->
+                        </div>
                     </div>
 					<div class="col-md-8">
 						<div class="table">
@@ -117,15 +121,15 @@
 										<td><?php echo $row['last_seen']; ?></td>
 										<td> </td>
 									</tr>
-                                </body>
+                                    <?php }?>
+                                </tbody>
 					    	</table>
-						</div> <!-- /.col-md-3 -->
+						</div>
 					</div>
-                </div> <!-- /.our-team -->
-                <?php }?>
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /#about -->
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
     include 'include/footer.php';
 ?>

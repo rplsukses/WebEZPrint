@@ -43,10 +43,10 @@
       }
       </script>";
     }else{
-    echo "<script type='text/javascript'>
-      onload =function(){
-      alert('Data gagal disimpan!');
-      }
+        echo "<script type='text/javascript'>
+        onload =function(){
+            alert('Data gagal disimpan!');
+        }
       </script>";
         }
     }
