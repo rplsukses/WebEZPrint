@@ -56,7 +56,7 @@
             </div> <!-- /.title-section -->
                 <div class="container lead">
                         <div class="col-md-12">
-                        <form action="" method="POST">
+                        <form enctype="multipart/form-data" method="POST">
                           <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Nama Mitra</label>
                             <div class="col-sm-10">
