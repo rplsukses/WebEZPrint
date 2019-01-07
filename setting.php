@@ -24,7 +24,13 @@
         $telp_pemilik = $_POST['telp_pemilik'];
         $email_pemilik = $_POST['email_pemilik'];
         $last_seen = $_POST['last_seen'];
-        $query = "UPDATE mitra
+        $namafoto=$_FILES['foto']['name'];
+        $lokasifoto=$_FILES['foto']['tmp_name'];
+
+        if ($namafoto != ''){
+            move_uploaded_file($lokasifoto, "admin/api/upload/foto_mitra/$namafoto");
+
+            $conn->query("UPDATE mitra 
                 SET nama='".$nama_mitra."',
                 alamat='".$alamat_mitra."',
                 no_telepon='".$telp_kantor."',
@@ -32,20 +38,18 @@
                 nama_pemilik='".$nama_pemilik."',
                 telp_pemilik='".$telp_pemilik."',
                 email_pemilik='".$email_pemilik."',
-                last_seen='".$last_seen."'
-                WHERE id_mitra = $_SESSION[user_id]";
-        
-        $update = mysqli_query($conn, $query);
-        if($update){
-            header('Location: profile.php');
-        }else{
-            echo "<p>Error: " . $query . "<br" . mysqli_error($conn). "</p>";
-        }       
-                
+                last_seen='".$last_seen."',
+                foto='".$namafoto."'
+                WHERE id_mitra = '$_SESSION[user_id]'");
+            }else {
+                $conn->query("UPDATE mitra SET nama='$' WHERE id_mitra='$_SESSION[user_id]'");
+            }
+
+            echo "<script>alert('Data was updated succesfully !');</script>";
+            echo "<script>location='profile.php';</script>";
+        }else if (isset($_POST['cancel'])){
+            echo "<script>location='profile.php';</script>";
     }
-
-
-
 ?>
 
 <body>  
@@ -68,7 +72,7 @@
                     <div class="row">
                         <div class="text-center">
                             <div class="logo">
-                                <h1><a href="#" title="Dreri">Setting</a></h1>
+                                <h1><a href="#" title="Dreri">Edit Profile</a></h1>
                             </div> <!-- /.logo -->
                         </div> <!-- /.col-md-4 -->
                         <div class="col-md-8 col-sm-8 col-xs-6">
@@ -143,6 +147,12 @@
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Last Seen</label>
                             <div class="col-sm-10">
                                 <input type="date" name="last_seen" class="form-control" id="colFormLabel" value="<?=$row['last_seen'];?>" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Foto Profil</label>
+                            <div class="col-sm-10">
+                            <input class="form-control" name="foto" type="file">
                             </div>
                         </div>
                         <?php
