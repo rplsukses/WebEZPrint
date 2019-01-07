@@ -36,6 +36,7 @@
 										</div>
 										<input class="form-control" name="icon" type="file">
 										<button class="btn btn-primary pull-right" name="add">Add</button>
+										<button class="btn btn-primary pull-right" name="cancel">Cancel</button>
 										</form>
 									</div>
 								</div>
@@ -52,6 +53,8 @@
 										echo "<script>alert('Data succesfully saved !');</script>";
 										echo "<script>location='kategori.php';</script>";
 
+									}else if (isset($_POST['cancel'])){
+										echo "<script>location='kategori.php';</script>";
 									}
 
 								?>
