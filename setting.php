@@ -122,15 +122,28 @@
 											$namafoto=$_FILES['foto']['name'];
 											$lokasifoto=$_FILES['foto']['tmp_name'];
                                             $nama=$_POST['nama'];
+                                            $alamat=$_POST['alamat'];
+                                            $email_mitra=$_POST['email'];
+                                            $telp_mitra=$_POST['no_telepon'];
+                                            $nama_pemilik=$_POST['nama_pemilik'];
+                                            $email_pemilik=$_POST['email_pemilik'];
+                                            $telp_pemilik=$_POST['telp_pemilik'];
+                                            $last_seen=$_POST['last_seen'];
 
 
 											if ($namafoto != ''){
 												move_uploaded_file($lokasifoto, "admin/api/upload/foto_mitra/$namafoto");
 												
-												$conn->query("UPDATE mitra SET nama='$nama', foto='$namafoto' WHERE id_mitra='$_GET[id]'");
+												$conn->query("UPDATE mitra SET nama='$nama', foto='$namafoto', alamat='$alamat', email='$email_mitra',
+                                                no_telepon='$telp_mitra', nama_pemilik='$nama_pemilik', email_pemilik='$email_pemilik',
+                                                telp_pemilik='$telp_pemilik', last_seen='$last_seen' 
+                                                WHERE id_mitra='$_GET[id]'");
 
 											} else {
-												$conn->query("UPDATE mitra SET nama='$nama' WHERE id_mitra='$_GET[id]'");
+												$conn->query("UPDATE mitra SET nama='$nama', alamat='$alamat', email='$email_mitra',
+                                                no_telepon='$telp_mitra', nama_pemilik='$nama_pemilik', email_pemilik='$email_pemilik',
+                                                telp_pemilik='$telp_pemilik', last_seen='$last_seen' 
+                                                WHERE id_mitra='$_GET[id]'");
 											}
 
 											echo "<script>alert('Data was updated succesfully !');</script>";
