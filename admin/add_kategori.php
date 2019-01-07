@@ -42,7 +42,9 @@
 										</form>
 									</div>
 								</div>
-								<?php 
+								
+								<?php
+									//Query Input Data Add Kategori 
 									if (isset($_POST['add'])){
 										$namafoto=$_FILES['icon']['name'];
 										$lokasi=$_FILES['icon']['tmp_name'];

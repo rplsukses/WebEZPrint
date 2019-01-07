@@ -15,35 +15,36 @@
     }
 ?>
 
-			<!-- Content -->
-			<div class="main-panel">
-			<div class="content">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header card-header-primary">
-									<h4 class="card-title">Tambah Admin</h4>
-								</div>
-								<div class="card-body">
-									<form method="POST" enctype="multipart/form-data">
-										<div class="form-group">
-											<label>Masukkan Nama</label>
-											<input class="form-control" placeholder="your name" type="text" name="nama" required>
-										</div>
-										<div class="form-group">
-											<label>Masukkan Password</label>
-											<input class="form-control" placeholder="your password" type="password" name="password" id="pass" required><br>
-											<input type="checkbox" onclick="showPass()">Show Password
-										</div>
-										<div class="form-group">
-											<label>Masukkan Email</label>
-											<input class="form-control" placeholder="your email" type="email" name="admin_email" required>
-										</div>
+<!-- Content -->
+	<div class="main-panel">
+		<div class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header card-header-primary">
+								<h4 class="card-title">Tambah Admin</h4>
+							</div>
+							<div class="card-body">
+								<form method="POST" enctype="multipart/form-data">
+									<div class="form-group">
+										<label>Masukkan Nama</label>
+										<input class="form-control" placeholder="your name" type="text" name="nama" required>
+									</div>
+									<div class="form-group">
+										<label>Masukkan Password</label>
+										<input class="form-control" placeholder="your password" type="password" name="password" id="pass" required><br>
+										<input type="checkbox" onclick="showPass()">Show Password
+									</div>
+									<div class="form-group">
+										<label>Masukkan Email</label>
+										<input class="form-control" placeholder="your email" type="email" name="admin_email" required>
+									</div>
 										<input class="btn btn-primary pull-right" type="submit" name="tambah" value="ADD">
 									</form>
 									
 									<?php
+									//QUERY INPUT DATA ADD ADMIN
 									if (isset($_POST['tambah'])){
 										$nama= $_POST['nama'];
 										$password= md5($_POST['password']);

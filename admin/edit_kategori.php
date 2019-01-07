@@ -48,6 +48,7 @@
 										</p>
 									</form>
 									<?php
+										//Query Update Edit Kategori
 										if (isset($_POST['save']))
 										{
 											$namafoto=$_FILES['icon']['name'];
@@ -68,15 +69,15 @@
 										}else if (isset($_POST['cancel'])){
 											echo "<script>location='kategori.php';</script>";
 										}
-										?>
+									?>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- End Content -->
 				</div>
 			</div>
 		</div>
 	</div>
+<!-- End Content -->
 </body>
 </html>

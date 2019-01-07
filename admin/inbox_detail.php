@@ -69,6 +69,7 @@
 						<input class="btn btn-primary center-block pull-right" type="submit" name="send" value="SEND">
 					</form>
 					<?php
+					//Query Insert Outbox
 					if (isset($_POST['send'])){
 						$email_user = $_POST['email'];
 						$balasan = $_POST['balasan'];
@@ -83,7 +84,8 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	<!-- End Content -->
+</div>
+<!-- End Content -->
+
 </body>
 </html>

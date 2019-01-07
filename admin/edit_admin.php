@@ -54,6 +54,7 @@
 									</form>
 
 									<?php
+										//QUERY Update Edit Admin
 										if (isset($_POST['simpan']))
 										{
 											$nama=$_POST['nama_admin'];
@@ -86,6 +87,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Content -->
+	<!-- End Content -->
 </body>
 </html>

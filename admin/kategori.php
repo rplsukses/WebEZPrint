@@ -5,7 +5,6 @@
   include 'include/footer.php';
 	include 'include/sidebar.php';
 
-	
 	// session
 	session_start();
 	if(!isset($_SESSION['loginadmin'])) {
@@ -14,29 +13,30 @@
 		$loginadmin = $_SESSION['loginadmin'];
 	}
 ?>
-      <!-- Navbar -->
-			<div class="main-panel">
-			<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
-				<div class="container-fluid">
-					<div class="collapse navbar-collapse justify-content-end">
-						<form class="navbar-form">
-							<div class="input-group no-border">
-								<input class="form-control" placeholder="Search..." type="text" value=""> <button class="btn btn-white btn-round btn-just-icon" type="submit"><i class="material-icons">search</i>
-								<div class="ripple-container"></div></button>
-							</div>
-						</form>
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link" href="kategori.php"><i class="material-icons">chrome_reader_mode</i>
-								<p class="d-lg-none d-md-block">Stats</p></a>
-							</li>
-						</ul>
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link" href="#pablo"><i class="material-icons">person</i>
-								<p class="d-lg-none d-md-block">Account</p></a>
-							</li>
-						</ul>
+
+<!-- Navbar -->
+	<div class="main-panel">
+		<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse justify-content-end">
+					<form class="navbar-form">
+						<div class="input-group no-border">
+							<input class="form-control" placeholder="Search..." type="text" value=""> <button class="btn btn-white btn-round btn-just-icon" type="submit"><i class="material-icons">search</i>
+							<div class="ripple-container"></div></button>
+						</div>
+					</form>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="kategori.php"><i class="material-icons">chrome_reader_mode</i>
+							<p class="d-lg-none d-md-block">Stats</p></a>
+						</li>
+					</ul>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#pablo"><i class="material-icons">person</i>
+							<p class="d-lg-none d-md-block">Account</p></a>
+						</li>
+					</ul>
 					</div>
 				</div>
 			</nav>
@@ -78,5 +78,5 @@
 	  </div>
 	</div>
   <!-- End Content -->
-	</body>
+</body>
 </html>

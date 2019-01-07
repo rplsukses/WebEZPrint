@@ -85,7 +85,6 @@
 							</div>
 						</div>
 					</div>
-					<!-- End Content -->
-
-		</body>
-		</html>
+				<!-- End Content -->
+	</body>
+</html>

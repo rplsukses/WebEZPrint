@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</nav>
-			<!-- End Navbar -->
+		<!-- End Navbar -->
 
 			<!-- Content -->
 			<div class="content">
@@ -76,8 +76,7 @@
 													</td>
 												</tr>
 												<?php $nomor++; ?>
-												<?php } ?>
-											
+												<?php } ?>									
 											</tbody>
 										</table>
 									</div>
@@ -85,7 +84,6 @@
 							</div>
 						</div>
 					</div>
-					<!-- End Content -->
-
-		</body>
-		</html>
+				<!-- End Content -->
+	</body>
+</html>
