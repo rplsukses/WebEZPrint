@@ -47,8 +47,10 @@
 										<label>Masukkan Email</label>
 										<input class="form-control" placeholder="your name" type="text" name="email_admin" value="<?php echo $pecah['email']; ?>">
 									</div>
-									<button class="btn btn-primary pull-right" name="simpan">Save</button>
-									<button class="btn btn-primary pull-right" name="cancel">CANCEL</button>
+									<p align="right">
+											<button class="btn btn-primary" name="simpan">Save</button>
+											<button class="btn btn-warning" name="cancel">Cancel</button>
+									</p>
 									</form>
 
 									<?php

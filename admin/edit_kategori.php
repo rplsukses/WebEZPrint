@@ -42,8 +42,10 @@
 											<label>Icon</label>
 										</div>
 											<input class="form-control" name="icon" type="file">
-											<button class="btn btn-primary pull-right" name="save">Save</button>
-											<button class="btn btn-warning pull-right" name="cancel">Cancel</button>
+										<p align="right">
+											<button class="btn btn-primary" name="save">Save</button>
+											<button class="btn btn-warning" name="cancel">Cancel</button>
+										</p>
 									</form>
 									<?php
 										if (isset($_POST['save']))
