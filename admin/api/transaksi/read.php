@@ -35,6 +35,8 @@
     
             $transaksi_item=array(
                 "id_transaksi" => $id_transaksi,
+                "id_user" => $id_user,
+                "file" => $file,
                 "status" => $status,
                 "tgl_pesan" => $tgl_pesan,
                 "tgl_selesai" => $tgl_selesai,
