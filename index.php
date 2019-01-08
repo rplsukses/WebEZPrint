@@ -3,14 +3,15 @@
     include 'include/header.php';
     include 'admin/api/config/database.php';
 
-	// Session
+    // Session
+    /*
     session_start();
     if(!isset($_SESSION['login_mitra'])) {
       header('location:index.php');
     }else {
       $login_mitra = $_SESSION['login_mitra'];
     }
-
+*/
     //Connect To Database
     $database = new Database();
     $db = $database->getConnection();
